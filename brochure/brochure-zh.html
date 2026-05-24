@@ -1,0 +1,1418 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Vida Dubai Mall · 一號塔 · 3 Bedroom — Pangea Properties · 繁體中文版</title>
+<link href="fonts/fonts.css" rel="stylesheet">
+<style>
+  :root {
+    --bg-dark: #0d1014;
+    --bg-cream: #ece4d3;
+    --ink: #1a1f25;
+    --line-dark: #2a3038;
+    --line-cream: #d7ceba;
+    --text-light: #e6eaef;
+    --text-muted-dark: #99a0aa;
+    --text-muted-light: #5a6172;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  @page { size: 297mm 210mm; margin: 0; }
+  html, body {
+    font-family: 'Inter', 'Manrope', -apple-system, sans-serif;
+    font-weight: 400;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    background: #333;
+  }
+
+  .page {
+    width: 297mm;
+    height: 210mm;
+    page-break-after: always;
+    overflow: hidden;
+    position: relative;
+  }
+  .page:last-child { page-break-after: auto; }
+
+  /* ========== THEMES ========== */
+  .theme-dark { background: var(--bg-dark); color: var(--text-light); }
+  .theme-dark::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(135deg, rgba(255,255,255,0.012) 0%, transparent 60%),
+      radial-gradient(ellipse at top right, rgba(60,80,100,0.18), transparent 60%);
+    pointer-events: none;
+  }
+  .theme-cream { background: var(--bg-cream); color: var(--ink); }
+  .theme-cream::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(135deg, rgba(0,0,0,0.012) 0%, transparent 70%),
+      radial-gradient(ellipse at top right, rgba(255,255,255,0.4), transparent 70%);
+    pointer-events: none;
+  }
+
+  /* ========== TOP BAR ========== */
+  .topbar {
+    position: absolute;
+    top: 9mm; left: 14mm; right: 14mm;
+    display: flex; justify-content: space-between; align-items: center;
+    z-index: 10;
+  }
+  .wordmark {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.32em;
+    font-size: 10.5pt;
+  }
+  .topbar-right {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 7.5pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .theme-dark .wordmark { color: rgba(255,255,255,0.95); text-shadow: 0 1px 4px rgba(0,0,0,0.3); }
+  .theme-dark .topbar-right { color: rgba(255,255,255,0.85); text-shadow: 0 1px 4px rgba(0,0,0,0.3); }
+  .theme-dark .footer { color: rgba(255,255,255,0.7) !important; text-shadow: 0 1px 3px rgba(0,0,0,0.4); }
+  .theme-cream .wordmark { color: rgba(26,31,37,0.9); }
+  .theme-cream .topbar-right { color: rgba(26,31,37,0.55); }
+
+  /* ========== FOOTER ========== */
+  .footer {
+    position: absolute;
+    bottom: 7mm; left: 14mm; right: 14mm;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 6.5pt;
+    letter-spacing: 0.05em;
+    z-index: 10;
+  }
+  .footer .left { display: flex; gap: 8mm; }
+  .theme-dark .footer { color: rgba(255,255,255,0.4); }
+  .theme-cream .footer { color: rgba(26,31,37,0.4); }
+
+  /* ========== CONTENT WRAPPER ========== */
+  .content {
+    position: absolute;
+    top: 20mm; bottom: 14mm; left: 14mm; right: 14mm;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ========== SECTION TAG ========== */
+  .section-tag {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 7.5pt;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    margin-bottom: 7mm;
+  }
+  .theme-dark .section-tag { color: rgba(255,255,255,0.55); }
+  .theme-cream .section-tag { color: rgba(26,31,37,0.5); }
+
+  /* ========== TYPOGRAPHY ========== */
+  .display {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 300;
+    font-size: 32pt;
+    line-height: 1.08;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 6mm;
+  }
+  .display b, .display strong { font-weight: 700; letter-spacing: 0.03em; }
+
+  .display-sm {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 300;
+    font-size: 24pt;
+    line-height: 1.1;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 5mm;
+  }
+  .display-sm b { font-weight: 700; }
+
+  .h2 {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 300;
+    font-size: 20pt;
+    line-height: 1.14;
+    letter-spacing: 0.035em;
+    text-transform: uppercase;
+    margin-bottom: 5mm;
+  }
+  .h2 b { font-weight: 700; }
+
+  .lead {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 10.5pt;
+    line-height: 1.55;
+    margin-bottom: 4mm;
+  }
+  .lead b, .lead strong { font-weight: 600; }
+  .theme-dark .lead { color: rgba(230, 234, 239, 0.94); }
+
+  .body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 10.5pt;
+    line-height: 1.6;
+    margin-bottom: 3mm;
+  }
+  .body b, .body strong { font-weight: 600; }
+  .theme-dark .body { color: rgba(220, 225, 232, 0.85); }
+  .theme-cream .body { color: var(--text-muted-light); }
+
+  /* ========== IMAGE / FIGURE ========== */
+  .imgbox { overflow: hidden; position: relative; }
+  .img-fill { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .figure { display: flex; flex-direction: column; height: 100%; }
+  .figure .imgbox { flex: 1; }
+  .figure .cap {
+    font-family: 'Manrope', sans-serif;
+    font-size: 6.5pt;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 3mm;
+    opacity: 0.55;
+    flex-shrink: 0;
+  }
+
+  /* ========== FULL-BLEED HERO ========== */
+  .hero {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .hero img { width: 100%; height: 100%; object-fit: cover; }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 30%, rgba(0,0,0,0.4) 65%, rgba(0,0,0,0.88) 100%);
+  }
+
+  /* ========== HALF-LAYOUTS ========== */
+  .half-image { width: 50%; height: 100%; position: absolute; top: 0; overflow: hidden; }
+  .half-image.left { left: 0; }
+  .half-image.right { right: 0; }
+  .half-image img { width: 100%; height: 100%; object-fit: cover; }
+
+  .half-content {
+    width: 50%;
+    position: absolute;
+    top: 18mm; bottom: 14mm;
+    padding: 0 14mm;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .half-content.left { left: 0; padding-left: 14mm; padding-right: 12mm; }
+  .half-content.right { right: 0; padding-right: 14mm; padding-left: 12mm; }
+
+  /* ========== OVERLAY PANEL ========== */
+  .panel {
+    position: absolute;
+    background: rgba(13, 16, 20, 0.78);
+    color: white;
+    padding: 9mm 11mm;
+    z-index: 5;
+    max-width: 145mm;
+  }
+  .panel.bl { left: 14mm; bottom: 16mm; }
+  .panel-eyebrow {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 7.5pt;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 5mm;
+  }
+  .panel-title {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 300;
+    font-size: 24pt;
+    line-height: 1.1;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 4mm;
+  }
+  .panel-title b { font-weight: 700; }
+  .panel-body {
+    font-family: 'Inter', sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.88);
+  }
+  .panel-body b { font-weight: 600; }
+
+  .photo-cap {
+    position: absolute;
+    bottom: 14mm; left: 14mm; right: 14mm;
+    z-index: 5;
+    color: white;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 8pt;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  }
+
+  /* ========== GRID UTILS ========== */
+  .grid { display: grid; gap: 5mm; }
+  .grid-2 { grid-template-columns: 1fr 1fr; }
+  .grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .grid-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+
+  /* ========== STAT STRIP ========== */
+  .stat-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    padding: 5mm 0;
+    margin: 4mm 0;
+  }
+  .theme-dark .stat-strip { border-color: rgba(255,255,255,0.18); }
+  .theme-cream .stat-strip { border-color: var(--line-cream); }
+  .stat {
+    padding: 0 5mm;
+    border-right: 1px solid;
+  }
+  .theme-dark .stat { border-color: rgba(255,255,255,0.12); }
+  .theme-cream .stat { border-color: var(--line-cream); }
+  .stat:last-child { border-right: none; }
+  .stat-label {
+    font-family: 'Manrope', sans-serif;
+    font-size: 6pt;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    opacity: 0.55;
+    margin-bottom: 2mm;
+  }
+  .stat-value {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 11pt;
+    letter-spacing: 0.005em;
+    line-height: 1.1;
+  }
+
+  /* ========== FACT CARDS ========== */
+  .facts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 4mm;
+  }
+  .fact {
+    border: 1px solid var(--line-cream);
+    padding: 5mm 5mm;
+    background: rgba(255,255,255,0.4);
+  }
+  .theme-dark .fact { border-color: rgba(255,255,255,0.18); background: rgba(255,255,255,0.03); }
+  .fact-label {
+    font-family: 'Manrope', sans-serif;
+    font-size: 6pt;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    opacity: 0.55;
+    margin-bottom: 2mm;
+  }
+  .fact-value {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 15pt;
+    letter-spacing: 0.005em;
+    line-height: 1.15;
+  }
+
+  /* ========== ARROW LIST ========== */
+  .arrow-list { list-style: none; padding: 0; margin: 0; }
+  .arrow-list li {
+    padding-left: 10mm;
+    position: relative;
+    margin-bottom: 4mm;
+    font-size: 10.5pt;
+    line-height: 1.5;
+  }
+  .arrow-list li::before {
+    content: '→';
+    position: absolute; left: 0; top: 0;
+    font-size: 10pt;
+    opacity: 0.55;
+  }
+  .arrow-list li b { font-weight: 600; }
+  .theme-dark .arrow-list li { color: rgba(220,225,232,0.88); }
+  .theme-cream .arrow-list li { color: var(--text-muted-light); }
+
+  /* ========== SPECS TABLE ========== */
+  .specs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12mm;
+    flex: 1;
+  }
+  .specs .col-title {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 10.5pt;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 5mm;
+    opacity: 0.6;
+    padding-bottom: 3mm;
+    border-bottom: 1px solid var(--line-cream);
+  }
+  .theme-dark .specs .col-title { border-bottom-color: rgba(255,255,255,0.18); }
+  .specs .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 2.5mm 0;
+    border-bottom: 1px solid var(--line-cream);
+    font-size: 8.5pt;
+  }
+  .theme-dark .specs .row { border-bottom-color: rgba(255,255,255,0.08); }
+  .specs .row:last-child { border-bottom: none; }
+  .specs .key {
+    color: var(--text-muted-light);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+  .theme-dark .specs .key { color: var(--text-muted-dark); }
+  .specs .val { font-weight: 600; text-align: right; max-width: 60%; }
+
+  /* ========== CONTACT CARD ========== */
+  .contact-card {
+    padding: 8mm 9mm;
+    background: rgba(255,255,255,0.6);
+    border: 1px solid var(--line-cream);
+    max-width: 110mm;
+  }
+  .contact-card .eyebrow {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 8pt;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    opacity: 0.55;
+    margin-bottom: 3mm;
+  }
+  .contact-card .name {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 17pt;
+    letter-spacing: 0.005em;
+    margin-bottom: 1.5mm;
+  }
+  .contact-card .role {
+    font-family: 'Manrope', sans-serif;
+    font-size: 10.5pt;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 5mm;
+  }
+  .contact-card .row {
+    display: flex;
+    align-items: baseline;
+    gap: 4mm;
+    margin-bottom: 2.5mm;
+    font-size: 11pt;
+  }
+  .contact-card .row .k {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 10.5pt;
+    letter-spacing: 0.18em;
+    opacity: 0.6;
+    width: 6mm;
+  }
+
+  /* ========== DISCLAIMER ========== */
+  .disclaimer {
+    font-family: 'Inter', sans-serif;
+    font-size: 6.5pt;
+    line-height: 1.55;
+    color: rgba(26,31,37,0.5);
+  }
+
+  /* === Cantonese / Traditional Chinese typography === */
+  .display, .display-sm, .h2, .h3, .lead, .body, .section-tag,
+  .panel-title, .panel-body, .panel-eyebrow,
+  .stat-label, .stat-value, .fact-label, .fact-value,
+  .col-title, .arrow-list li, .specs .key, .specs .val,
+  .caption, .photo-cap, .contact-card .name, .contact-card .role,
+  .topbar-right, .footer, .disclaimer,
+  h1, h2, p, div, span, li {
+    font-family: 'Manrope', 'Inter', 'Noto Sans TC', sans-serif;
+  }
+  .display, .display-sm, .h2, .h3, .panel-title, h1, h2 {
+    letter-spacing: 0.005em !important;
+    text-transform: none !important;
+  }
+  .section-tag, .panel-eyebrow, .caption, .photo-cap, .col-title,
+  .stat-label, .fact-label, .topbar-right, .contact-card .eyebrow,
+  .contact-card .role {
+    letter-spacing: 0.16em !important;
+  }
+  .wordmark { letter-spacing: 0.3em !important; }
+  .body, .panel-body, .lead, .arrow-list li { line-height: 1.7 !important; }
+
+</style>
+</head>
+<body>
+
+<!-- =====================================
+     PAGE 1 — COVER
+     ===================================== -->
+<section class="page theme-dark">
+  <div class="hero"><img src="images/dev_1_clean.jpg" alt="Vida Dubai Mall · Downtown skyline" /></div>
+  <div class="hero-overlay" style="background: linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.25) 35%, rgba(0,0,0,0.5) 70%, rgba(0,0,0,0.85) 100%);"></div>
+
+  <div class="topbar">
+    <div class="wordmark" style="color:#fff;">P A N G E A</div>
+    <div class="topbar-right" style="color:rgba(255,255,255,0.85);">物業簡介</div>
+  </div>
+
+  <!-- Centered hero panel with title -->
+  <div style="position:absolute; left: 22mm; right: 22mm; top: 52mm; bottom: 52mm; z-index:5; background: rgba(13, 16, 20, 0.85); border: 1px solid rgba(255,255,255,0.1); text-align:center; display: flex; flex-direction: column; justify-content: center; padding: 14mm 28mm;">
+    <div style="font-family:'Manrope'; font-weight:500; font-size:10pt; letter-spacing:0.5em; text-transform:uppercase; color:rgba(255,255,255,0.75); margin-bottom:8mm;">
+      物業簡介 &nbsp;·&nbsp; 杜拜市中心
+    </div>
+
+    <h1 style="font-family:'Manrope'; font-weight:300; font-size:48pt; line-height:1.05; letter-spacing:0.04em; text-transform:uppercase; color:#fff; margin: 0;">
+      Vida Dubai Mall<br/><b style="font-weight:700;">一號塔</b>
+    </h1>
+
+    <div style="width:46mm; height:1px; background:rgba(255,255,255,0.5); margin: 8mm auto;"></div>
+
+    <div style="font-family:'Inter'; font-size:12pt; font-weight:400; color:#fff; letter-spacing:0.02em; margin-bottom:4mm;">
+      三房服務式住宅
+    </div>
+    <div style="font-family:'Inter'; font-size:10pt; color:rgba(255,255,255,0.88); letter-spacing:0.04em;">
+      全景哈里發塔及噴泉景觀 &nbsp;·&nbsp; 設工人房 &nbsp;·&nbsp; 即住 · 配備齊全
+    </div>
+  </div>
+
+  <div class="footer" style="color:rgba(255,255,255,0.8);">
+    <div class="left">
+      <span>Raj Tomar · 物業顧問</span>
+      <span>+971 58 996 6085 · raj@pangeadubai.com</span>
+    </div>
+    <div>01 / 26</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 2 — PERSONAL NOTE (Mr. Xie Xingyao)
+     ===================================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">致 謝興堯先生 · 香港</div>
+  </div>
+
+  <div class="content" style="padding-top: 22mm; padding-bottom: 14mm;">
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 14mm; height: 100%; align-items: stretch;">
+      <div style="display:flex; flex-direction:column; justify-content:center;">
+        <div class="section-tag" style="margin-bottom:7mm;">個人信函 &nbsp;·&nbsp; 2026 年 5 月 24 日</div>
+
+        <div style="font-family:'Manrope'; font-weight:300; font-size:10.5pt; letter-spacing:0.05em; text-transform:uppercase; color: rgba(26,31,37,0.55); margin-bottom: 2mm;">
+          致
+        </div>
+        <h2 style="font-family:'Manrope'; font-weight:300; font-size:28pt; line-height:1.06; letter-spacing:0.03em; margin-bottom: 2mm;">
+          <b style="font-weight:700;">謝興堯</b> 先生
+        </h2>
+        <div style="font-family:'Inter'; font-size:10.5pt; color: rgba(26,31,37,0.6); letter-spacing:0.04em; margin-bottom: 6mm;">
+          香港 &nbsp;·&nbsp; 代表您的客戶
+        </div>
+
+        <p class="body" style="font-size:10.5pt; margin-bottom: 2.5mm; line-height: 1.55;">
+          謝先生 您好，
+        </p>
+        <p class="body" style="font-size:10.5pt; margin-bottom: 2.5mm; line-height: 1.55;">
+          感謝您對 Pangea Properties 的信任。根據您客戶的要求 — <b>位於哈里發塔附近的 2-3 房單位，預算 AED 800 萬</b>，作為其每年到訪杜拜的住所 — 本人特此為您準備此份介紹，相信此單位最切合其需要。
+        </p>
+        <p class="body" style="font-size:10.5pt; line-height: 1.55; margin-bottom: 5mm;">
+          Vida Dubai Mall · 一號塔為 Emaar 旗下<b>全新落成、全套傢俬電器配備</b>的服務式住宅。本單位為大廈內<b>最大三房間隔</b>，位於市中心高層 <b>23 樓</b>，落地玻璃盡覽哈里發塔及杜拜噴泉景觀 — 是即住即用、無需任何佈置的旅居之選。
+        </p>
+
+        <div>
+          <div style="font-family:'Manrope'; font-weight:700; font-size:11pt; color:#1a1f25;">Raj Tomar</div>
+          <div style="font-family:'Manrope'; font-size:8pt; letter-spacing:0.18em; text-transform:uppercase; color: rgba(26,31,37,0.55);">物業顧問 · Pangea Properties</div>
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; justify-content:center;">
+        <div style="border: 1px solid var(--line-cream); padding: 8mm 8mm; background: rgba(255,255,255,0.55);">
+          <div style="font-family:'Manrope'; font-weight:500; font-size:8pt; letter-spacing:0.4em; text-transform:uppercase; color: rgba(26,31,37,0.55); margin-bottom: 5mm;">
+            此單位契合客戶要求的原因
+          </div>
+
+          <div style="display:grid; grid-template-columns: 1fr; gap: 3mm;">
+            <div style="display:grid; grid-template-columns: 32mm 1fr; gap: 4mm; padding-bottom: 3mm; border-bottom: 1px solid var(--line-cream);">
+              <div style="font-family:'Manrope'; font-weight:700; font-size:8.5pt; letter-spacing:0.18em; text-transform:uppercase; color:#1a1f25;">旅居兩用</div>
+              <div style="font-family:'Inter'; font-size:10pt; line-height:1.45; color: var(--text-muted-light);">Vida 服務式管理，全套傢俬電器配備 — 帶一個行李箱即可入住，無需任何佈置。</div>
+            </div>
+
+            <div style="display:grid; grid-template-columns: 32mm 1fr; gap: 4mm; padding-bottom: 3mm; border-bottom: 1px solid var(--line-cream);">
+              <div style="font-family:'Manrope'; font-weight:700; font-size:8.5pt; letter-spacing:0.18em; text-transform:uppercase; color:#1a1f25;">哈里發塔</div>
+              <div style="font-family:'Inter'; font-size:10pt; line-height:1.45; color: var(--text-muted-light);">確認位於哈里發塔及噴泉景觀軸線 — 主人睡房及全景露台正面望塔。</div>
+            </div>
+
+            <div style="display:grid; grid-template-columns: 32mm 1fr; gap: 4mm; padding-bottom: 3mm; border-bottom: 1px solid var(--line-cream);">
+              <div style="font-family:'Manrope'; font-weight:700; font-size:8.5pt; letter-spacing:0.18em; text-transform:uppercase; color:#1a1f25;">高層單位</div>
+              <div style="font-family:'Inter'; font-size:10pt; line-height:1.45; color: var(--text-muted-light);">23 樓 — 高於大街景觀，可賞夜景及享空氣清新環境。</div>
+            </div>
+
+            <div style="display:grid; grid-template-columns: 32mm 1fr; gap: 4mm; padding-bottom: 3mm; border-bottom: 1px solid var(--line-cream);">
+              <div style="font-family:'Manrope'; font-weight:700; font-size:8.5pt; letter-spacing:0.18em; text-transform:uppercase; color:#1a1f25;">交通連繫</div>
+              <div style="font-family:'Inter'; font-size:10pt; line-height:1.45; color: var(--text-muted-light);">位處主大街，設有私人冷氣天橋直通杜拜購物中心，並可經商場直達地鐵站。</div>
+            </div>
+
+            <div style="display:grid; grid-template-columns: 32mm 1fr; gap: 4mm; padding-bottom: 3mm; border-bottom: 1px solid var(--line-cream);">
+              <div style="font-family:'Manrope'; font-weight:700; font-size:8.5pt; letter-spacing:0.18em; text-transform:uppercase; color:#1a1f25;">車位及通道</div>
+              <div style="font-family:'Inter'; font-size:10pt; line-height:1.45; color: var(--text-muted-light);">2 個有蓋車位 · 大廈設 4 部升降機 — 由停車場到單位短捷私密。</div>
+            </div>
+
+            <div style="display:grid; grid-template-columns: 32mm 1fr; gap: 4mm;">
+              <div style="font-family:'Manrope'; font-weight:700; font-size:8.5pt; letter-spacing:0.18em; text-transform:uppercase; color:#1a1f25;">會所設施</div>
+              <div style="font-family:'Inter'; font-size:10pt; line-height:1.45; color: var(--text-muted-light);">24 小時健身房、Vida 水療、住戶休憩廳、Origins 樓內餐廳及 Qix 兒童俱樂部 — 訪港家庭一應俱全。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>02 / 26</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 3 — THE BUILDING (intro)
+     ===================================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">Vida Dubai Mall · 一號塔 · 三房</div>
+  </div>
+
+  <div class="content">
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 14mm; height: 100%;">
+      <div style="display:flex; flex-direction:column; justify-content:center;">
+        <div class="section-tag">01 &nbsp;·&nbsp; 大廈介紹</div>
+        <h2 class="display">通往繁華都會<br/>的<b>門戶。</b></h2>
+        <p class="body" style="font-size:10pt;">
+          Vida Dubai Mall is the residential expression of Emaar's <b>Vida 酒店s &amp; Resorts</b>
+          brand — a <b>238-metre, 55-storey tower</b> at the heart of Downtown Dubai, anchored by
+          the Vida Dubai Mall · 195 間客房 hotel.
+        </p>
+        <p class="body" style="font-size:10pt; margin-top:4mm;">
+          一號塔為首座建成的塔樓，亦是杜拜市中心唯一<b>直接連接</b>杜拜購物中心的住宅地址，由私人冷氣天橋連通。
+        </p>
+
+        <div class="stat-strip" style="margin-top:8mm;">
+          <div class="stat"><div class="stat-label">高度</div><div class="stat-value">238 m</div></div>
+          <div class="stat"><div class="stat-label">樓層</div><div class="stat-value">55</div></div>
+          <div class="stat"><div class="stat-label">酒店房間</div><div class="stat-value">195</div></div>
+          <div class="stat"><div class="stat-label">至商場</div><div class="stat-value">≈ 3 min</div></div>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:4mm;">
+        <div class="imgbox" style="height:60%;">
+          <img class="img-fill" src="images/dev_1_clean.jpg" alt="Vida Dubai Mall · Tower exterior"/>
+        </div>
+        <div class="imgbox" style="height:40%;">
+          <img class="img-fill" src="images/dev_3_clean.jpg" alt="Vida Dubai Mall · Boulevard frontage"/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>03 / 26</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 3 — THE VIEW (full bleed)
+     ===================================== -->
+<section class="page theme-dark">
+  <div class="hero"><img src="images/dev_2.jpg" alt="Uninterrupted views of 哈里發塔"/></div>
+  <div class="hero-overlay" style="background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, transparent 25%, transparent 60%, rgba(0,0,0,0.85) 100%);"></div>
+
+  <div class="topbar">
+    <div class="wordmark" style="color:#fff;">P A N G E A</div>
+    <div class="topbar-right" style="color:rgba(255,255,255,0.85);">Vida Dubai Mall · 一號塔 · 三房</div>
+  </div>
+
+  <div class="panel bl" style="max-width: 145mm;">
+    <div class="panel-eyebrow">02 &nbsp;·&nbsp; 景觀</div>
+    <p class="panel-body" style="font-size:11pt;">
+      本單位確定位於 <b>哈里發塔及杜拜噴泉景觀軸線</b> — 大廈內最搶手的景觀方向。<b>主露台</b>由客廳延伸至主人睡房，正面飽覽哈里發塔，配合噴泉長廊及市中心天際線盡收眼底。
+    </p>
+  </div>
+
+  <div class="photo-cap" style="bottom: 9mm;">發展商效果圖 · 哈里發塔景觀軸線</div>
+
+  <div class="footer" style="color:rgba(255,255,255,0.7);">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>04 / 26</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 4 — CONNECTED (skybridge)
+     ===================================== -->
+<section class="page theme-cream">
+  <div class="half-image right"><img src="images/dev_4_clean.jpg" alt="Sky-bridge to The Dubai Mall"/></div>
+
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">Vida Dubai Mall · 一號塔 · 三房</div>
+  </div>
+
+  <div class="half-content left">
+    <div class="section-tag">03 &nbsp;·&nbsp; 交通連繫</div>
+    <h2 class="h2">無縫連接<br/><b>杜拜購物中心。</b></h2>
+    <p class="body" style="font-size:11pt; margin-top: 2mm;">
+      從大堂出發約三分鐘即可進入杜拜購物中心 — 無需過馬路、無需頂著酷暑。
+    </p>
+    <p class="body" style="font-size:11pt; margin-top: 2mm;">
+      此項配套是住戶及短期入住者選擇本大廈而非其他市中心地址的<b>最常見原因</b>。
+    </p>
+
+    <ul class="arrow-list" style="margin-top: 6mm;">
+      <li><b>私人冷氣天橋</b> — 僅限住戶及酒店客人使用。</li>
+      <li><b>逾 200 間餐飲</b>及杜拜水族館，全部步行可達。</li>
+      <li>直達杜拜噴泉長廊及哈里發塔公園。</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>05 / 26</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 5 — THE POOL (hero)
+     ===================================== -->
+<section class="page theme-dark">
+  <div class="hero"><img src="images/ffd749a6-274574.webp" alt="Pool with 哈里發塔"/></div>
+  <div class="hero-overlay" style="background: linear-gradient(180deg, rgba(13,16,20,0.6) 0%, transparent 35%, transparent 60%, rgba(13,16,20,0.95) 100%);"></div>
+
+  <div class="topbar">
+    <div class="wordmark" style="color:#fff;">P A N G E A</div>
+    <div class="topbar-right" style="color:rgba(255,255,255,0.75);">Vida Dubai Mall · 一號塔 · 三房</div>
+  </div>
+
+  <div style="position:absolute; top:24mm; left:14mm; z-index:5; color:#fff; max-width:160mm;">
+    <div style="font-family:'Manrope'; font-weight:500; font-size:8pt; letter-spacing:0.42em; text-transform:uppercase; color:rgba(255,255,255,0.82); margin-bottom:6mm;">
+      04 &nbsp;·&nbsp; 泳池
+    </div>
+    <h2 style="font-family:'Manrope'; font-weight:300; font-size:32pt; line-height:1.06; letter-spacing:0.04em; text-transform:uppercase; color:#fff;">
+      哈里發塔倒映<br/><b style="font-weight:700;">於泳池</b>。
+    </h2>
+  </div>
+
+  <div class="photo-cap" style="bottom:10mm;">戶外泳池平台 · 正面望哈里發塔</div>
+
+  <div class="footer" style="color:rgba(255,255,255,0.7);">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>06 / 26</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 6 — POOL CONT.
+     ===================================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">Vida Dubai Mall · 一號塔 · 三房</div>
+  </div>
+
+  <div class="content">
+    <div class="section-tag">04 &nbsp;·&nbsp; 泳池（續）</div>
+    <h2 class="h2" style="margin-bottom: 7mm;">兩個角度，<br/><b>同一天際線。</b></h2>
+
+    <div class="grid grid-2" style="gap:5mm; flex:1; min-height:0;">
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/e34638a6-274570.webp" alt="泳池望向哈里發塔及 Emaar 廣場"/></div>
+        <div class="cap">泳池望向哈里發塔及 Emaar 廣場</div>
+      </div>
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/bd98f158-274572.webp" alt="Pool deck and lounge seating"/></div>
+        <div class="cap">泳池平台及休憩座位</div>
+      </div>
+    </div>
+
+    <p class="body" style="margin-top: 6mm; max-width: 230mm;">
+      <b>戶外恆溫泳池</b>，正面飽覽市中心天際線 — 為住戶設置的實用型泳池，與酒店客人專用泳池分開。設有日光浴床、私人涼亭座位，並由大堂咖啡廳直接送餐。
+    </p>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>07 / 26</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 7 — LOBBY
+     ===================================== -->
+<section class="page theme-dark">
+  <div class="hero"><img src="images/6f50394d-274565.jpg" alt="酒店 lobby"/></div>
+  <div class="hero-overlay" style="background: linear-gradient(180deg, rgba(13,16,20,0.55) 0%, transparent 30%, transparent 60%, rgba(13,16,20,0.92) 100%);"></div>
+
+  <div class="topbar">
+    <div class="wordmark" style="color:#fff;">P A N G E A</div>
+    <div class="topbar-right" style="color:rgba(255,255,255,0.75);">Vida Dubai Mall · 一號塔 · 三房</div>
+  </div>
+
+  <div class="panel bl" style="max-width: 125mm;">
+    <div class="panel-eyebrow">05 &nbsp;·&nbsp; 大堂及休憩廳</div>
+    <h2 class="panel-title"><b>入門</b><br/>初印象。</h2>
+    <p class="panel-body">
+      雙層挑高大堂，配以標誌性吊燈、精選藝術品展示，並設有通往泳池平台的咖啡廳。
+    </p>
+  </div>
+
+  <div class="photo-cap" style="bottom:10mm;">酒店大堂 · 雙層挑高天花及標誌性吊燈</div>
+
+  <div class="footer" style="color:rgba(255,255,255,0.7);">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>08 / 26</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 8 — LOUNGES (3 moods)
+     ===================================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">Vida Dubai Mall · 一號塔 · 三房</div>
+  </div>
+
+  <div class="content">
+    <div class="section-tag">06 &nbsp;·&nbsp; 住戶休憩廳</div>
+    <h2 class="h2" style="margin-bottom: 7mm;">三個休憩廳，<br/><b>三種氛圍。</b></h2>
+
+    <div class="grid grid-3" style="gap:4mm; flex:1; min-height:0;">
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/0af66917-274575.jpg" alt="Daylight lounge with Burj view"/></div>
+        <div class="cap">日光休憩廳 · 望哈里發塔</div>
+      </div>
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/0d274fcf-274582.webp" alt="Library lounge"/></div>
+        <div class="cap">晚間圖書館休憩廳</div>
+      </div>
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/bd2777e4-274569.webp" alt="Atrium lounge with art wall"/></div>
+        <div class="cap">中庭休憩廳 · 藝術牆</div>
+      </div>
+    </div>
+
+    <p class="body" style="margin-top: 6mm; max-width: 235mm;">
+      住戶全日可使用多個休憩空間 — 大堂旁設有<b>日光休憩廳</b>飽覽哈里發塔，晚間設有<b>閱讀及雞尾酒休憩廳</b>，以及雙層挑高、由藝術裝置點綴的<b>中庭休憩廳</b>。三個休憩廳僅限住戶及酒店客人使用 — 不對外開放。
+    </p>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>09 / 26</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 9 — ORIGINS (dining)
+     ===================================== -->
+<section class="page theme-dark">
+  <div class="half-image right"><img src="images/85fde58a-274573.webp" alt="Origins restaurant"/></div>
+
+  <div class="topbar">
+    <div class="wordmark" style="color:#fff;">P A N G E A</div>
+    <div class="topbar-right" style="color:rgba(255,255,255,0.75);">Vida Dubai Mall · 一號塔 · 三房</div>
+  </div>
+
+  <div class="half-content left">
+    <div class="section-tag">07 &nbsp;·&nbsp; 餐飲</div>
+    <h2 class="h2"><b>Origins</b><br/>樓內餐廳。</h2>
+    <p class="body" style="font-size:11pt; margin-top: 2mm;">
+      Origins 為大廈內的標誌性餐廳 — <b>全日供餐</b>，設有自助餐區及單點服務。
+    </p>
+    <p class="body" style="font-size:11pt; margin-top: 2mm;">
+      除 Origins 外，住戶可直接使用<b>大堂咖啡廳</b>及酒店的<b>晚間雞尾酒酒廊</b>，並可經天橋使用杜拜購物中心內逾 200 間餐飲。
+    </p>
+
+    <div class="stat-strip" style="margin-top: 7mm;">
+      <div class="stat"><div class="stat-label">樓內</div><div class="stat-value">3 個場所</div></div>
+      <div class="stat"><div class="stat-label">服務</div><div class="stat-value">全日供餐</div></div>
+      <div class="stat"><div class="stat-label">經商場</div><div class="stat-value">200+ 食肆</div></div>
+      <div class="stat"><div class="stat-label">使用權</div><div class="stat-value">僅限住戶</div></div>
+    </div>
+  </div>
+
+  <div class="footer" style="color:rgba(255,255,255,0.7);">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>10 / 26</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 10 — WELLNESS
+     ===================================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">Vida Dubai Mall · 一號塔 · 三房</div>
+  </div>
+
+  <div class="content">
+    <div class="section-tag">08 &nbsp;·&nbsp; 健康設施</div>
+    <h2 class="h2" style="margin-bottom: 7mm;"><b>健身房</b>、水療、<br/>桑拿及蒸氣浴。</h2>
+
+    <div class="grid grid-2" style="gap:5mm; flex:1; min-height:0;">
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/ca71c5f8-274576.jpg" alt="Fitness centre with Matrix equipment"/></div>
+        <div class="cap">24 小時健身中心 · Matrix 器材</div>
+      </div>
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/f0f4250d-274580.jpg" alt="Vida Spa treatment room"/></div>
+        <div class="cap">Vida 水療 · 療程室</div>
+      </div>
+    </div>
+
+    <p class="body" style="margin-top: 6mm; max-width: 235mm;">
+      <b>24 小時健身中心</b>，配備全套 Matrix 心肺及阻力訓練器材，並設 Vida 品牌<b>水療中心</b>提供度身定制療程、桑拿、蒸氣浴及日光露台 — 住戶可使用 Vida 酒店全部設施。
+    </p>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>11 / 26</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 11 — FAMILY & WORK
+     ===================================== -->
+<section class="page theme-dark">
+  <div class="topbar">
+    <div class="wordmark" style="color:#fff;">P A N G E A</div>
+    <div class="topbar-right" style="color:rgba(255,255,255,0.75);">Vida Dubai Mall · 一號塔 · 三房</div>
+  </div>
+
+  <div class="content">
+    <div class="section-tag">09 &nbsp;·&nbsp; 親子與工作</div>
+    <h2 class="h2" style="margin-bottom: 7mm;">Qix 兒童俱樂部及<br/><b>共享工作層。</b></h2>
+
+    <div class="grid grid-3" style="gap:4mm; flex:1; min-height:0;">
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/0f4ab355-274571.webp" alt="Qix Club indoor playroom"/></div>
+        <div class="cap" style="color:rgba(255,255,255,0.55);">Qix 俱樂部 · 室內遊戲</div>
+      </div>
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/587ee3ef-274581.jpg" alt="Outdoor play deck"/></div>
+        <div class="cap" style="color:rgba(255,255,255,0.55);">戶外遊戲平台</div>
+      </div>
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/91c37c78-274583.webp" alt="Co-working space"/></div>
+        <div class="cap" style="color:rgba(255,255,255,0.55);">共享工作空間</div>
+      </div>
+    </div>
+
+    <p class="body" style="margin-top: 6mm; max-width: 235mm;">
+      <b>Qix 兒童俱樂部</b>為 4-12 歲兒童提供有監督的活動 — 室內遊戲、戶外活動平台及每週主題節目。為大人而設的<b>共享工作層</b>則配備 Mac 工作站、私人會議廂及壁爐休憩廳 — 適合每週在家工作數天的住戶。
+    </p>
+  </div>
+
+  <div class="footer" style="color:rgba(255,255,255,0.7);">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>12 / 26</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 12 — MEETING & EVENTS
+     ===================================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">Vida Dubai Mall · 一號塔 · 三房</div>
+  </div>
+
+  <div class="content">
+    <div class="section-tag">10 &nbsp;·&nbsp; 會議及活動</div>
+    <h2 class="h2" style="margin-bottom: 7mm;">五間會議室，<br/><b>可容納 156 人。</b></h2>
+
+    <div class="grid grid-2" style="gap:5mm; flex:1; min-height:0;">
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/ab41948b-274579.jpg" alt="Boardroom configuration"/></div>
+        <div class="cap">董事會佈局</div>
+      </div>
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/2ff21dfb-274578.jpg" alt="Banquet configuration"/></div>
+        <div class="cap">宴會佈局</div>
+      </div>
+    </div>
+
+    <p class="body" style="margin-top: 6mm; max-width: 235mm;">
+      五間採光充足的會議室，可容納 <b>156 位來賓</b>，提供董事會、宴會及劇院式佈局。另設活動露台及活動平台，可舉辦私人聚會、婚宴及企業活動 — 對於同時用作居住及接待的住戶來說<b>是難得的配套</b>。
+    </p>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>13 / 26</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 14 — AMENITIES (developer renders)
+     ===================================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">Vida Dubai Mall · 一號塔 · 三房</div>
+  </div>
+
+  <div class="content">
+    <div class="section-tag">11 &nbsp;·&nbsp; 會所設施</div>
+    <h2 class="h2" style="margin-bottom: 7mm;">完整<b>度假式設施層</b>，<br/>住戶專享。</h2>
+
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 5mm; flex:1; min-height:0;">
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/dev_5.jpg" alt="Vida Dubai Mall amenities — function terrace, yoga pad, kids play, events deck"/></div>
+        <div class="cap">活動露台 · 瑜伽平台 · 兒童玩水區 · 活動平台</div>
+      </div>
+      <div style="display:flex; flex-direction:column; justify-content:center;">
+        <ul class="arrow-list">
+          <li><b>活動露台</b> — 雙層挑高中庭，可舉辦住戶活動，配有餐桌及景觀植栽。</li>
+          <li><b>瑜伽平台</b> — 樹蔭遮蔭的露天平台，適合晨間練習。</li>
+          <li><b>兒童玩水區</b> — 有監督的玩水平台，配遮陽棚，毗鄰 Qix 俱樂部。</li>
+          <li><b>活動平台</b> — 露天用餐及娛樂區，正面望向碼頭天際線。</li>
+          <li>Plus the <b>outdoor pool</b>, <b>24/7 gym</b>, <b>Vida spa</b>, <b>three lounges</b> and the <b>co-working floor</b> covered in the previous spreads.</li>
+        </ul>
+        <p class="body" style="margin-top: 6mm; font-size: 9pt;">
+          本設施由 Vida 酒店團隊統一管理 — 住戶可於大廈<b>品牌服務合約</b>下全面使用。
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>14 / 26</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 15 — THE RESIDENCE (intro)
+     ===================================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">Vida Dubai Mall · 一號塔 · 三房</div>
+  </div>
+
+  <div class="content">
+    <div class="section-tag">12 &nbsp;·&nbsp; 單位介紹</div>
+    <h2 class="display-sm" style="margin-bottom: 6mm;">三房單位 · 望哈里發塔<br/><b>即住。</b></h2>
+
+    <div class="imgbox" style="height:105mm; margin-bottom: 6mm;">
+      <img class="img-fill" src="images/bf3d53f4-274529.jpg" alt="Open-plan living, dining and kitchen"/>
+    </div>
+
+    <div class="facts">
+      <div class="fact"><div class="fact-label">間隔</div><div class="fact-value">3 房 + 工人房</div></div>
+      <div class="fact"><div class="fact-label">面積</div><div class="fact-value">1,693 平方呎</div></div>
+      <div class="fact"><div class="fact-label">景觀</div><div class="fact-value">哈里發塔 + 噴泉</div></div>
+      <div class="fact"><div class="fact-label">狀態</div><div class="fact-value">即住 · 配備齊全</div></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>15 / 26</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 14 — LIVING & DINING (hero)
+     ===================================== -->
+<section class="page theme-dark">
+  <div class="hero"><img src="images/a779e8bc-274535.jpg" alt="Living area with floor-to-ceiling balcony access"/></div>
+  <div class="hero-overlay" style="background: linear-gradient(180deg, rgba(13,16,20,0.55) 0%, transparent 30%, transparent 60%, rgba(13,16,20,0.9) 100%);"></div>
+
+  <div class="topbar">
+    <div class="wordmark" style="color:#fff;">P A N G E A</div>
+    <div class="topbar-right" style="color:rgba(255,255,255,0.75);">Vida Dubai Mall · 一號塔 · 三房</div>
+  </div>
+
+  <div class="panel bl" style="max-width: 120mm;">
+    <div class="panel-eyebrow">12 &nbsp;·&nbsp; 客廳與飯廳</div>
+    <h2 class="panel-title" style="font-size:26pt;">主要<br/><b>起居空間。</b></h2>
+  </div>
+
+  <div class="photo-cap" style="bottom:10mm;">客廳設露台通道 · 望哈里發塔</div>
+
+  <div class="footer" style="color:rgba(255,255,255,0.7);">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>16 / 26</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 15 — DINING + LIVING (alt angles)
+     ===================================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">Vida Dubai Mall · 一號塔 · 三房</div>
+  </div>
+
+  <div class="content">
+    <div class="section-tag">12 &nbsp;·&nbsp; 客廳與飯廳（續）</div>
+    <h2 class="h2" style="margin-bottom: 6mm;">開放式佈局，<br/><b>露台景觀。</b></h2>
+
+    <div class="grid grid-2" style="gap:5mm; flex:1; min-height:0;">
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/7f4fa09d-274531.jpg" alt="Dining toward balcony"/></div>
+        <div class="cap">飯廳望向露台</div>
+      </div>
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/7d85e5d9-274537.jpg" alt="Living · alternate angle"/></div>
+        <div class="cap">客廳 · 另一角度</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>17 / 26</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 16 — KITCHEN + BALCONY
+     ===================================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">Vida Dubai Mall · 一號塔 · 三房</div>
+  </div>
+
+  <div class="content">
+    <div class="section-tag">13 &nbsp;·&nbsp; 廚房及露台</div>
+    <h2 class="h2" style="margin-bottom: 7mm;"><b>全套配備。</b><br/>落地玻璃。</h2>
+
+    <div class="grid grid-2" style="gap:5mm; flex:1; min-height:0;">
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/25e15f84-274539.jpg" alt="Fitted kitchen"/></div>
+        <div class="cap">配備齊全廚房 · 高級電器</div>
+      </div>
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/5817a87d-274541.jpg" alt="露台 · Burj view"/></div>
+        <div class="cap">露台 · 哈里發塔景觀</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>18 / 26</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 17 — BALCONY GOLDEN HOUR (hero)
+     ===================================== -->
+<section class="page theme-dark">
+  <div class="hero"><img src="images/burj_balcony_274678.webp" alt="Main balcony with 哈里發塔 view"/></div>
+  <div class="hero-overlay" style="background: linear-gradient(180deg, rgba(13,16,20,0.4) 0%, transparent 30%, transparent 65%, rgba(13,16,20,0.92) 100%);"></div>
+
+  <div class="topbar">
+    <div class="wordmark" style="color:#fff;">P A N G E A</div>
+    <div class="topbar-right" style="color:rgba(255,255,255,0.75);">Vida Dubai Mall · 一號塔 · 三房</div>
+  </div>
+
+  <div class="panel bl" style="max-width: 130mm;">
+    <div class="panel-eyebrow">13 &nbsp;·&nbsp; 露台</div>
+    <h2 class="panel-title" style="font-size:26pt;"><b>全景露台</b>，<br/>市中心第一排。</h2>
+  </div>
+
+  <div class="photo-cap" style="bottom:10mm;">主露台 · 正面望哈里發塔及噴泉</div>
+
+  <div class="footer" style="color:rgba(255,255,255,0.7);">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>19 / 26</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 18 — MASTER BEDROOM
+     ===================================== -->
+<section class="page theme-cream">
+  <div class="half-image right"><img src="images/master_bedroom_274679.webp" alt="Master bedroom with 哈里發塔 view" style="object-position: 25% center;"/></div>
+
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">Vida Dubai Mall · 一號塔 · 三房</div>
+  </div>
+
+  <div class="half-content left">
+    <div class="section-tag">14 &nbsp;·&nbsp; 主人睡房</div>
+    <h2 class="h2">伴<b>哈里發塔</b><br/>醒來。</h2>
+    <p class="body" style="font-size:11pt; margin-top:2mm;">
+      主人套房<b>正面望向哈里發塔</b>，設有私人露台門、步入式更衣間，以及配備浸浴缸和獨立花灑間的套房浴室。
+    </p>
+
+    <ul class="arrow-list" style="margin-top: 6mm;">
+      <li>落地玻璃正面望哈里發塔</li>
+      <li>私人露台通道</li>
+      <li>步入式更衣間</li>
+      <li>浸浴缸及獨立花灑間</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>20 / 26</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 19 — MASTER ENSUITE
+     ===================================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">Vida Dubai Mall · 一號塔 · 三房</div>
+  </div>
+
+  <div class="content">
+    <div class="section-tag">15 &nbsp;·&nbsp; 主人浴室</div>
+    <h2 class="h2" style="margin-bottom: 7mm;"><b>主人</b><br/>浴室。</h2>
+
+    <div class="grid grid-2" style="gap:5mm; flex:1; min-height:0;">
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/51f3469b-274555.jpg" alt="Vanity &amp; double basin"/></div>
+        <div class="cap">主人浴室 · 洗手枱</div>
+      </div>
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/676827bd-274561.jpg" alt="Rain shower &amp; WC"/></div>
+        <div class="cap">花灑間及廁所</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>21 / 26</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 20 — GUEST BEDROOMS
+     ===================================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">Vida Dubai Mall · 一號塔 · 三房</div>
+  </div>
+
+  <div class="content">
+    <div class="section-tag">16 &nbsp;·&nbsp; 客房</div>
+    <h2 class="h2" style="margin-bottom: 7mm;">另設<br/><b>兩間客房。</b></h2>
+
+    <div class="grid grid-2" style="gap:5mm; flex:1; min-height:0;">
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/499b6b01-274549.jpg" alt="Second bedroom"/></div>
+        <div class="cap">第二睡房</div>
+      </div>
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/8c570509-274545.jpg" alt="Third bedroom"/></div>
+        <div class="cap">第三睡房</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>22 / 26</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 21 — MAID'S ROOM + WIDE VIEW
+     ===================================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">Vida Dubai Mall · 一號塔 · 三房</div>
+  </div>
+
+  <div class="content">
+    <div class="section-tag">17 &nbsp;·&nbsp; 其他空間</div>
+    <h2 class="h2" style="margin-bottom: 7mm;">工人房<br/><b>及更廣景觀。</b></h2>
+
+    <div class="grid grid-2" style="gap:5mm; flex:1; min-height:0;">
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/fcb44d0d-274551.jpg" alt="Maid's room"/></div>
+        <div class="cap">工人房</div>
+      </div>
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/734e2265-274553.jpg" alt="Guest powder room"/></div>
+        <div class="cap">客用洗手間</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>23 / 26</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 22 — WIDE BALCONY (hero)
+     ===================================== -->
+<section class="page theme-dark">
+  <div class="hero"><img src="images/07d0eddb-274563.jpg" alt="Second balcony · DIFC skyline"/></div>
+  <div class="hero-overlay" style="background: linear-gradient(180deg, rgba(13,16,20,0.4) 0%, transparent 30%, transparent 60%, rgba(13,16,20,0.92) 100%);"></div>
+
+  <div class="topbar">
+    <div class="wordmark" style="color:#fff;">P A N G E A</div>
+    <div class="topbar-right" style="color:rgba(255,255,255,0.85);">Vida Dubai Mall · 一號塔 · 三房</div>
+  </div>
+
+  <div class="panel bl" style="max-width: 150mm;">
+    <div class="panel-eyebrow">17 &nbsp;·&nbsp; 第二露台</div>
+    <h2 class="panel-title" style="font-size:24pt;">
+      另一<b>景觀</b>，<br/>飽覽 DIFC 天際線。
+    </h2>
+    <p class="panel-body" style="font-size:10.5pt; margin-top: 4mm;">
+      本單位橫跨整個塔樓深度，擁有<b>兩個不同景觀</b>。主露台由客廳出入，延伸至主人睡房，正面望向哈里發塔。第二露台則由額外睡房出入，向相反方向望出，飽覽 <b>DIFC</b> 及謝赫扎耶德大道。
+    </p>
+  </div>
+
+  <div class="footer" style="color:rgba(255,255,255,0.7);">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>24 / 26</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 23 — SPECIFICATIONS
+     ===================================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">Vida Dubai Mall · 一號塔 · 三房</div>
+  </div>
+
+  <div class="content">
+    <div class="section-tag">18 &nbsp;·&nbsp; 規格</div>
+    <h2 class="display-sm" style="margin-bottom: 8mm;"><b>詳細資料。</b></h2>
+
+    <div class="specs">
+      <div class="col">
+        <div class="col-title">單位資料</div>
+        <div class="row"><span class="key">睡房</span><span class="val">3 + 工人房</span></div>
+        <div class="row"><span class="key">浴室</span><span class="val">3 + 客用洗手間</span></div>
+        <div class="row"><span class="key">面積</span><span class="val">1,693 平方呎 / 157 平方米</span></div>
+        <div class="row"><span class="key">傢俬</span><span class="val">全套高級傢俬</span></div>
+        <div class="row"><span class="key">廚房</span><span class="val">配備齊全 · 嵌入式電器</span></div>
+        <div class="row"><span class="key">車位</span><span class="val">2 個有蓋車位</span></div>
+        <div class="row"><span class="key">景觀</span><span class="val">哈里發塔 + 杜拜噴泉</span></div>
+        <div class="row"><span class="key">露台</span><span class="val">大型全景露台</span></div>
+        <div class="row"><span class="key">可入住</span><span class="val">2026 年 5 月 22 日</span></div>
+      </div>
+      <div class="col">
+        <div class="col-title">大廈資料</div>
+        <div class="row"><span class="key">發展商</span><span class="val">Emaar Properties</span></div>
+        <div class="row"><span class="key">Tower</span><span class="val">Vida Dubai Mall · 一號塔</span></div>
+        <div class="row"><span class="key">高度</span><span class="val">238 米 · 55 層</span></div>
+        <div class="row"><span class="key">酒店</span><span class="val">Vida Dubai Mall · 195 間客房</span></div>
+        <div class="row"><span class="key">業權</span><span class="val">永久業權 · 可申請黃金簽證</span></div>
+        <div class="row"><span class="key">服務</span><span class="val">品牌管理 · DTCM 短租許可</span></div>
+        <div class="row"><span class="key">商場通道</span><span class="val">私人冷氣天橋</span></div>
+        <div class="row"><span class="key">地段</span><span class="val">哈里發塔區 · DLD</span></div>
+        <div class="row"><span class="key">狀態</span><span class="val">已落成 · 已交付 · 即住</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>25 / 26</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 24 — NEXT STEPS & CONTACT
+     ===================================== -->
+<section class="page theme-cream">
+  <div class="half-image right"><img src="images/dev_3_clean.jpg" alt="Vida Dubai Mall · Downtown Dubai"/></div>
+
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">Vida Dubai Mall · 一號塔 · 三房</div>
+  </div>
+
+  <div class="half-content left" style="justify-content: flex-start; padding-top: 6mm;">
+    <div class="section-tag">19 &nbsp;·&nbsp; 下一步</div>
+    <h2 class="display-sm">誠邀您安排<br/><b>實地視察。</b></h2>
+
+    <p class="body" style="font-size:10.5pt; margin-top: 2mm;">
+      本單位可供視察。建議於<b>黃金時段</b>視察，可欣賞哈里發塔及噴泉的最佳狀態，並可步行經天橋進入杜拜購物中心，親身感受位置之便利。
+    </p>
+    <p class="body" style="font-size:10.5pt; margin-top: 2mm;">
+      本大廈成屋單位之購買程序由 MOU 至轉名通常為 <b>4-6 週</b>。
+    </p>
+
+    <div class="contact-card" style="margin-top: 5mm;">
+      <div class="eyebrow">您的物業顧問</div>
+      <div class="name">Raj Tomar</div>
+      <div class="role">物業顧問 · Pangea Properties · RERA ORN 23724</div>
+
+      <div class="row"><span class="k">M</span><span>+971 58 996 6085</span></div>
+      <div class="row"><span class="k">E</span><span>raj@pangeadubai.com</span></div>
+      <div class="row"><span class="k">W</span><span>www.pangeadubai.com</span></div>
+    </div>
+
+    <p class="disclaimer" style="margin-top: 5mm; max-width: 125mm;">
+      大廈外觀及生活效果圖取自 Emaar Vida Dubai Mall 發展商小冊子。大廈設施相片版權屬於 Vida 酒店s &amp; Resorts / Emaar Hospitality。單位相片來自 Pangea Properties 上盤資料。最終商業條款須以樓契及 RERA F 表為準。
+    </p>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>26 / 26</div>
+  </div>
+</section>
+
+</body>
+</html>

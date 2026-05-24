@@ -82,3 +82,38 @@
   font-display: swap;
   src: url(xn7_YHE41ni1AdIRqAuZuw1Bx9mbZk59E-_F.ttf) format('truetype');
 }
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(-nFuOG829Oofr2wohFbTp9ifNAn722rq0MXz7_6y_Co.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(-nFuOG829Oofr2wohFbTp9ifNAn722rq0MXz76Cy_Co.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(-nFuOG829Oofr2wohFbTp9ifNAn722rq0MXz75Ky_Co.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(-nFuOG829Oofr2wohFbTp9ifNAn722rq0MXz70e1_Co.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(-nFuOG829Oofr2wohFbTp9ifNAn722rq0MXz7wm1_Co.ttf) format('truetype');
+}

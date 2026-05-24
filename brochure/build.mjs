@@ -10,15 +10,23 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const variants = [
   {
     html: 'brochure.html',
-    pdf: 'Vida_Dubai_Mall_T1_3BR_Brochure_Landscape.pdf',
-    width: '297mm',
-    height: '210mm',
+    pdf: 'Vida_Dubai_Mall_T1_3BR_Brochure_Landscape_EN.pdf',
+    width: '297mm', height: '210mm',
   },
   {
     html: 'brochure-portrait.html',
-    pdf: 'Vida_Dubai_Mall_T1_3BR_Brochure_Portrait.pdf',
-    width: '210mm',
-    height: '297mm',
+    pdf: 'Vida_Dubai_Mall_T1_3BR_Brochure_Portrait_EN.pdf',
+    width: '210mm', height: '297mm',
+  },
+  {
+    html: 'brochure-zh.html',
+    pdf: 'Vida_Dubai_Mall_T1_3BR_Brochure_Landscape_ZH.pdf',
+    width: '297mm', height: '210mm',
+  },
+  {
+    html: 'brochure-portrait-zh.html',
+    pdf: 'Vida_Dubai_Mall_T1_3BR_Brochure_Portrait_ZH.pdf',
+    width: '210mm', height: '297mm',
   },
 ];
 
@@ -30,15 +38,14 @@ for (const v of variants) {
   const htmlPath = path.join(__dirname, v.html);
   await page.goto('file://' + htmlPath, { waitUntil: 'networkidle' });
   await page.evaluate(() => document.fonts.ready);
-  await page.waitForTimeout(2000);
+  await page.waitForTimeout(2500);
 
   const rawPdf = path.join(__dirname, `.raw-${v.html}.pdf`);
   const outPdf = path.join(__dirname, v.pdf);
 
   await page.pdf({
     path: rawPdf,
-    width: v.width,
-    height: v.height,
+    width: v.width, height: v.height,
     printBackground: true,
     margin: { top: 0, right: 0, bottom: 0, left: 0 },
     preferCSSPageSize: true,
