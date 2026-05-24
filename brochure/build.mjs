@@ -31,9 +31,10 @@ await page.pdf({
 await browser.close();
 
 execSync(
-  `gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.5 -dPDFSETTINGS=/ebook ` +
+  `gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.5 -dPDFSETTINGS=/printer ` +
   `-dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true ` +
-  `-dDownsampleColorImages=true -dColorImageResolution=150 ` +
+  `-dDownsampleColorImages=true -dColorImageResolution=300 ` +
+  `-dDownsampleGrayImages=true -dGrayImageResolution=300 ` +
   `-sOutputFile="${outPdf}" "${rawPdf}"`,
   { stdio: 'inherit' }
 );
