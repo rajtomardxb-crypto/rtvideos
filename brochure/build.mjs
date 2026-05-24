@@ -1,6 +1,8 @@
 import pkg from '/opt/node22/lib/node_modules/playwright/index.js';
 import { fileURLToPath } from 'url';
+import { execSync } from 'child_process';
 import path from 'path';
+import fs from 'fs';
 
 const { chromium } = pkg;
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -14,8 +16,11 @@ await page.goto('file://' + htmlPath, { waitUntil: 'networkidle' });
 await page.evaluate(() => document.fonts.ready);
 await page.waitForTimeout(2500);
 
+const rawPdf = path.join(__dirname, '.raw.pdf');
+const outPdf = path.join(__dirname, 'Vida_Dubai_Mall_T1_3BR_Brochure.pdf');
+
 await page.pdf({
-  path: path.join(__dirname, 'Vida_Dubai_Mall_T1_3BR_Brochure.pdf'),
+  path: rawPdf,
   width: '297mm',
   height: '210mm',
   printBackground: true,
@@ -24,4 +29,15 @@ await page.pdf({
 });
 
 await browser.close();
-console.log('PDF generated.');
+
+execSync(
+  `gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.5 -dPDFSETTINGS=/ebook ` +
+  `-dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true ` +
+  `-dDownsampleColorImages=true -dColorImageResolution=150 ` +
+  `-sOutputFile="${outPdf}" "${rawPdf}"`,
+  { stdio: 'inherit' }
+);
+fs.unlinkSync(rawPdf);
+
+const sizeKB = Math.round(fs.statSync(outPdf).size / 1024);
+console.log(`PDF generated: ${sizeKB} KB`);
