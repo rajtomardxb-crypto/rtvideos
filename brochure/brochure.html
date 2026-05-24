@@ -1,0 +1,1294 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Vida Dubai Mall · Tower 1 · 3 Bedroom — Pangea Properties</title>
+<link href="fonts/fonts.css" rel="stylesheet">
+<style>
+  :root {
+    --bg-dark: #0d1014;
+    --bg-cream: #ece4d3;
+    --ink: #1a1f25;
+    --line-dark: #2a3038;
+    --line-cream: #d7ceba;
+    --text-light: #e6eaef;
+    --text-muted-dark: #99a0aa;
+    --text-muted-light: #5a6172;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  @page { size: 297mm 210mm; margin: 0; }
+  html, body {
+    font-family: 'Inter', 'Manrope', -apple-system, sans-serif;
+    font-weight: 400;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    background: #333;
+  }
+
+  .page {
+    width: 297mm;
+    height: 210mm;
+    page-break-after: always;
+    overflow: hidden;
+    position: relative;
+  }
+  .page:last-child { page-break-after: auto; }
+
+  /* ========== THEMES ========== */
+  .theme-dark { background: var(--bg-dark); color: var(--text-light); }
+  .theme-dark::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(135deg, rgba(255,255,255,0.012) 0%, transparent 60%),
+      radial-gradient(ellipse at top right, rgba(60,80,100,0.18), transparent 60%);
+    pointer-events: none;
+  }
+  .theme-cream { background: var(--bg-cream); color: var(--ink); }
+  .theme-cream::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(135deg, rgba(0,0,0,0.012) 0%, transparent 70%),
+      radial-gradient(ellipse at top right, rgba(255,255,255,0.4), transparent 70%);
+    pointer-events: none;
+  }
+
+  /* ========== TOP BAR ========== */
+  .topbar {
+    position: absolute;
+    top: 9mm; left: 14mm; right: 14mm;
+    display: flex; justify-content: space-between; align-items: center;
+    z-index: 10;
+  }
+  .wordmark {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.32em;
+    font-size: 9pt;
+  }
+  .topbar-right {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 7.5pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .theme-dark .wordmark { color: rgba(255,255,255,0.95); text-shadow: 0 1px 4px rgba(0,0,0,0.3); }
+  .theme-dark .topbar-right { color: rgba(255,255,255,0.85); text-shadow: 0 1px 4px rgba(0,0,0,0.3); }
+  .theme-dark .footer { color: rgba(255,255,255,0.7) !important; text-shadow: 0 1px 3px rgba(0,0,0,0.4); }
+  .theme-cream .wordmark { color: rgba(26,31,37,0.9); }
+  .theme-cream .topbar-right { color: rgba(26,31,37,0.55); }
+
+  /* ========== FOOTER ========== */
+  .footer {
+    position: absolute;
+    bottom: 7mm; left: 14mm; right: 14mm;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 6.5pt;
+    letter-spacing: 0.05em;
+    z-index: 10;
+  }
+  .footer .left { display: flex; gap: 8mm; }
+  .theme-dark .footer { color: rgba(255,255,255,0.4); }
+  .theme-cream .footer { color: rgba(26,31,37,0.4); }
+
+  /* ========== CONTENT WRAPPER ========== */
+  .content {
+    position: absolute;
+    top: 20mm; bottom: 14mm; left: 14mm; right: 14mm;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ========== SECTION TAG ========== */
+  .section-tag {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 7.5pt;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    margin-bottom: 7mm;
+  }
+  .theme-dark .section-tag { color: rgba(255,255,255,0.55); }
+  .theme-cream .section-tag { color: rgba(26,31,37,0.5); }
+
+  /* ========== TYPOGRAPHY ========== */
+  .display {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 300;
+    font-size: 32pt;
+    line-height: 1.08;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 6mm;
+  }
+  .display b, .display strong { font-weight: 700; letter-spacing: 0.03em; }
+
+  .display-sm {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 300;
+    font-size: 24pt;
+    line-height: 1.1;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 5mm;
+  }
+  .display-sm b { font-weight: 700; }
+
+  .h2 {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 300;
+    font-size: 20pt;
+    line-height: 1.14;
+    letter-spacing: 0.035em;
+    text-transform: uppercase;
+    margin-bottom: 5mm;
+  }
+  .h2 b { font-weight: 700; }
+
+  .lead {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 10.5pt;
+    line-height: 1.55;
+    margin-bottom: 4mm;
+  }
+  .lead b, .lead strong { font-weight: 600; }
+  .theme-dark .lead { color: rgba(230, 234, 239, 0.94); }
+
+  .body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 9pt;
+    line-height: 1.6;
+    margin-bottom: 3mm;
+  }
+  .body b, .body strong { font-weight: 600; }
+  .theme-dark .body { color: rgba(220, 225, 232, 0.85); }
+  .theme-cream .body { color: var(--text-muted-light); }
+
+  /* ========== IMAGE / FIGURE ========== */
+  .imgbox { overflow: hidden; position: relative; }
+  .img-fill { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .figure { display: flex; flex-direction: column; height: 100%; }
+  .figure .imgbox { flex: 1; }
+  .figure .cap {
+    font-family: 'Manrope', sans-serif;
+    font-size: 6.5pt;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 3mm;
+    opacity: 0.55;
+    flex-shrink: 0;
+  }
+
+  /* ========== FULL-BLEED HERO ========== */
+  .hero {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .hero img { width: 100%; height: 100%; object-fit: cover; }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 30%, rgba(0,0,0,0.4) 65%, rgba(0,0,0,0.88) 100%);
+  }
+
+  /* ========== HALF-LAYOUTS ========== */
+  .half-image { width: 50%; height: 100%; position: absolute; top: 0; overflow: hidden; }
+  .half-image.left { left: 0; }
+  .half-image.right { right: 0; }
+  .half-image img { width: 100%; height: 100%; object-fit: cover; }
+
+  .half-content {
+    width: 50%;
+    position: absolute;
+    top: 18mm; bottom: 14mm;
+    padding: 0 14mm;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .half-content.left { left: 0; padding-left: 14mm; padding-right: 12mm; }
+  .half-content.right { right: 0; padding-right: 14mm; padding-left: 12mm; }
+
+  /* ========== OVERLAY PANEL ========== */
+  .panel {
+    position: absolute;
+    background: rgba(13, 16, 20, 0.78);
+    color: white;
+    padding: 9mm 11mm;
+    z-index: 5;
+    max-width: 145mm;
+  }
+  .panel.bl { left: 14mm; bottom: 16mm; }
+  .panel-eyebrow {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 7.5pt;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 5mm;
+  }
+  .panel-title {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 300;
+    font-size: 24pt;
+    line-height: 1.1;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 4mm;
+  }
+  .panel-title b { font-weight: 700; }
+  .panel-body {
+    font-family: 'Inter', sans-serif;
+    font-size: 9pt;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.88);
+  }
+  .panel-body b { font-weight: 600; }
+
+  .photo-cap {
+    position: absolute;
+    bottom: 14mm; left: 14mm; right: 14mm;
+    z-index: 5;
+    color: white;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 7pt;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  }
+
+  /* ========== GRID UTILS ========== */
+  .grid { display: grid; gap: 5mm; }
+  .grid-2 { grid-template-columns: 1fr 1fr; }
+  .grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .grid-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+
+  /* ========== STAT STRIP ========== */
+  .stat-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    padding: 5mm 0;
+    margin: 4mm 0;
+  }
+  .theme-dark .stat-strip { border-color: rgba(255,255,255,0.18); }
+  .theme-cream .stat-strip { border-color: var(--line-cream); }
+  .stat {
+    padding: 0 5mm;
+    border-right: 1px solid;
+  }
+  .theme-dark .stat { border-color: rgba(255,255,255,0.12); }
+  .theme-cream .stat { border-color: var(--line-cream); }
+  .stat:last-child { border-right: none; }
+  .stat-label {
+    font-family: 'Manrope', sans-serif;
+    font-size: 6pt;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    opacity: 0.55;
+    margin-bottom: 2mm;
+  }
+  .stat-value {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 11pt;
+    letter-spacing: 0.005em;
+    line-height: 1.1;
+  }
+
+  /* ========== FACT CARDS ========== */
+  .facts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 4mm;
+  }
+  .fact {
+    border: 1px solid var(--line-cream);
+    padding: 5mm 5mm;
+    background: rgba(255,255,255,0.4);
+  }
+  .theme-dark .fact { border-color: rgba(255,255,255,0.18); background: rgba(255,255,255,0.03); }
+  .fact-label {
+    font-family: 'Manrope', sans-serif;
+    font-size: 6pt;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    opacity: 0.55;
+    margin-bottom: 2mm;
+  }
+  .fact-value {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 13pt;
+    letter-spacing: 0.005em;
+    line-height: 1.15;
+  }
+
+  /* ========== ARROW LIST ========== */
+  .arrow-list { list-style: none; padding: 0; margin: 0; }
+  .arrow-list li {
+    padding-left: 10mm;
+    position: relative;
+    margin-bottom: 4mm;
+    font-size: 9pt;
+    line-height: 1.5;
+  }
+  .arrow-list li::before {
+    content: '→';
+    position: absolute; left: 0; top: 0;
+    font-size: 10pt;
+    opacity: 0.55;
+  }
+  .arrow-list li b { font-weight: 600; }
+  .theme-dark .arrow-list li { color: rgba(220,225,232,0.88); }
+  .theme-cream .arrow-list li { color: var(--text-muted-light); }
+
+  /* ========== SPECS TABLE ========== */
+  .specs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12mm;
+    flex: 1;
+  }
+  .specs .col-title {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 8pt;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 5mm;
+    opacity: 0.6;
+    padding-bottom: 3mm;
+    border-bottom: 1px solid var(--line-cream);
+  }
+  .theme-dark .specs .col-title { border-bottom-color: rgba(255,255,255,0.18); }
+  .specs .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 2.5mm 0;
+    border-bottom: 1px solid var(--line-cream);
+    font-size: 8.5pt;
+  }
+  .theme-dark .specs .row { border-bottom-color: rgba(255,255,255,0.08); }
+  .specs .row:last-child { border-bottom: none; }
+  .specs .key {
+    color: var(--text-muted-light);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+  .theme-dark .specs .key { color: var(--text-muted-dark); }
+  .specs .val { font-weight: 600; text-align: right; max-width: 60%; }
+
+  /* ========== CONTACT CARD ========== */
+  .contact-card {
+    padding: 8mm 9mm;
+    background: rgba(255,255,255,0.6);
+    border: 1px solid var(--line-cream);
+    max-width: 110mm;
+  }
+  .contact-card .eyebrow {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 7pt;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    opacity: 0.55;
+    margin-bottom: 3mm;
+  }
+  .contact-card .name {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 17pt;
+    letter-spacing: 0.005em;
+    margin-bottom: 1.5mm;
+  }
+  .contact-card .role {
+    font-family: 'Manrope', sans-serif;
+    font-size: 8pt;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 5mm;
+  }
+  .contact-card .row {
+    display: flex;
+    align-items: baseline;
+    gap: 4mm;
+    margin-bottom: 2.5mm;
+    font-size: 9.5pt;
+  }
+  .contact-card .row .k {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 8pt;
+    letter-spacing: 0.18em;
+    opacity: 0.6;
+    width: 6mm;
+  }
+
+  /* ========== DISCLAIMER ========== */
+  .disclaimer {
+    font-family: 'Inter', sans-serif;
+    font-size: 6.5pt;
+    line-height: 1.55;
+    color: rgba(26,31,37,0.5);
+  }
+</style>
+</head>
+<body>
+
+<!-- =====================================
+     PAGE 1 — COVER
+     ===================================== -->
+<section class="page theme-dark">
+  <div class="hero"><img src="images/e34638a6-274570.webp" alt="Vida Dubai Mall · Pool with Burj Khalifa" /></div>
+  <div class="hero-overlay" style="background: linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.1) 30%, rgba(0,0,0,0.45) 70%, rgba(0,0,0,0.95) 100%);"></div>
+
+  <div class="topbar">
+    <div class="wordmark" style="color:#fff;">P A N G E A</div>
+    <div class="topbar-right" style="color:rgba(255,255,255,0.7);">Property Brochure</div>
+  </div>
+
+  <div style="position:absolute; left:0; right:0; top:38%; transform: translateY(-50%); z-index:5; text-align:center; padding: 0 30mm;">
+    <div style="font-family:'Manrope'; font-weight:500; font-size:7.5pt; letter-spacing:0.45em; text-transform:uppercase; color:rgba(255,255,255,0.78); margin-bottom:10mm;">
+      Property Brochure &nbsp;·&nbsp; Downtown Dubai
+    </div>
+
+    <h1 style="font-family:'Manrope'; font-weight:300; font-size:42pt; line-height:1.04; letter-spacing:0.045em; text-transform:uppercase; color:#fff; margin-bottom:5mm; text-shadow:0 2px 14px rgba(0,0,0,0.4);">
+      Vida Dubai Mall<br/><b style="font-weight:700;">Tower 1</b>
+    </h1>
+
+    <div style="width:38mm; height:1px; background:rgba(255,255,255,0.6); margin: 6mm auto 7mm;"></div>
+
+    <div style="font-family:'Inter'; font-size:11.5pt; font-weight:400; color:rgba(255,255,255,0.95); letter-spacing:0.02em; margin-bottom:2mm;">
+      Three-bedroom serviced residence
+    </div>
+    <div style="font-family:'Inter'; font-size:9.5pt; color:rgba(255,255,255,0.78); letter-spacing:0.04em;">
+      Full Burj Khalifa &amp; Fountain view &nbsp;·&nbsp; Maid's room &nbsp;·&nbsp; Ready &amp; Furnished
+    </div>
+  </div>
+
+  <div class="footer" style="color:rgba(255,255,255,0.7);">
+    <div class="left">
+      <span>Raj Tomar · Real Estate Advisor</span>
+      <span>+971 58 996 6085 · raj@pangeadubai.com</span>
+    </div>
+    <div>01 / 24</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 2 — THE BUILDING (intro)
+     ===================================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">Vida Dubai Mall · Tower 1 · 3 BR</div>
+  </div>
+
+  <div class="content">
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 14mm; height: 100%;">
+      <div style="display:flex; flex-direction:column; justify-content:center;">
+        <div class="section-tag">01 &nbsp;·&nbsp; The Building</div>
+        <h2 class="display">A gateway into a<br/><b>thriving city.</b></h2>
+        <p class="body" style="font-size:10pt;">
+          Vida Dubai Mall is the residential expression of Emaar's <b>Vida Hotels &amp; Resorts</b>
+          brand — a <b>238-metre, 55-storey tower</b> at the heart of Downtown Dubai, anchored by
+          the 195-key Vida Dubai Mall hotel.
+        </p>
+        <p class="body" style="font-size:10pt; margin-top:4mm;">
+          Tower 1 is the original tower, and the only residential address in Downtown
+          <b>connected directly</b> to The Dubai Mall by a private, air-conditioned sky-bridge.
+        </p>
+
+        <div class="stat-strip" style="margin-top:8mm;">
+          <div class="stat"><div class="stat-label">Height</div><div class="stat-value">238 m</div></div>
+          <div class="stat"><div class="stat-label">Storeys</div><div class="stat-value">55</div></div>
+          <div class="stat"><div class="stat-label">Hotel keys</div><div class="stat-value">195</div></div>
+          <div class="stat"><div class="stat-label">To the Mall</div><div class="stat-value">≈ 3 min</div></div>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:4mm;">
+        <div class="imgbox" style="height:60%;">
+          <img class="img-fill" src="images/ffd749a6-274574.webp" alt="Vida Tower view with Burj"/>
+        </div>
+        <div class="imgbox" style="height:40%;">
+          <img class="img-fill" src="images/9b294fe5-274567.webp" alt="Hotel lobby"/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>02 / 24</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 3 — THE VIEW (full bleed)
+     ===================================== -->
+<section class="page theme-dark">
+  <div class="hero"><img src="images/555bcc5d-274533.jpg" alt="Burj Khalifa view from balcony"/></div>
+  <div class="hero-overlay"></div>
+
+  <div class="topbar">
+    <div class="wordmark" style="color:#fff;">P A N G E A</div>
+    <div class="topbar-right" style="color:rgba(255,255,255,0.75);">Vida Dubai Mall · Tower 1 · 3 BR</div>
+  </div>
+
+  <div class="panel bl" style="max-width: 135mm;">
+    <div class="panel-eyebrow">02 &nbsp;·&nbsp; The View</div>
+    <h2 class="panel-title">Uninterrupted views<br/>of <b>Burj Khalifa</b>.</h2>
+    <p class="panel-body">
+      This residence sits on a confirmed <b>Burj Khalifa &amp; Dubai Fountain stack</b> — the
+      most sought-after view orientation in the building. The panoramic balcony frames the Burj
+      head-on, with the Fountain promenade and Downtown skyline filling the horizon.
+    </p>
+  </div>
+
+  <div class="photo-cap" style="bottom: 9mm;">View from the Unit's Balcony · Burj Khalifa Stack</div>
+
+  <div class="footer" style="color:rgba(255,255,255,0.7);">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>03 / 24</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 4 — CONNECTED (skybridge)
+     ===================================== -->
+<section class="page theme-cream">
+  <div class="half-image right"><img src="images/f62aef9b-274566.jpg" alt="In-building dining venue"/></div>
+
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">Vida Dubai Mall · Tower 1 · 3 BR</div>
+  </div>
+
+  <div class="half-content left">
+    <div class="section-tag">03 &nbsp;·&nbsp; Connected</div>
+    <h2 class="h2">Seamlessly connected<br/>to <b>The Dubai Mall.</b></h2>
+    <p class="body" style="font-size:9.5pt; margin-top: 2mm;">
+      Step out of the lobby and you're inside The Dubai Mall in roughly three minutes —
+      without crossing a road or stepping into the heat.
+    </p>
+    <p class="body" style="font-size:9.5pt; margin-top: 2mm;">
+      This single feature is the <b>most-cited reason</b> residents and short-stay guests choose
+      this building over any other Downtown address.
+    </p>
+
+    <ul class="arrow-list" style="margin-top: 6mm;">
+      <li><b>Private, air-conditioned sky-bridge</b> — residents and hotel guests only.</li>
+      <li><b>200+ F&amp;B outlets</b> and the Dubai Aquarium, all reachable on foot.</li>
+      <li>Direct access to The Dubai Fountain promenade and Burj Park.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>04 / 24</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 5 — THE POOL (hero)
+     ===================================== -->
+<section class="page theme-dark">
+  <div class="hero"><img src="images/ffd749a6-274574.webp" alt="Pool with Burj Khalifa"/></div>
+  <div class="hero-overlay" style="background: linear-gradient(180deg, rgba(13,16,20,0.6) 0%, transparent 35%, transparent 60%, rgba(13,16,20,0.95) 100%);"></div>
+
+  <div class="topbar">
+    <div class="wordmark" style="color:#fff;">P A N G E A</div>
+    <div class="topbar-right" style="color:rgba(255,255,255,0.75);">Vida Dubai Mall · Tower 1 · 3 BR</div>
+  </div>
+
+  <div style="position:absolute; top:24mm; left:14mm; z-index:5; color:#fff; max-width:160mm;">
+    <div style="font-family:'Manrope'; font-weight:500; font-size:8pt; letter-spacing:0.42em; text-transform:uppercase; color:rgba(255,255,255,0.82); margin-bottom:6mm;">
+      04 &nbsp;·&nbsp; The Pool
+    </div>
+    <h2 style="font-family:'Manrope'; font-weight:300; font-size:32pt; line-height:1.06; letter-spacing:0.04em; text-transform:uppercase; color:#fff;">
+      Burj Khalifa<br/>at the <b style="font-weight:700;">waterline</b>.
+    </h2>
+  </div>
+
+  <div class="photo-cap" style="bottom:10mm;">Outdoor Pool Deck · Full Burj Khalifa Frontage</div>
+
+  <div class="footer" style="color:rgba(255,255,255,0.7);">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>05 / 24</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 6 — POOL CONT.
+     ===================================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">Vida Dubai Mall · Tower 1 · 3 BR</div>
+  </div>
+
+  <div class="content">
+    <div class="section-tag">04 &nbsp;·&nbsp; The Pool, cont.</div>
+    <h2 class="h2" style="margin-bottom: 7mm;">Two angles,<br/><b>one skyline.</b></h2>
+
+    <div class="grid grid-2" style="gap:5mm; flex:1; min-height:0;">
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/e34638a6-274570.webp" alt="Pool toward Burj &amp; Emaar Square"/></div>
+        <div class="cap">Pool toward Burj &amp; Emaar Square</div>
+      </div>
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/bd98f158-274572.webp" alt="Pool deck and lounge seating"/></div>
+        <div class="cap">Pool deck &amp; lounge seating</div>
+      </div>
+    </div>
+
+    <p class="body" style="margin-top: 6mm; max-width: 230mm;">
+      An <b>outdoor temperature-controlled pool</b> with full Downtown skyline frontage — a working pool
+      for residents, distinct from the hotel guest pool. Sun loungers, cabana seating, and direct
+      service from the lobby café.
+    </p>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>06 / 24</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 7 — LOBBY
+     ===================================== -->
+<section class="page theme-dark">
+  <div class="hero"><img src="images/6f50394d-274565.jpg" alt="Hotel lobby"/></div>
+  <div class="hero-overlay" style="background: linear-gradient(180deg, rgba(13,16,20,0.55) 0%, transparent 30%, transparent 60%, rgba(13,16,20,0.92) 100%);"></div>
+
+  <div class="topbar">
+    <div class="wordmark" style="color:#fff;">P A N G E A</div>
+    <div class="topbar-right" style="color:rgba(255,255,255,0.75);">Vida Dubai Mall · Tower 1 · 3 BR</div>
+  </div>
+
+  <div class="panel bl" style="max-width: 125mm;">
+    <div class="panel-eyebrow">05 &nbsp;·&nbsp; Lobby &amp; Lounges</div>
+    <h2 class="panel-title">The <b>arrival</b><br/>sequence.</h2>
+    <p class="panel-body">
+      A double-height lobby with signature pendant lighting, a curated art programme, and a café
+      that opens onto the pool deck.
+    </p>
+  </div>
+
+  <div class="photo-cap" style="bottom:10mm;">Hotel Lobby · Double-Height Ceiling &amp; Signature Pendant Lighting</div>
+
+  <div class="footer" style="color:rgba(255,255,255,0.7);">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>07 / 24</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 8 — LOUNGES (3 moods)
+     ===================================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">Vida Dubai Mall · Tower 1 · 3 BR</div>
+  </div>
+
+  <div class="content">
+    <div class="section-tag">06 &nbsp;·&nbsp; Residents' Lounges</div>
+    <h2 class="h2" style="margin-bottom: 7mm;">Three lounges,<br/><b>three moods.</b></h2>
+
+    <div class="grid grid-3" style="gap:4mm; flex:1; min-height:0;">
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/0af66917-274575.jpg" alt="Daylight lounge with Burj view"/></div>
+        <div class="cap">Daylight Lounge · Burj View</div>
+      </div>
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/0d274fcf-274582.webp" alt="Library lounge"/></div>
+        <div class="cap">Evening Library Lounge</div>
+      </div>
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/bd2777e4-274569.webp" alt="Atrium lounge with art wall"/></div>
+        <div class="cap">Atrium Lounge · Art Wall</div>
+      </div>
+    </div>
+
+    <p class="body" style="margin-top: 6mm; max-width: 235mm;">
+      Residents have access to multiple lounge spaces throughout the day — a <b>daylight lounge</b> with
+      Burj views off the lobby, an evening <b>reading and cocktail lounge</b> with library, and a
+      double-height <b>atrium lounge</b> anchored by a curated art installation. All three are
+      residents-and-hotel-guests only — no public access.
+    </p>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>08 / 24</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 9 — ORIGINS (dining)
+     ===================================== -->
+<section class="page theme-dark">
+  <div class="half-image right"><img src="images/85fde58a-274573.webp" alt="Origins restaurant"/></div>
+
+  <div class="topbar">
+    <div class="wordmark" style="color:#fff;">P A N G E A</div>
+    <div class="topbar-right" style="color:rgba(255,255,255,0.75);">Vida Dubai Mall · Tower 1 · 3 BR</div>
+  </div>
+
+  <div class="half-content left">
+    <div class="section-tag">07 &nbsp;·&nbsp; Dining</div>
+    <h2 class="h2"><b>Origins</b><br/>the in-house restaurant.</h2>
+    <p class="body" style="font-size:9.5pt; margin-top: 2mm;">
+      Origins is the building's signature restaurant — <b>all-day dining</b> with a buffet counter
+      and à-la-carte service.
+    </p>
+    <p class="body" style="font-size:9.5pt; margin-top: 2mm;">
+      Beyond Origins, residents have direct in-building access to a chic <b>lobby café</b> and the
+      hotel's <b>evening cocktail lounge</b>, plus 200+ F&amp;B outlets inside The Dubai Mall via
+      the sky-bridge.
+    </p>
+
+    <div class="stat-strip" style="margin-top: 7mm;">
+      <div class="stat"><div class="stat-label">In-house</div><div class="stat-value">3 venues</div></div>
+      <div class="stat"><div class="stat-label">Service</div><div class="stat-value">All-day</div></div>
+      <div class="stat"><div class="stat-label">Via Mall</div><div class="stat-value">200+ F&amp;B</div></div>
+      <div class="stat"><div class="stat-label">Access</div><div class="stat-value">Residents</div></div>
+    </div>
+  </div>
+
+  <div class="footer" style="color:rgba(255,255,255,0.7);">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>09 / 24</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 10 — WELLNESS
+     ===================================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">Vida Dubai Mall · Tower 1 · 3 BR</div>
+  </div>
+
+  <div class="content">
+    <div class="section-tag">08 &nbsp;·&nbsp; Wellness</div>
+    <h2 class="h2" style="margin-bottom: 7mm;"><b>Gym</b>, spa,<br/>sauna &amp; steam.</h2>
+
+    <div class="grid grid-2" style="gap:5mm; flex:1; min-height:0;">
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/ca71c5f8-274576.jpg" alt="Fitness centre with Matrix equipment"/></div>
+        <div class="cap">24/7 Fitness Centre · Matrix Equipment</div>
+      </div>
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/f0f4250d-274580.jpg" alt="Vida Spa treatment room"/></div>
+        <div class="cap">Vida Spa · Treatment Room</div>
+      </div>
+    </div>
+
+    <p class="body" style="margin-top: 6mm; max-width: 235mm;">
+      A <b>24-hour fitness centre</b> with full Matrix-equipped cardio and resistance training,
+      alongside the Vida-branded <b>spa</b> offering tailored treatments, sauna, steam room, and
+      sun terraces — all available to residents under the Vida hotel programme.
+    </p>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>10 / 24</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 11 — FAMILY & WORK
+     ===================================== -->
+<section class="page theme-dark">
+  <div class="topbar">
+    <div class="wordmark" style="color:#fff;">P A N G E A</div>
+    <div class="topbar-right" style="color:rgba(255,255,255,0.75);">Vida Dubai Mall · Tower 1 · 3 BR</div>
+  </div>
+
+  <div class="content">
+    <div class="section-tag">09 &nbsp;·&nbsp; Family &amp; Work</div>
+    <h2 class="h2" style="margin-bottom: 7mm;">Qix Club and the<br/><b>co-working floor.</b></h2>
+
+    <div class="grid grid-3" style="gap:4mm; flex:1; min-height:0;">
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/0f4ab355-274571.webp" alt="Qix Club indoor playroom"/></div>
+        <div class="cap" style="color:rgba(255,255,255,0.55);">Qix Club · Indoor Play</div>
+      </div>
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/587ee3ef-274581.jpg" alt="Outdoor play deck"/></div>
+        <div class="cap" style="color:rgba(255,255,255,0.55);">Outdoor Play Deck</div>
+      </div>
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/91c37c78-274583.webp" alt="Co-working space"/></div>
+        <div class="cap" style="color:rgba(255,255,255,0.55);">Co-Working Space</div>
+      </div>
+    </div>
+
+    <p class="body" style="margin-top: 6mm; max-width: 235mm;">
+      <b>Qix Club</b> is the supervised kids' club for ages 4–12 — indoor play, an outdoor activity deck
+      and structured weekly programmes. For the adults, a dedicated <b>co-working floor</b> offers Mac
+      stations, private booths and a fireplaced lounge — designed for residents who work from home a
+      few days a week.
+    </p>
+  </div>
+
+  <div class="footer" style="color:rgba(255,255,255,0.7);">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>11 / 24</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 12 — MEETING & EVENTS
+     ===================================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">Vida Dubai Mall · Tower 1 · 3 BR</div>
+  </div>
+
+  <div class="content">
+    <div class="section-tag">10 &nbsp;·&nbsp; Meeting &amp; Events</div>
+    <h2 class="h2" style="margin-bottom: 7mm;">Five meeting rooms<br/><b>for up to 156.</b></h2>
+
+    <div class="grid grid-2" style="gap:5mm; flex:1; min-height:0;">
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/ab41948b-274579.jpg" alt="Boardroom configuration"/></div>
+        <div class="cap">Boardroom Configuration</div>
+      </div>
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/2ff21dfb-274578.jpg" alt="Banquet configuration"/></div>
+        <div class="cap">Banquet Configuration</div>
+      </div>
+    </div>
+
+    <p class="body" style="margin-top: 6mm; max-width: 235mm;">
+      Five sunlit meeting rooms accommodate up to <b>156 guests</b> across boardroom, banquet and
+      theatre layouts. A function terrace and event deck extend the offer for private parties,
+      weddings and corporate offsites — <b>a meaningful amenity</b> for residents using the property
+      for both home and entertaining.
+    </p>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>12 / 24</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 13 — THE RESIDENCE (intro)
+     ===================================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">Vida Dubai Mall · Tower 1 · 3 BR</div>
+  </div>
+
+  <div class="content">
+    <div class="section-tag">11 &nbsp;·&nbsp; The Residence</div>
+    <h2 class="display-sm" style="margin-bottom: 6mm;">Three bedrooms.<br/>Burj-facing. <b>Ready.</b></h2>
+
+    <div class="imgbox" style="height:105mm; margin-bottom: 6mm;">
+      <img class="img-fill" src="images/bf3d53f4-274529.jpg" alt="Open-plan living, dining and kitchen"/>
+    </div>
+
+    <div class="facts">
+      <div class="fact"><div class="fact-label">Configuration</div><div class="fact-value">3 BR + Maid</div></div>
+      <div class="fact"><div class="fact-label">Size</div><div class="fact-value">1,693 sqft</div></div>
+      <div class="fact"><div class="fact-label">View</div><div class="fact-value">Burj + Fountain</div></div>
+      <div class="fact"><div class="fact-label">Status</div><div class="fact-value">Ready · Furnished</div></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>13 / 24</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 14 — LIVING & DINING (hero)
+     ===================================== -->
+<section class="page theme-dark">
+  <div class="hero"><img src="images/7d85e5d9-274537.jpg" alt="Living area"/></div>
+  <div class="hero-overlay" style="background: linear-gradient(180deg, rgba(13,16,20,0.55) 0%, transparent 30%, transparent 60%, rgba(13,16,20,0.9) 100%);"></div>
+
+  <div class="topbar">
+    <div class="wordmark" style="color:#fff;">P A N G E A</div>
+    <div class="topbar-right" style="color:rgba(255,255,255,0.75);">Vida Dubai Mall · Tower 1 · 3 BR</div>
+  </div>
+
+  <div class="panel bl" style="max-width: 120mm;">
+    <div class="panel-eyebrow">12 &nbsp;·&nbsp; Living &amp; Dining</div>
+    <h2 class="panel-title" style="font-size:22pt;">The <b>reception</b><br/>areas.</h2>
+  </div>
+
+  <div class="photo-cap" style="bottom:10mm;">Living Area with Balcony Access · Burj-Facing</div>
+
+  <div class="footer" style="color:rgba(255,255,255,0.7);">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>14 / 24</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 15 — DINING + LIVING (alt angles)
+     ===================================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">Vida Dubai Mall · Tower 1 · 3 BR</div>
+  </div>
+
+  <div class="content">
+    <div class="section-tag">12 &nbsp;·&nbsp; Living &amp; Dining, cont.</div>
+    <h2 class="h2" style="margin-bottom: 6mm;">Open-plan,<br/><b>balcony-out.</b></h2>
+
+    <div class="grid grid-2" style="gap:5mm; flex:1; min-height:0;">
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/7f4fa09d-274531.jpg" alt="Dining toward balcony"/></div>
+        <div class="cap">Dining toward Balcony</div>
+      </div>
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/a779e8bc-274535.jpg" alt="Living · alternate angle"/></div>
+        <div class="cap">Living · Alternate Angle</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>15 / 24</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 16 — KITCHEN + BALCONY
+     ===================================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">Vida Dubai Mall · Tower 1 · 3 BR</div>
+  </div>
+
+  <div class="content">
+    <div class="section-tag">13 &nbsp;·&nbsp; Kitchen &amp; Balcony</div>
+    <h2 class="h2" style="margin-bottom: 7mm;"><b>Fully fitted.</b><br/>Floor-to-ceiling.</h2>
+
+    <div class="grid grid-2" style="gap:5mm; flex:1; min-height:0;">
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/25e15f84-274539.jpg" alt="Fitted kitchen"/></div>
+        <div class="cap">Fitted Kitchen · Premium Appliances</div>
+      </div>
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/5817a87d-274541.jpg" alt="Balcony · Burj view"/></div>
+        <div class="cap">Balcony · Burj Khalifa View</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>16 / 24</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 17 — BALCONY GOLDEN HOUR (hero)
+     ===================================== -->
+<section class="page theme-dark">
+  <div class="hero"><img src="images/5817a87d-274541.jpg" alt="Balcony at golden hour"/></div>
+  <div class="hero-overlay" style="background: linear-gradient(180deg, rgba(13,16,20,0.4) 0%, transparent 30%, transparent 65%, rgba(13,16,20,0.92) 100%);"></div>
+
+  <div class="topbar">
+    <div class="wordmark" style="color:#fff;">P A N G E A</div>
+    <div class="topbar-right" style="color:rgba(255,255,255,0.75);">Vida Dubai Mall · Tower 1 · 3 BR</div>
+  </div>
+
+  <div class="panel bl" style="max-width: 130mm;">
+    <div class="panel-eyebrow">13 &nbsp;·&nbsp; The Balcony</div>
+    <h2 class="panel-title" style="font-size:22pt;">The <b>panoramic balcony</b>,<br/>front-row to Downtown.</h2>
+  </div>
+
+  <div class="photo-cap" style="bottom:10mm;">Burj + Fountain Frontage</div>
+
+  <div class="footer" style="color:rgba(255,255,255,0.7);">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>17 / 24</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 18 — MASTER BEDROOM
+     ===================================== -->
+<section class="page theme-cream">
+  <div class="half-image right"><img src="images/a636a3b4-274543.jpg" alt="Master bedroom"/></div>
+
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">Vida Dubai Mall · Tower 1 · 3 BR</div>
+  </div>
+
+  <div class="half-content left">
+    <div class="section-tag">14 &nbsp;·&nbsp; Master Bedroom</div>
+    <h2 class="h2"><b>Wake up</b><br/>to the Burj.</h2>
+    <p class="body" style="font-size:9.5pt; margin-top:2mm;">
+      The master suite <b>faces the Burj head-on</b>, with a private balcony door, walk-in dressing area
+      and an ensuite bathroom with both a soaking tub and a separate rain shower.
+    </p>
+
+    <ul class="arrow-list" style="margin-top: 6mm;">
+      <li>Floor-to-ceiling Burj Khalifa frontage</li>
+      <li>Private balcony access</li>
+      <li>Walk-in dressing area</li>
+      <li>Soaking tub &amp; separate rain shower</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>18 / 24</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 19 — MASTER ENSUITE
+     ===================================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">Vida Dubai Mall · Tower 1 · 3 BR</div>
+  </div>
+
+  <div class="content">
+    <div class="section-tag">15 &nbsp;·&nbsp; Master Ensuite</div>
+    <h2 class="h2" style="margin-bottom: 7mm;">The <b>master</b><br/>bathroom.</h2>
+
+    <div class="grid grid-2" style="gap:5mm; flex:1; min-height:0;">
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/51f3469b-274555.jpg" alt="Vanity &amp; double basin"/></div>
+        <div class="cap">Master Bathroom · Vanity</div>
+      </div>
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/676827bd-274561.jpg" alt="Rain shower &amp; WC"/></div>
+        <div class="cap">Rain Shower &amp; WC</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>19 / 24</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 20 — GUEST BEDROOMS
+     ===================================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">Vida Dubai Mall · Tower 1 · 3 BR</div>
+  </div>
+
+  <div class="content">
+    <div class="section-tag">16 &nbsp;·&nbsp; Guest Bedrooms</div>
+    <h2 class="h2" style="margin-bottom: 7mm;"><b>Two further</b><br/>bedrooms.</h2>
+
+    <div class="grid grid-2" style="gap:5mm; flex:1; min-height:0;">
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/499b6b01-274549.jpg" alt="Second bedroom"/></div>
+        <div class="cap">Second Bedroom</div>
+      </div>
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/8c570509-274545.jpg" alt="Third bedroom"/></div>
+        <div class="cap">Third Bedroom</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>20 / 24</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 21 — MAID'S ROOM + WIDE VIEW
+     ===================================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">Vida Dubai Mall · Tower 1 · 3 BR</div>
+  </div>
+
+  <div class="content">
+    <div class="section-tag">17 &nbsp;·&nbsp; Additional</div>
+    <h2 class="h2" style="margin-bottom: 7mm;">Maid's room<br/><b>and the wider view.</b></h2>
+
+    <div class="grid grid-2" style="gap:5mm; flex:1; min-height:0;">
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/fcb44d0d-274551.jpg" alt="Maid's room"/></div>
+        <div class="cap">Maid's Room</div>
+      </div>
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/734e2265-274553.jpg" alt="Guest powder room"/></div>
+        <div class="cap">Guest Powder Room</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>21 / 24</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 22 — WIDE BALCONY (hero)
+     ===================================== -->
+<section class="page theme-dark">
+  <div class="hero"><img src="images/07d0eddb-274563.jpg" alt="Wide balcony · Downtown skyline"/></div>
+  <div class="hero-overlay" style="background: linear-gradient(180deg, rgba(13,16,20,0.4) 0%, transparent 30%, transparent 65%, rgba(13,16,20,0.9) 100%);"></div>
+
+  <div class="topbar">
+    <div class="wordmark" style="color:#fff;">P A N G E A</div>
+    <div class="topbar-right" style="color:rgba(255,255,255,0.75);">Vida Dubai Mall · Tower 1 · 3 BR</div>
+  </div>
+
+  <div class="panel bl" style="max-width: 135mm;">
+    <div class="panel-eyebrow">17 &nbsp;·&nbsp; The Balcony, cont.</div>
+    <h2 class="panel-title" style="font-size:20pt;">
+      <b>Wide balcony</b>,<br/>Downtown skyline toward Sheikh Zayed Road.
+    </h2>
+  </div>
+
+  <div class="footer" style="color:rgba(255,255,255,0.7);">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>22 / 24</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 23 — SPECIFICATIONS
+     ===================================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">Vida Dubai Mall · Tower 1 · 3 BR</div>
+  </div>
+
+  <div class="content">
+    <div class="section-tag">17 &nbsp;·&nbsp; Specifications</div>
+    <h2 class="display-sm" style="margin-bottom: 8mm;">The <b>detail.</b></h2>
+
+    <div class="specs">
+      <div class="col">
+        <div class="col-title">The Unit</div>
+        <div class="row"><span class="key">Bedrooms</span><span class="val">3 + maid's room</span></div>
+        <div class="row"><span class="key">Bathrooms</span><span class="val">3 + powder room</span></div>
+        <div class="row"><span class="key">Size</span><span class="val">1,693 sqft / 157 sqm</span></div>
+        <div class="row"><span class="key">Furnishing</span><span class="val">Fully furnished · premium</span></div>
+        <div class="row"><span class="key">Kitchen</span><span class="val">Fully fitted · integrated appliances</span></div>
+        <div class="row"><span class="key">Parking</span><span class="val">2 covered bays</span></div>
+        <div class="row"><span class="key">View</span><span class="val">Full Burj + Dubai Fountain</span></div>
+        <div class="row"><span class="key">Balcony</span><span class="val">Large panoramic balcony</span></div>
+        <div class="row"><span class="key">Available</span><span class="val">22 May 2026</span></div>
+      </div>
+      <div class="col">
+        <div class="col-title">The Building</div>
+        <div class="row"><span class="key">Developer</span><span class="val">Emaar Properties</span></div>
+        <div class="row"><span class="key">Tower</span><span class="val">Vida Dubai Mall · Tower 1</span></div>
+        <div class="row"><span class="key">Height</span><span class="val">238 m · 55 storeys</span></div>
+        <div class="row"><span class="key">Hotel</span><span class="val">195-key Vida Dubai Mall</span></div>
+        <div class="row"><span class="key">Tenure</span><span class="val">Freehold · Golden Visa eligible</span></div>
+        <div class="row"><span class="key">Service</span><span class="val">Branded &amp; serviced · DTCM short-stay</span></div>
+        <div class="row"><span class="key">Mall access</span><span class="val">Private air-conditioned sky-bridge</span></div>
+        <div class="row"><span class="key">Zone</span><span class="val">Burj Khalifa · DLD zone</span></div>
+        <div class="row"><span class="key">Status</span><span class="val">Complete · handed over · ready</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>23 / 24</div>
+  </div>
+</section>
+
+<!-- =====================================
+     PAGE 24 — NEXT STEPS & CONTACT
+     ===================================== -->
+<section class="page theme-cream">
+  <div class="half-image right"><img src="images/ffd749a6-274574.webp" alt="Vida Dubai Mall · Pool with Burj"/></div>
+
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">Vida Dubai Mall · Tower 1 · 3 BR</div>
+  </div>
+
+  <div class="half-content left" style="justify-content: flex-start; padding-top: 6mm;">
+    <div class="section-tag">18 &nbsp;·&nbsp; Next Steps</div>
+    <h2 class="display-sm">Let's arrange<br/>a <b>viewing.</b></h2>
+
+    <p class="body" style="font-size:9pt; margin-top: 2mm;">
+      The unit is available for viewing. I'd suggest doing this at the <b>golden hour</b> so the Burj
+      and Fountain show at their best, paired with a short walk across the sky-bridge into The
+      Dubai Mall to feel the location difference firsthand.
+    </p>
+    <p class="body" style="font-size:9pt; margin-top: 2mm;">
+      The buying process for a ready unit in this building typically runs <b>4–6 weeks</b> from MOU
+      to transfer.
+    </p>
+
+    <div class="contact-card" style="margin-top: 5mm;">
+      <div class="eyebrow">Your Advisor</div>
+      <div class="name">Raj Tomar</div>
+      <div class="role">Real Estate Advisor · Pangea Properties · RERA ORN 23724</div>
+
+      <div class="row"><span class="k">M</span><span>+971 58 996 6085</span></div>
+      <div class="row"><span class="k">E</span><span>raj@pangeadubai.com</span></div>
+      <div class="row"><span class="k">W</span><span>www.pangeadubai.com</span></div>
+    </div>
+
+    <p class="disclaimer" style="margin-top: 5mm; max-width: 125mm;">
+      Building exterior and lifestyle renders are extracted from the Emaar Vida Dubai Mall developer
+      brochure. Building amenity photography is the property of Vida Hotels &amp; Resorts / Emaar
+      Hospitality. Unit photography is sourced from the Pangea Properties listing. Final commercial
+      terms are subject to confirmation against the title deed and RERA Form F.
+    </p>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>24 / 24</div>
+  </div>
+</section>
+
+</body>
+</html>
