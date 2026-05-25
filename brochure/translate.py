@@ -322,7 +322,199 @@ TRANSLATIONS = [
     ("Mall access", "商場通道"),
     ("The Unit", "單位資料"),
     ("The Building", "大廈資料"),
+
+    # ============================================================
+    # === St. Regis specific (must precede generic terms below) ===
+    # ============================================================
+
+    # St. Regis full paragraphs (landscape, 10-space indent)
+    ("Alongside the Vida Dubai Mall residence, a second option has just come to hand\n          that I'd like to present for your principal's consideration: the\n          <b>St. Regis Residences, Downtown Dubai · Tower 1</b>.",
+     "繼 Vida Dubai Mall 單位之後，現再為您客戶呈上另一個值得考慮的選擇 — <b>St. Regis Residences, Downtown Dubai · 一號塔</b>。"),
+    ("We have <b>four units available on the 55<sup>th</sup> floor</b> — 5501, 5502,\n          5503 and 5510 — directly from the developer. <b>Handover is scheduled for\n          end of 2026</b>, so this is an off-plan position with payment phased through\n          the build period.",
+     "我們可直接由發展商提供<b>位於 55 樓的四個單位</b> — 5501、5502、5503 及 5510。<b>預定 2026 年底交付</b>，屬樓花單位，付款隨工程進度分期支付。"),
+
+    # St. Regis full paragraphs (portrait, 6-space indent)
+    ("Alongside the Vida Dubai Mall residence, a second option has just come to hand\n      that I'd like to present for your principal's consideration: the\n      <b>St. Regis Residences, Downtown Dubai · Tower 1</b>.",
+     "繼 Vida Dubai Mall 單位之後，現再為您客戶呈上另一個值得考慮的選擇 — <b>St. Regis Residences, Downtown Dubai · 一號塔</b>。"),
+    ("We have <b>four units available on the 55<sup>th</sup> floor</b> — 5501, 5502,\n      5503 and 5510 — directly from the developer. <b>Handover is scheduled for\n      end of 2026</b>, so this is an off-plan position with payment phased through\n      the build period.",
+     "我們可直接由發展商提供<b>位於 55 樓的四個單位</b> — 5501、5502、5503 及 5510。<b>預定 2026 年底交付</b>，屬樓花單位，付款隨工程進度分期支付。"),
+    ("I can arrange a site visit to the St. Regis Residences podium and the show\n      apartment, alongside the Vida Dubai Mall viewing. Floor plans and pricing for\n      units 5501, 5502, 5503 and 5510 will follow under separate cover from the\n      developer.",
+     "本人可安排視察 St. Regis Residences 設施平台及示範單位，並可同時前往 Vida Dubai Mall 視察。5501、5502、5503 及 5510 單位之平面圖及價格將由發展商另函提供。"),
+
+    # Standalone labels
+    (">Payment</div>", ">付款</div>"),
+    (">Status</div>", ">狀態</div>"),
+    (">Floor</div>", ">樓層</div>"),
+    (">Brand</div>", ">品牌</div>"),
+    (">Location</div>", ">位置</div>"),
+    (">Units available</div>", ">可選單位</div>"),
+
+    ("The principal differences from the Vida option: a higher floor with broader\n          downtown reach, the <b>St. Regis brand</b> (Marriott) operating the residences,\n          and a fresh-from-developer delivery rather than the ready-furnished Vida unit.",
+     "與 Vida 單位之主要分別：本盤位處更高樓層、市中心景觀更廣闊，由 <b>St. Regis（Marriott 旗下）</b>品牌營運，並由發展商全新交付，而非 Vida 已配備齊全的成屋單位。"),
+    ("A place unlike any other, Downtown Dubai is where record-breaking is the norm.\n      It is the only place where you can take a walk past the world's tallest tower\n      or enjoy the captivating choreography of the world's largest fountain show.",
+     "杜拜市中心是獨一無二的所在，紀錄屢創新高乃是常態。在此可漫步於全球最高塔樓旁，或欣賞世界最大噴泉表演的迷人編排。"),
+    ("Sixty-four floors of branded residence — the dark slim tower at centre — set\n      against the Burj Khalifa and the Address Boulevard cluster, with the podium\n      pool deck wrapping the base.",
+     "64 層品牌住宅 — 中央的修長深色塔樓 — 與哈里發塔及 Address Boulevard 群樓相映，平台泳池環繞塔基。"),
+    ("The St. Regis Residences, Downtown Dubai sit at the foot of the\n          <b>Burj Khalifa</b>, opposite the Dubai Opera and the Dubai Fountain. Tower 1\n          is the original tower of the development.",
+     "St. Regis Residences, Downtown Dubai 座落於<b>哈里發塔</b>腳下，正對杜拜歌劇院及杜拜噴泉。一號塔為本發展項目的首座建成塔樓。"),
+    ("Designed to the exacting standards of the St. Regis brand, homes range from\n          one to three bedrooms and have been carefully positioned to capture the open\n          views of Burj Khalifa, Dubai Opera and The Dubai Fountain.",
+     "依照 St. Regis 品牌嚴謹標準設計，單位由一房至三房不等，並經過悉心定位，盡覽哈里發塔、杜拜歌劇院及杜拜噴泉之開闊景觀。"),
+    ("The St. Regis brand sets the standard in premiere personalised living experiences.\n      Downtown Dubai is the hallmark of luxury living celebrating the quintessential,\n      the rare and the exquisite.",
+     "St. Regis 品牌乃個人化頂級生活體驗的典範。本項目代表杜拜市中心奢華生活之標誌 — 經典、稀有、精緻。"),
+    ("Homes are carefully positioned to capture the open views of <b>Burj Khalifa</b>,\n      Dubai Opera and The Dubai Fountain — the three icons that define this district —\n      with interiors and finishes that harmonise with the tower's architecture and aesthetic.",
+     "住宅單位經悉心定位，盡覽<b>哈里發塔</b>、杜拜歌劇院及杜拜噴泉 — 此區三大地標 — 而室內設計與裝修均與塔樓建築美學相互呼應。"),
+    ("Interiors are finished to St. Regis specification: stone and warm timber palette,\n      integrated kitchen, full-height glazing onto the balconies and the Downtown skyline.\n      Layouts run from one to three bedrooms; the units offered here are on the 55<sup>th</sup> floor.",
+     "室內裝修依 St. Regis 規格完成：石材配暖木調色系、嵌入式廚房、落地玻璃通往露台及市中心天際線。間隔由一房至三房；此處呈獻之單位均位於 55 樓。"),
+    ("A resort-scaled pool set across the podium deck, framed by mature palms, sun-shades\n      and private cabanas — open to the residents of all three towers.",
+     "度假級泳池橫跨整個平台，配以茂盛棕櫚樹、遮陽設施及私人涼亭 — 供三座塔樓住戶共用。"),
+    ("Set across an ultra-modern landscaped podium that connects the three towers,\n          with views over the Dubai Opera promenade.",
+     "設置於連接三座塔樓的超現代景觀平台，可俯瞰杜拜歌劇院長廊。"),
+    ("Step out and you are on Sheikh Mohammed bin Rashid Boulevard, with the Dubai Opera\n      to the left, Burj Park ahead and The Dubai Mall a four-minute walk away.",
+     "踏出大門即抵謝赫穆罕默德本拉希德大道 — 杜拜歌劇院在左、哈里發塔公園在前、杜拜購物中心步行四分鐘可達。"),
+    ("I can arrange a site visit to the St. Regis Residences podium and the show\n      apartment, alongside the Vida Dubai Mall viewing. Floor plans and pricing for\n      units 5501, 5502, 5503 and 5510 will follow under separate cover from the\n      developer.",
+     "本人可安排視察 St. Regis Residences 設施平台及示範單位，並可同時前往 Vida Dubai Mall 視察。5501、5502、5503 及 5510 單位之平面圖及價格將由發展商另函提供。"),
+    ("For the principal who wants <b>brand-new and branded</b>, this is the closer\n      match. For the principal who wants <b>move-in-ready this year</b>, the Vida\n      Dubai Mall unit remains the better fit.",
+     "若客戶傾向<b>全新及品牌管理</b>，本盤更為合適；若客戶傾向<b>今年即可入住</b>，Vida Dubai Mall 單位仍為更佳之選。"),
+    ("All renders, location indications and amenity descriptions extracted from the\n      Emaar St. Regis Residences developer brochure. The St. Regis Residences,\n      Downtown Dubai are not owned, developed or sold by Marriott International, Inc.\n      Emaar Properties PJSC uses the St. Regis marks under licence from Marriott.\n      Final commercial terms subject to confirmation against the SPA and RERA Form F.",
+     "所有效果圖、位置標示及設施描述均取自 Emaar St. Regis Residences 發展商小冊子。St. Regis Residences, Downtown Dubai 並非由 Marriott International, Inc. 擁有、開發或銷售。Emaar Properties PJSC 取得 Marriott 授權使用 St. Regis 品牌。最終商業條款須以 SPA 及 RERA F 表為準。"),
+
+    # Personal note specifics
+    ("Personal Note &nbsp;·&nbsp; A Second Option", "個人信函 &nbsp;·&nbsp; 另一選擇"),
+    ("St. Regis vs. Vida — at a glance", "St. Regis 與 Vida — 一覽"),
+
+    # Comparison matrix labels & cells
+    ("Off-plan · Handover end of 2026", "樓花 · 2026 年底交付"),
+    ("55<sup>th</sup> floor — broader downtown views", "55 樓 — 市中心景觀更廣闊"),
+    ("5501 · 5502 · 5503 · 5510 — choice of layouts", "5501 · 5502 · 5503 · 5510 — 多款間隔可選"),
+    ("St. Regis (Marriott International) — global luxury", "St. Regis（Marriott 旗下）— 國際奢華品牌"),
+    ("3 min walk to Burj Khalifa · 4 min to Dubai Mall · 1 min to Dubai Opera",
+     "步行 3 分鐘至哈里發塔 · 4 分鐘至杜拜購物中心 · 1 分鐘至杜拜歌劇院"),
+    ("Phased through build — direct from Emaar", "隨工程進度分期付款 — 直接由 Emaar 銷售"),
+
+    # Headlines
+    ("The hallmark of<br/><b>distinction</b>.", "卓越非凡<br/>的<b>標誌</b>。"),
+    ("Tower 1,<br/><b>at street level</b>.", "一號塔，<br/><b>街景一覽</b>。"),
+    ("Live in the<br/><b>centre of it all.</b>", "盡享<br/><b>城市中心地段。</b>"),
+    ("Simply<br/><b>iconic.</b>", "經典<br/><b>傳奇。</b>"),
+    ("Come home to<br/><b>legendary style.</b>", "回家盡享<br/><b>傳奇格調。</b>"),
+    ("Unique spaces,<br/><b>unmatched views</b>.", "獨特空間，<br/><b>無與倫比之景觀</b>。"),
+    ("The <b>ultimate</b> in<br/>comfort &amp; luxury.", "<b>極致</b>舒適<br/>與奢華。"),
+    ("Relax<br/>and <b>unwind</b>.", "放鬆<br/><b>身心</b>。"),
+    ("An <b>urban retreat</b><br/>across the podium.", "<b>都市靜謐之地</b><br/>橫跨整個平台。"),
+    ("<b>Four units</b><br/>on the 55<sup>th</sup> floor.", "<b>四個單位</b><br/>位於 55 樓。"),
+    ("Four units<br/><b>on the 55<sup>th</sup> floor.</b>", "四個單位<br/><b>位於 55 樓。</b>"),
+    ("Extraordinary living<br/>in a <b>cosmopolitan city</b>.", "非凡生活<br/><b>於國際都會</b>。"),
+    ("Let's discuss<br/>the <b>options.</b>", "讓我們一同<br/>探討<b>選擇。</b>"),
+
+    # Section labels (St. Regis brochure)
+    ("01 &nbsp;·&nbsp; The Address", "01 &nbsp;·&nbsp; 地段"),
+    ("02 &nbsp;·&nbsp; The Tower", "02 &nbsp;·&nbsp; 塔樓"),
+    ("03 &nbsp;·&nbsp; The Building", "03 &nbsp;·&nbsp; 大廈介紹"),
+    ("04 &nbsp;·&nbsp; The Brand", "04 &nbsp;·&nbsp; 品牌"),
+    ("05 &nbsp;·&nbsp; The View", "05 &nbsp;·&nbsp; 景觀"),
+    ("06 &nbsp;·&nbsp; The Interiors", "06 &nbsp;·&nbsp; 室內設計"),
+    ("07 &nbsp;·&nbsp; The Pool", "07 &nbsp;·&nbsp; 泳池"),
+    ("08 &nbsp;·&nbsp; Amenities", "08 &nbsp;·&nbsp; 會所設施"),
+    ("09 &nbsp;·&nbsp; Available Units", "09 &nbsp;·&nbsp; 可選單位"),
+    ("10 &nbsp;·&nbsp; Floor Plan", "10 &nbsp;·&nbsp; 平面圖"),
+    ("10 &nbsp;·&nbsp; The Neighbourhood", "10 &nbsp;·&nbsp; 周邊環境"),
+    ("11 &nbsp;·&nbsp; Specifications", "11 &nbsp;·&nbsp; 規格"),
+    ("12 &nbsp;·&nbsp; Next Steps", "12 &nbsp;·&nbsp; 下一步"),
+
+    # Cover - St. Regis brochure
+    ("The St. Regis<br/><b>Residences</b><br/>", "St. Regis<br/><b>Residences</b><br/>"),
+    ("Downtown Dubai · Tower 1", "Downtown Dubai · 一號塔"),
+    ("Four units on the <b>55<sup>th</sup> floor</b>", "四個單位 · 位於 <b>55 樓</b>"),
+    ("Off-plan &nbsp;·&nbsp; Handover end of 2026 &nbsp;·&nbsp; Branded by St. Regis",
+     "樓花 &nbsp;·&nbsp; 2026 年底交付 &nbsp;·&nbsp; St. Regis 品牌管理"),
+
+    # Captions, walking minutes
+    ("min walk to", "分鐘步行至"),
+    ("The Dubai Mall", "杜拜購物中心"),
+    ("The Dubai Fountain", "杜拜噴泉"),
+    ("Dubai Opera", "杜拜歌劇院"),
+
+    # Stat labels & values
+    ("Branded by", "品牌管理"),
+    ("End 2026", "2026 年底"),
+    ("Handover", "交付"),
+    ("Tower 1", "一號塔"),
+
+    # Specs table (St. Regis specifics)
+    ("The Offer", "本盤資料"),
+    ("Units", "單位"),
+    ("Configurations", "間隔"),
+    ("1–3 bedroom", "1-3 房"),
+    ("Branded fit-out · unfurnished", "品牌裝修 · 未配傢俬"),
+    ("Burj Khalifa · Opera · Fountain", "哈里發塔 · 歌劇院 · 噴泉"),
+    ("Off-plan · Handover end 2026", "樓花 · 2026 年底交付"),
+    ("Direct from Emaar", "直接由 Emaar 銷售"),
+    ("Phased through build", "隨工程進度分期"),
+    ("Brand", "品牌"),
+    ("St. Regis (Marriott International)", "St. Regis（Marriott 旗下）"),
+    ("Resort podium · F&amp;B service", "度假式平台 · 餐飲服務"),
+    ("Spa, sauna, steam, fitness", "水療、桑拿、蒸氣、健身"),
+    ("Kids' pool &amp; play area", "兒童泳池及遊樂區"),
+    ("Sheikh Mohammed bin Rashid Blvd", "謝赫穆罕默德本拉希德大道"),
+    ("Wellness", "健康設施"),
+    ("Family", "家庭設施"),
+    ("Pool", "泳池"),
+    ("Location", "位置"),
+
+    # Floor plan page metadata
+    ("1 Bedroom · Type D", "1 房 · D 型"),
+    ("2 Bedroom · Type F1", "2 房 · F1 型"),
+    ("3 Bedroom · Type D", "3 房 · D 型"),
+    ("Suite area", "套房面積"),
+    ("Total", "總面積"),
+    ("Position", "位置"),
+    ("Corner · two balconies", "角位 · 雙露台"),
+    ("Two bedrooms · single balcony", "兩房 · 單露台"),
+    ("Three bedrooms · wrap balcony", "三房 · 環繞露台"),
+
+    # Unit card chips on Available Units page
+    ("Unit · Type 1 BR D", "單位 · 1 房 D 型"),
+    ("Unit · Type 2 BR F1", "單位 · 2 房 F1 型"),
+    ("Unit · Type 3 BR D", "單位 · 3 房 D 型"),
+    ("Suite", "套房"),
+    ("Bedrooms", "睡房數"),
+    ("1 BR", "1 房"),
+    ("2 BR", "2 房"),
+    ("3 BR", "3 房"),
+
+    # Photo caption
+    ("Developer Render · Tower 1 from Sheikh Mohammed bin Rashid Boulevard",
+     "發展商效果圖 · 由謝赫穆罕默德本拉希德大道遠眺一號塔"),
+    ("Developer Render · Typical Living Area Towards Burj Khalifa",
+     "發展商效果圖 · 典型客廳望哈里發塔"),
+
+    # Amenities bullets (St. Regis)
+    ("<b>F&amp;B serviced pool</b> with cabanas", "<b>餐飲服務泳池</b>，設私人涼亭"),
+    ("<b>Spa treatment rooms</b> · sauna &amp; steam", "<b>水療療程室</b> · 桑拿及蒸氣浴"),
+    ("<b>Fitness centre</b> — 24-hour access", "<b>健身中心</b> — 24 小時開放"),
+    ("<b>Community retail</b> on the podium", "<b>社區零售</b>於平台層"),
+    ("<b>Barbecue areas</b> across the gardens", "<b>燒烤區</b>遍佈園區"),
+    ("<b>Kids' pool</b> &amp; supervised play area", "<b>兒童泳池</b>及有監督遊樂區"),
+    ("<b>Resident lounges</b> — daytime &amp; evening", "<b>住戶休憩廳</b> — 日間及晚間"),
+
+    # Brand bullets (St. Regis)
+    ("<b>Grand signature staircase</b> — arrival sequence in the manner of the brand.",
+     "<b>標誌性華麗樓梯</b> — 品牌專屬的入門儀式。"),
+    ("<b>Great Hall</b> — double-height lobby with curated art and a residents' library.",
+     "<b>宏偉大廳</b> — 雙層挑高大堂，配以精選藝術品及住戶圖書館。"),
+    ("<b>Residential lounges</b> — distinct daytime and evening spaces.",
+     "<b>住戶休憩廳</b> — 日間與晚間各有獨特空間。"),
+    ("<b>St. Regis butler service</b> — available to residents on request.",
+     "<b>St. Regis 管家服務</b> — 住戶可預約使用。"),
+
+    # Spec stat strip on Simply Iconic
+    ("Tower", "塔樓"),
+    ("Floor", "樓層"),
+
+    # Building intro for St. Regis context (longer copy)
+    ("Bedrooms", "睡房數"),
     ("Burj Khalifa", "哈里發塔"),
+
 
     # === Single-word generics LAST ===
     ("Configuration", "間隔"),
@@ -383,8 +575,15 @@ def translate(content):
     return content
 
 
-src = Path("brochure.html").read_text()
-Path("brochure-zh.html").write_text(translate(src))
-src = Path("brochure-portrait.html").read_text()
-Path("brochure-portrait-zh.html").write_text(translate(src))
-print("Created brochure-zh.html and brochure-portrait-zh.html")
+for src_name in [
+    "brochure.html",
+    "brochure-portrait.html",
+    "brochure-stregis.html",
+    "brochure-stregis-portrait.html",
+]:
+    src_path = Path(src_name)
+    if not src_path.exists():
+        continue
+    out_name = src_name.replace(".html", "-zh.html")
+    Path(out_name).write_text(translate(src_path.read_text()))
+    print(f"Created {out_name}")

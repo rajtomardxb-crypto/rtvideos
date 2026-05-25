@@ -34,6 +34,21 @@ const variants = [
     width: '297mm', height: '210mm',
   },
   {
+    html: 'brochure-stregis-portrait.html',
+    pdf: 'St_Regis_Residences_T1_Brochure_Portrait_EN.pdf',
+    width: '210mm', height: '297mm',
+  },
+  {
+    html: 'brochure-stregis-zh.html',
+    pdf: 'St_Regis_Residences_T1_Brochure_Landscape_ZH.pdf',
+    width: '297mm', height: '210mm',
+  },
+  {
+    html: 'brochure-stregis-portrait-zh.html',
+    pdf: 'St_Regis_Residences_T1_Brochure_Portrait_ZH.pdf',
+    width: '210mm', height: '297mm',
+  },
+  {
     html: 'cost-summary.html',
     pdf: 'Vida_T1_3BR_Acquisition_Cost.pdf',
     width: '297mm', height: '210mm',

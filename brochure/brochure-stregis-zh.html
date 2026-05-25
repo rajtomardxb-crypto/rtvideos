@@ -1,0 +1,961 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>The St. Regis Residences · Downtown Dubai · 一號塔 — Pangea Properties · 繁體中文版</title>
+<link href="fonts/fonts.css" rel="stylesheet">
+<style>
+  :root {
+    --bg-dark: #0d1014;
+    --bg-cream: #ece4d3;
+    --ink: #1a1f25;
+    --line-dark: #2a3038;
+    --line-cream: #d7ceba;
+    --text-light: #e6eaef;
+    --text-muted-dark: #99a0aa;
+    --text-muted-light: #5a6172;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  @page { size: 297mm 210mm; margin: 0; }
+  html, body {
+    font-family: 'Inter', 'Manrope', -apple-system, sans-serif;
+    font-weight: 400;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    background: #333;
+  }
+  .page { width: 297mm; height: 210mm; page-break-after: always; overflow: hidden; position: relative; }
+  .page:last-child { page-break-after: auto; }
+  .theme-dark { background: var(--bg-dark); color: var(--text-light); }
+  .theme-dark::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(135deg, rgba(255,255,255,0.012) 0%, transparent 60%), radial-gradient(ellipse at top right, rgba(60,80,100,0.18), transparent 60%);
+  }
+  .theme-cream { background: var(--bg-cream); color: var(--ink); }
+
+  .topbar { position: absolute; top: 9mm; left: 14mm; right: 14mm; display: flex; justify-content: space-between; align-items: center; z-index: 10; }
+  .wordmark { font-family: 'Manrope', sans-serif; font-weight: 600; letter-spacing: 0.32em; font-size: 9pt; }
+  .topbar-right { font-family: 'Manrope', sans-serif; font-weight: 400; font-size: 8pt; letter-spacing: 0.18em; text-transform: uppercase; }
+  .theme-dark .wordmark { color: rgba(255,255,255,0.95); text-shadow: 0 1px 4px rgba(0,0,0,0.3); }
+  .theme-dark .topbar-right { color: rgba(255,255,255,0.85); text-shadow: 0 1px 4px rgba(0,0,0,0.3); }
+  .theme-cream .wordmark { color: rgba(26,31,37,0.9); }
+  .theme-cream .topbar-right { color: rgba(26,31,37,0.55); }
+
+  .footer { position: absolute; bottom: 7mm; left: 14mm; right: 14mm; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.5pt; letter-spacing: 0.05em; z-index: 10; }
+  .footer .left { display: flex; gap: 8mm; }
+  .theme-dark .footer { color: rgba(255,255,255,0.55); }
+  .theme-cream .footer { color: rgba(26,31,37,0.45); }
+
+  .content { position: absolute; top: 20mm; bottom: 14mm; left: 14mm; right: 14mm; z-index: 2; display: flex; flex-direction: column; }
+
+  .section-tag { font-family: 'Manrope', sans-serif; font-weight: 500; font-size: 9pt; letter-spacing: 0.42em; text-transform: uppercase; margin-bottom: 7mm; }
+  .theme-dark .section-tag { color: rgba(255,255,255,0.6); }
+  .theme-cream .section-tag { color: rgba(26,31,37,0.55); }
+
+  .display { font-family: 'Manrope', sans-serif; font-weight: 300; font-size: 44pt; line-height: 1.08; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 6mm; }
+  .display b { font-weight: 700; letter-spacing: 0.03em; }
+  .display-sm { font-family: 'Manrope', sans-serif; font-weight: 300; font-size: 30pt; line-height: 1.1; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 5mm; }
+  .display-sm b { font-weight: 700; }
+  .h2 { font-family: 'Manrope', sans-serif; font-weight: 300; font-size: 26pt; line-height: 1.14; letter-spacing: 0.035em; text-transform: uppercase; margin-bottom: 5mm; }
+  .h2 b { font-weight: 700; }
+
+  .lead { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 13pt; line-height: 1.55; margin-bottom: 4mm; }
+  .lead b { font-weight: 600; }
+  .body { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 11pt; line-height: 1.6; margin-bottom: 3mm; }
+  .body b { font-weight: 600; }
+  .theme-dark .body { color: rgba(220, 225, 232, 0.88); }
+  .theme-cream .body { color: var(--text-muted-light); }
+
+  .imgbox { overflow: hidden; position: relative; }
+  .img-fill { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .hero { position: absolute; inset: 0; z-index: 0; }
+  .hero img { width: 100%; height: 100%; object-fit: cover; }
+  .hero-overlay { position: absolute; inset: 0; z-index: 1; }
+
+  .half-image { width: 50%; height: 100%; position: absolute; top: 0; overflow: hidden; }
+  .half-image.left { left: 0; }
+  .half-image.right { right: 0; }
+  .half-image img { width: 100%; height: 100%; object-fit: cover; }
+
+  .half-content { width: 50%; position: absolute; top: 18mm; bottom: 14mm; padding: 0 14mm; z-index: 2; display: flex; flex-direction: column; justify-content: center; }
+  .half-content.left { left: 0; padding-left: 14mm; padding-right: 12mm; }
+  .half-content.right { right: 0; padding-right: 14mm; padding-left: 12mm; }
+
+  .panel { position: absolute; background: rgba(13, 16, 20, 0.82); color: white; padding: 10mm 12mm; z-index: 5; max-width: 145mm; }
+  .panel.bl { left: 14mm; bottom: 16mm; }
+  .panel-eyebrow { font-family: 'Manrope', sans-serif; font-weight: 500; font-size: 9pt; letter-spacing: 0.42em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 5mm; }
+  .panel-title { font-family: 'Manrope', sans-serif; font-weight: 300; font-size: 26pt; line-height: 1.1; letter-spacing: 0.04em; text-transform: uppercase; color: #fff; margin-bottom: 5mm; }
+  .panel-title b { font-weight: 700; }
+  .panel-body { font-family: 'Inter', sans-serif; font-size: 10.5pt; line-height: 1.55; color: rgba(255,255,255,0.9); }
+  .panel-body b { font-weight: 600; }
+
+  .photo-cap { position: absolute; bottom: 14mm; left: 14mm; right: 14mm; z-index: 5; color: white; font-family: 'Manrope', sans-serif; font-weight: 500; font-size: 8pt; letter-spacing: 0.32em; text-transform: uppercase; text-align: center; text-shadow: 0 2px 8px rgba(0,0,0,0.6); }
+
+  .stat-strip { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid; border-bottom: 1px solid; padding: 5mm 0; margin: 4mm 0; }
+  .theme-dark .stat-strip { border-color: rgba(255,255,255,0.18); }
+  .theme-cream .stat-strip { border-color: var(--line-cream); }
+  .stat { padding: 0 5mm; border-right: 1px solid; }
+  .theme-dark .stat { border-color: rgba(255,255,255,0.12); }
+  .theme-cream .stat { border-color: var(--line-cream); }
+  .stat:last-child { border-right: none; }
+  .stat-label { font-family: 'Manrope', sans-serif; font-size: 7.5pt; letter-spacing: 0.28em; text-transform: uppercase; opacity: 0.55; margin-bottom: 2mm; }
+  .stat-value { font-family: 'Manrope', sans-serif; font-weight: 600; font-size: 12pt; line-height: 1.1; }
+
+  .arrow-list { list-style: none; padding: 0; margin: 0; }
+  .arrow-list li { padding-left: 10mm; position: relative; margin-bottom: 4mm; font-size: 11pt; line-height: 1.55; }
+  .arrow-list li::before { content: '→'; position: absolute; left: 0; top: 0; font-size: 11pt; opacity: 0.6; }
+  .arrow-list li b { font-weight: 600; }
+  .theme-dark .arrow-list li { color: rgba(220,225,232,0.88); }
+  .theme-cream .arrow-list li { color: var(--text-muted-light); }
+
+  .figure { display: flex; flex-direction: column; height: 100%; }
+  .figure .imgbox { flex: 1; }
+  .figure .cap { font-family: 'Manrope', sans-serif; font-size: 8pt; letter-spacing: 0.28em; text-transform: uppercase; text-align: center; padding-top: 3mm; opacity: 0.55; flex-shrink: 0; }
+
+  .specs { display: grid; grid-template-columns: 1fr 1fr; gap: 12mm; flex: 1; }
+  .specs .col-title { font-family: 'Manrope', sans-serif; font-weight: 600; font-size: 9pt; letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 5mm; opacity: 0.6; padding-bottom: 3mm; border-bottom: 1px solid var(--line-cream); }
+  .specs .row { display: flex; justify-content: space-between; align-items: baseline; padding: 2.5mm 0; border-bottom: 1px solid var(--line-cream); font-size: 10pt; }
+  .specs .row:last-child { border-bottom: none; }
+  .specs .key { color: var(--text-muted-light); font-weight: 400; letter-spacing: 0.02em; }
+  .specs .val { font-weight: 600; text-align: right; max-width: 60%; }
+
+  .contact-card { padding: 8mm 9mm; background: rgba(255,255,255,0.6); border: 1px solid var(--line-cream); max-width: 110mm; }
+  .contact-card .eyebrow { font-family: 'Manrope', sans-serif; font-weight: 500; font-size: 8pt; letter-spacing: 0.35em; text-transform: uppercase; opacity: 0.55; margin-bottom: 3mm; }
+  .contact-card .name { font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 18pt; margin-bottom: 1.5mm; }
+  .contact-card .role { font-family: 'Manrope', sans-serif; font-size: 8.5pt; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.6; margin-bottom: 5mm; }
+  .contact-card .row { display: flex; align-items: baseline; gap: 4mm; margin-bottom: 2.5mm; font-size: 10.5pt; }
+  .contact-card .row .k { font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 9pt; letter-spacing: 0.18em; opacity: 0.6; width: 6mm; }
+
+  .disclaimer { font-family: 'Inter', sans-serif; font-size: 7.5pt; line-height: 1.55; color: rgba(26,31,37,0.5); }
+
+  /* Unit card layout for the available units page */
+  .unit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; flex: 1; min-height: 0; }
+  .unit-card { border: 1px solid var(--line-cream); padding: 6mm 8mm; background: rgba(255,255,255,0.55); display: flex; flex-direction: column; }
+  .unit-card .num { font-family: 'Manrope', sans-serif; font-weight: 200; font-size: 30pt; line-height: 1; color: var(--ink); margin-bottom: 3mm; }
+  .unit-card .num b { font-weight: 700; }
+  .unit-card .label { font-family: 'Manrope', sans-serif; font-weight: 500; font-size: 7.5pt; letter-spacing: 0.32em; text-transform: uppercase; opacity: 0.55; margin-bottom: 3mm; }
+  .unit-card .meta { display: grid; grid-template-columns: 1fr 1fr; gap: 3mm; font-size: 9.5pt; }
+  .unit-card .meta .k { font-family: 'Manrope', sans-serif; font-size: 7pt; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.55; margin-bottom: 1mm; }
+  .unit-card .meta .v { font-family: 'Manrope', sans-serif; font-weight: 600; }
+
+  /* === Cantonese / Traditional Chinese typography === */
+  .display, .display-sm, .h2, .h3, .lead, .body, .section-tag,
+  .panel-title, .panel-body, .panel-eyebrow,
+  .stat-label, .stat-value, .fact-label, .fact-value,
+  .col-title, .arrow-list li, .specs .key, .specs .val,
+  .caption, .photo-cap, .contact-card .name, .contact-card .role,
+  .topbar-right, .footer, .disclaimer,
+  h1, h2, p, div, span, li {
+    font-family: 'Manrope', 'Inter', 'Noto Sans TC', sans-serif;
+  }
+  .display, .display-sm, .h2, .h3, .panel-title, h1, h2 {
+    letter-spacing: 0.005em !important;
+    text-transform: none !important;
+  }
+  .section-tag, .panel-eyebrow, .caption, .photo-cap, .col-title,
+  .stat-label, .fact-label, .topbar-right, .contact-card .eyebrow,
+  .contact-card .role {
+    letter-spacing: 0.16em !important;
+  }
+  .wordmark { letter-spacing: 0.3em !important; }
+  .body, .panel-body, .lead, .arrow-list li { line-height: 1.7 !important; }
+
+</style>
+</head>
+<body>
+
+<!-- =================== PAGE 1 — COVER =================== -->
+<section class="page theme-dark">
+  <div class="hero"><img src="images/sr_01_cover.jpg" alt="St. Regis Residences Downtown Dubai" /></div>
+  <div class="hero-overlay" style="background: linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.25) 35%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.92) 100%);"></div>
+
+  <div class="topbar">
+    <div class="wordmark" style="color:#fff;">P A N G E A</div>
+    <div class="topbar-right" style="color:rgba(255,255,255,0.85);">物業簡介</div>
+  </div>
+
+  <div style="position:absolute; left: 22mm; right: 22mm; top: 52mm; bottom: 52mm; z-index:5; background: rgba(13, 16, 20, 0.85); border: 1px solid rgba(255,255,255,0.1); text-align:center; display: flex; flex-direction: column; justify-content: center; padding: 14mm 28mm;">
+    <div style="font-family:'Manrope'; font-weight:500; font-size:8.5pt; letter-spacing:0.5em; text-transform:uppercase; color:rgba(255,255,255,0.75); margin-bottom:8mm;">
+      物業簡介 &nbsp;·&nbsp; 杜拜市中心
+    </div>
+    <h1 style="font-family:'Manrope'; font-weight:300; font-size:38pt; line-height:1.06; letter-spacing:0.045em; text-transform:uppercase; color:#fff; margin: 0;">
+      The St. Regis<br/><b style="font-weight:700;">Residences</b><br/>
+      <span style="font-size: 22pt; letter-spacing: 0.04em; display:inline-block; margin-top: 5mm;">Downtown Dubai · 一號塔</span>
+    </h1>
+    <div style="width:46mm; height:1px; background:rgba(255,255,255,0.5); margin: 8mm auto;"></div>
+    <div style="font-family:'Inter'; font-size:12pt; font-weight:400; color:#fff; letter-spacing:0.02em; margin-bottom:4mm;">
+      四個單位 · 位於 <b>55 樓</b>
+    </div>
+    <div style="font-family:'Inter'; font-size:10pt; color:rgba(255,255,255,0.88); letter-spacing:0.04em;">
+      樓花 &nbsp;·&nbsp; 2026 年底交付 &nbsp;·&nbsp; St. Regis 品牌管理
+    </div>
+  </div>
+
+  <div class="footer" style="color:rgba(255,255,255,0.8);">
+    <div class="left">
+      <span>Raj Tomar · 物業顧問</span>
+      <span>+971 58 996 6085 · raj@pangeadubai.com</span>
+    </div>
+    <div>01 / 19</div>
+  </div>
+</section>
+
+<!-- =================== PAGE 2 — PERSONAL NOTE =================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">致 謝興堯先生 · 香港</div>
+  </div>
+
+  <div class="content" style="padding-top: 22mm; padding-bottom: 14mm;">
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 14mm; height: 100%; align-items: stretch;">
+      <div style="display:flex; flex-direction:column; justify-content:center;">
+        <div class="section-tag" style="margin-bottom:7mm;">個人信函 &nbsp;·&nbsp; 另一選擇</div>
+
+        <div style="font-family:'Manrope'; font-weight:300; font-size:10pt; letter-spacing:0.05em; text-transform:uppercase; color: rgba(26,31,37,0.55); margin-bottom: 2mm;">致</div>
+        <h2 style="font-family:'Manrope'; font-weight:300; font-size:26pt; line-height:1.06; letter-spacing:0.03em; margin-bottom: 2mm;">
+          <b style="font-weight:700;">謝興堯</b> 先生
+        </h2>
+        <div style="font-family:'Inter'; font-size:10pt; color: rgba(26,31,37,0.6); letter-spacing:0.04em; margin-bottom: 6mm;">
+          香港 &nbsp;·&nbsp; 代表您的客戶
+        </div>
+
+        <p class="body" style="font-size:10pt; margin-bottom: 3mm;">謝先生 您好，</p>
+        <p class="body" style="font-size:10pt; margin-bottom: 3mm;">
+          繼 Vida Dubai Mall 單位之後，現再為您客戶呈上另一個值得考慮的選擇 — <b>St. Regis Residences, Downtown Dubai · 一號塔</b>。
+        </p>
+        <p class="body" style="font-size:10pt; margin-bottom: 3mm;">
+          我們可直接由發展商提供<b>位於 55 樓的四個單位</b> — 5501、5502、5503 及 5510。<b>預定 2026 年底交付</b>，屬樓花單位，付款隨工程進度分期支付。
+        </p>
+        <p class="body" style="font-size:10pt;">
+          與 Vida 單位之主要分別：本盤位處更高樓層、市中心景觀更廣闊，由 <b>St. Regis（Marriott 旗下）</b>品牌營運，並由發展商全新交付，而非 Vida 已配備齊全的成屋單位。
+        </p>
+
+        <div style="margin-top: 6mm;">
+          <div style="font-family:'Manrope'; font-weight:700; font-size:11pt; color:#1a1f25;">Raj Tomar</div>
+          <div style="font-family:'Manrope'; font-size:7.5pt; letter-spacing:0.18em; text-transform:uppercase; color: rgba(26,31,37,0.55);">物業顧問 · Pangea Properties</div>
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; justify-content:center;">
+        <div style="border: 1px solid var(--line-cream); padding: 9mm 9mm; background: rgba(255,255,255,0.55);">
+          <div style="font-family:'Manrope'; font-weight:500; font-size:8pt; letter-spacing:0.4em; text-transform:uppercase; color: rgba(26,31,37,0.55); margin-bottom: 6mm;">
+            St. Regis 與 Vida — 一覽
+          </div>
+
+          <div style="display:grid; grid-template-columns: 32mm 1fr; gap: 4mm; padding-bottom: 4mm; border-bottom: 1px solid var(--line-cream); margin-bottom: 4mm;">
+            <div style="font-family:'Manrope'; font-weight:700; font-size:8pt; letter-spacing:0.18em; text-transform:uppercase; color:#1a1f25;">狀態</div>
+            <div style="font-family:'Inter'; font-size:9.5pt; line-height:1.5; color: var(--text-muted-light);">樓花 · 2026 年底交付</div>
+          </div>
+          <div style="display:grid; grid-template-columns: 32mm 1fr; gap: 4mm; padding-bottom: 4mm; border-bottom: 1px solid var(--line-cream); margin-bottom: 4mm;">
+            <div style="font-family:'Manrope'; font-weight:700; font-size:8pt; letter-spacing:0.18em; text-transform:uppercase; color:#1a1f25;">樓層</div>
+            <div style="font-family:'Inter'; font-size:9.5pt; line-height:1.5; color: var(--text-muted-light);">55 樓 — 市中心景觀更廣闊</div>
+          </div>
+          <div style="display:grid; grid-template-columns: 32mm 1fr; gap: 4mm; padding-bottom: 4mm; border-bottom: 1px solid var(--line-cream); margin-bottom: 4mm;">
+            <div style="font-family:'Manrope'; font-weight:700; font-size:8pt; letter-spacing:0.18em; text-transform:uppercase; color:#1a1f25;">可選單位</div>
+            <div style="font-family:'Inter'; font-size:9.5pt; line-height:1.5; color: var(--text-muted-light);">5501 · 5502 · 5503 · 5510 — 多款間隔可選</div>
+          </div>
+          <div style="display:grid; grid-template-columns: 32mm 1fr; gap: 4mm; padding-bottom: 4mm; border-bottom: 1px solid var(--line-cream); margin-bottom: 4mm;">
+            <div style="font-family:'Manrope'; font-weight:700; font-size:8pt; letter-spacing:0.18em; text-transform:uppercase; color:#1a1f25;">品牌</div>
+            <div style="font-family:'Inter'; font-size:9.5pt; line-height:1.5; color: var(--text-muted-light);">St. Regis（Marriott 旗下）— 國際奢華品牌</div>
+          </div>
+          <div style="display:grid; grid-template-columns: 32mm 1fr; gap: 4mm; padding-bottom: 4mm; border-bottom: 1px solid var(--line-cream); margin-bottom: 4mm;">
+            <div style="font-family:'Manrope'; font-weight:700; font-size:8pt; letter-spacing:0.18em; text-transform:uppercase; color:#1a1f25;">位置</div>
+            <div style="font-family:'Inter'; font-size:9.5pt; line-height:1.5; color: var(--text-muted-light);">步行 3 分鐘至哈里發塔 · 4 分鐘至杜拜購物中心 · 1 分鐘至杜拜歌劇院</div>
+          </div>
+          <div style="display:grid; grid-template-columns: 32mm 1fr; gap: 4mm;">
+            <div style="font-family:'Manrope'; font-weight:700; font-size:8pt; letter-spacing:0.18em; text-transform:uppercase; color:#1a1f25;">付款</div>
+            <div style="font-family:'Inter'; font-size:9.5pt; line-height:1.5; color: var(--text-muted-light);">隨工程進度分期付款 — 直接由 Emaar 銷售</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>02 / 19</div>
+  </div>
+</section>
+
+<!-- =================== PAGE 3 — HALLMARK OF DISTINCTION =================== -->
+<section class="page theme-dark">
+  <div class="hero"><img src="images/sr_02_burj.jpg" alt="哈里發塔 night view"/></div>
+  <div class="hero-overlay" style="background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.1) 30%, rgba(0,0,0,0.5) 65%, rgba(0,0,0,0.92) 100%);"></div>
+
+  <div class="topbar">
+    <div class="wordmark" style="color:#fff;">P A N G E A</div>
+    <div class="topbar-right" style="color:rgba(255,255,255,0.85);">St. Regis Residences · Downtown Dubai</div>
+  </div>
+
+  <div class="panel bl" style="max-width: 145mm;">
+    <div class="panel-eyebrow">01 &nbsp;·&nbsp; 地段</div>
+    <h2 class="panel-title">卓越非凡<br/>的<b>標誌</b>。</h2>
+    <p class="panel-body">
+      杜拜市中心是獨一無二的所在，紀錄屢創新高乃是常態。在此可漫步於全球最高塔樓旁，或欣賞世界最大噴泉表演的迷人編排。
+    </p>
+  </div>
+
+  <div class="footer" style="color:rgba(255,255,255,0.75);">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>03 / 19</div>
+  </div>
+</section>
+
+<!-- =================== PAGE 4 — THE TOWER (NEW) =================== -->
+<section class="page theme-dark">
+  <div class="hero"><img src="images/sr_building_dusk.jpg" alt="St. Regis Residences · 一號塔 at dusk"/></div>
+  <div class="hero-overlay" style="background: linear-gradient(180deg, rgba(0,0,0,0.35) 0%, transparent 25%, transparent 55%, rgba(0,0,0,0.92) 100%);"></div>
+
+  <div class="topbar">
+    <div class="wordmark" style="color:#fff;">P A N G E A</div>
+    <div class="topbar-right" style="color:rgba(255,255,255,0.85);">St. Regis Residences · 一號塔</div>
+  </div>
+
+  <div class="panel bl" style="max-width: 150mm;">
+    <div class="panel-eyebrow">02 &nbsp;·&nbsp; 塔樓</div>
+    <h2 class="panel-title">一號塔，<br/><b>街景一覽</b>。</h2>
+    <p class="panel-body">
+      64 層品牌住宅 — 中央的修長深色塔樓 — 與哈里發塔及 Address Boulevard 群樓相映，平台泳池環繞塔基。
+    </p>
+  </div>
+
+  <div class="photo-cap" style="bottom: 10mm;">發展商 Render · 一號塔 from Sheikh Mohammed bin Rashid Boulevard</div>
+
+  <div class="footer" style="color:rgba(255,255,255,0.75);">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>04 / 19</div>
+  </div>
+</section>
+
+<!-- =================== PAGE 5 — LIVE IN THE CENTRE =================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">St. Regis Residences · Downtown Dubai</div>
+  </div>
+
+  <div class="content">
+    <div style="display:grid; grid-template-columns: 45% 55%; gap: 12mm; height: 100%;">
+      <div class="imgbox" style="height:100%; background:#0d1014;">
+        <img class="img-fill" src="images/sr_06_map.jpg" alt="位置 map" style="object-fit: contain;"/>
+      </div>
+      <div style="display:flex; flex-direction:column; justify-content:center;">
+        <div class="section-tag">02 &nbsp;·&nbsp; Proximity</div>
+        <h2 class="display">盡享<br/><b>城市中心地段。</b></h2>
+
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 6mm; margin-top: 6mm;">
+          <div style="border: 1px solid var(--line-cream); padding: 6mm 7mm; background: rgba(255,255,255,0.5);">
+            <div style="font-family:'Manrope'; font-weight:200; font-size:32pt; line-height:1; color: var(--ink);">4</div>
+            <div style="font-family:'Inter'; font-size:9pt; opacity: 0.55; margin-top: 2mm; letter-spacing: 0.04em;">分鐘步行至</div>
+            <div style="font-family:'Manrope'; font-weight:600; font-size:11pt; margin-top: 1mm;">杜拜購物中心</div>
+          </div>
+          <div style="border: 1px solid var(--line-cream); padding: 6mm 7mm; background: rgba(255,255,255,0.5);">
+            <div style="font-family:'Manrope'; font-weight:200; font-size:32pt; line-height:1; color: var(--ink);">3</div>
+            <div style="font-family:'Inter'; font-size:9pt; opacity: 0.55; margin-top: 2mm; letter-spacing: 0.04em;">分鐘步行至</div>
+            <div style="font-family:'Manrope'; font-weight:600; font-size:11pt; margin-top: 1mm;">哈里發塔</div>
+          </div>
+          <div style="border: 1px solid var(--line-cream); padding: 6mm 7mm; background: rgba(255,255,255,0.5);">
+            <div style="font-family:'Manrope'; font-weight:200; font-size:32pt; line-height:1; color: var(--ink);">2</div>
+            <div style="font-family:'Inter'; font-size:9pt; opacity: 0.55; margin-top: 2mm; letter-spacing: 0.04em;">分鐘步行至</div>
+            <div style="font-family:'Manrope'; font-weight:600; font-size:11pt; margin-top: 1mm;">杜拜噴泉</div>
+          </div>
+          <div style="border: 1px solid var(--line-cream); padding: 6mm 7mm; background: rgba(255,255,255,0.5);">
+            <div style="font-family:'Manrope'; font-weight:200; font-size:32pt; line-height:1; color: var(--ink);">1</div>
+            <div style="font-family:'Inter'; font-size:9pt; opacity: 0.55; margin-top: 2mm; letter-spacing: 0.04em;">分鐘步行至</div>
+            <div style="font-family:'Manrope'; font-weight:600; font-size:11pt; margin-top: 1mm;">杜拜歌劇院</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>05 / 19</div>
+  </div>
+</section>
+
+<!-- =================== PAGE 5 — SIMPLY ICONIC =================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">St. Regis Residences · Downtown Dubai</div>
+  </div>
+
+  <div class="content">
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 14mm; height: 100%;">
+      <div style="display:flex; flex-direction:column; justify-content:center;">
+        <div class="section-tag">03 &nbsp;·&nbsp; 大廈資料</div>
+        <h2 class="display">經典<br/><b>傳奇。</b></h2>
+        <p class="body" style="font-size: 11.5pt;">
+          St. Regis Residences, Downtown Dubai 座落於<b>哈里發塔</b>腳下，正對杜拜歌劇院及杜拜噴泉。一號塔為本發展項目的首座建成塔樓。
+        </p>
+        <p class="body" style="font-size: 11.5pt;">
+          依照 St. Regis 品牌嚴謹標準設計，單位由一房至三房不等，並經過悉心定位，盡覽哈里發塔、杜拜歌劇院及杜拜噴泉之開闊景觀。
+        </p>
+
+        <div class="stat-strip" style="margin-top: 6mm;">
+          <div class="stat"><div class="stat-label">塔樓</div><div class="stat-value">一號塔</div></div>
+          <div class="stat"><div class="stat-label">樓層</div><div class="stat-value">55<sup>th</sup></div></div>
+          <div class="stat"><div class="stat-label">品牌管理</div><div class="stat-value">St. Regis</div></div>
+          <div class="stat"><div class="stat-label">交付</div><div class="stat-value">2026 年底</div></div>
+        </div>
+      </div>
+      <div class="imgbox" style="height:100%;">
+        <img class="img-fill" src="images/sr_05_iconic.jpg" alt="St. Regis tower with 哈里發塔"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>06 / 19</div>
+  </div>
+</section>
+
+<!-- =================== PAGE 6 — COME HOME TO LEGENDARY STYLE =================== -->
+<section class="page theme-dark">
+  <div class="half-image right"><img src="images/sr_08_legendary.jpg" alt="Legendary Style"/></div>
+
+  <div class="topbar">
+    <div class="wordmark" style="color:#fff;">P A N G E A</div>
+    <div class="topbar-right" style="color:rgba(255,255,255,0.85);">St. Regis Residences · Downtown Dubai</div>
+  </div>
+
+  <div class="half-content left">
+    <div class="section-tag">04 &nbsp;·&nbsp; 品牌</div>
+    <h2 class="h2">回家盡享<br/><b>傳奇格調。</b></h2>
+    <p class="body" style="font-size: 11pt; margin-top: 2mm;">
+      St. Regis 品牌乃個人化頂級生活體驗的典範。本項目代表杜拜市中心奢華生活之標誌 — 經典、稀有、精緻。
+    </p>
+
+    <ul class="arrow-list" style="margin-top: 6mm;">
+      <li><b>標誌性華麗樓梯</b> — 品牌專屬的入門儀式。</li>
+      <li><b>宏偉大廳</b> — 雙層挑高大堂，配以精選藝術品及住戶圖書館。</li>
+      <li><b>住戶休憩廳</b> — 日間與晚間各有獨特空間。</li>
+      <li><b>St. Regis 管家服務</b> — 住戶可預約使用。</li>
+    </ul>
+  </div>
+
+  <div class="footer" style="color:rgba(255,255,255,0.75);">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>07 / 19</div>
+  </div>
+</section>
+
+<!-- =================== PAGE 7 — UNIQUE SPACES & UNMATCHED VIEWS =================== -->
+<section class="page theme-dark">
+  <div class="hero"><img src="images/sr_12_living.jpg" alt="Living room with Burj view"/></div>
+  <div class="hero-overlay" style="background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, transparent 25%, transparent 55%, rgba(0,0,0,0.92) 100%);"></div>
+
+  <div class="topbar">
+    <div class="wordmark" style="color:#fff;">P A N G E A</div>
+    <div class="topbar-right" style="color:rgba(255,255,255,0.85);">St. Regis Residences · Downtown Dubai</div>
+  </div>
+
+  <div class="panel bl" style="max-width: 145mm;">
+    <div class="panel-eyebrow">05 &nbsp;·&nbsp; 景觀</div>
+    <h2 class="panel-title">獨特空間，<br/><b>無與倫比之景觀</b>。</h2>
+    <p class="panel-body">
+      住宅單位經悉心定位，盡覽<b>哈里發塔</b>、杜拜歌劇院及杜拜噴泉 — 此區三大地標 — 而室內設計與裝修均與塔樓建築美學相互呼應。
+    </p>
+  </div>
+
+  <div class="photo-cap" style="bottom: 9mm;">發展商效果圖 · 典型客廳望哈里發塔</div>
+
+  <div class="footer" style="color:rgba(255,255,255,0.75);">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>08 / 19</div>
+  </div>
+</section>
+
+<!-- =================== PAGE 8 — THE INTERIORS =================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">St. Regis Residences · Downtown Dubai</div>
+  </div>
+
+  <div class="content">
+    <div class="section-tag">06 &nbsp;·&nbsp; 室內設計</div>
+    <h2 class="h2" style="margin-bottom: 7mm;"><b>極致</b>舒適<br/>與奢華。</h2>
+
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:5mm; flex:1; min-height: 0;">
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/sr_13_kitchen.jpg" alt="Living and dining"/></div>
+        <div class="cap">Living &amp; Dining · Open-Plan 廚房</div>
+      </div>
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/sr_14_bedroom.jpg" alt="Master bedroom with Burj view"/></div>
+        <div class="cap">Master Bedroom · 哈里發塔 景觀</div>
+      </div>
+    </div>
+
+    <p class="body" style="margin-top: 6mm; max-width: 235mm;">
+      室內裝修依 St. Regis 規格完成：石材配暖木調色系、嵌入式廚房、落地玻璃通往露台及市中心天際線。間隔由一房至三房；此處呈獻之單位均位於 55 樓。
+    </p>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>09 / 19</div>
+  </div>
+</section>
+
+<!-- =================== PAGE 9 — RELAX AND UNWIND (POOL) =================== -->
+<section class="page theme-dark">
+  <div class="hero"><img src="images/sr_15_pool.jpg" alt="Resort pool"/></div>
+  <div class="hero-overlay" style="background: linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 30%, rgba(0,0,0,0.5) 65%, rgba(0,0,0,0.92) 100%);"></div>
+
+  <div class="topbar">
+    <div class="wordmark" style="color:#fff;">P A N G E A</div>
+    <div class="topbar-right" style="color:rgba(255,255,255,0.85);">St. Regis Residences · Downtown Dubai</div>
+  </div>
+
+  <div class="panel bl" style="max-width: 135mm;">
+    <div class="panel-eyebrow">07 &nbsp;·&nbsp; 泳池</div>
+    <h2 class="panel-title">放鬆<br/><b>身心</b>。</h2>
+    <p class="panel-body">
+      度假級泳池橫跨整個平台，配以茂盛棕櫚樹、遮陽設施及私人涼亭 — 供三座塔樓住戶共用。
+    </p>
+  </div>
+
+  <div class="footer" style="color:rgba(255,255,255,0.75);">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>10 / 19</div>
+  </div>
+</section>
+
+<!-- =================== PAGE 10 — URBAN RETREAT (AMENITIES) =================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">St. Regis Residences · Downtown Dubai</div>
+  </div>
+
+  <div class="content">
+    <div class="section-tag">08 &nbsp;·&nbsp; 會所設施</div>
+    <h2 class="h2" style="margin-bottom: 7mm;"><b>都市靜謐之地</b><br/>橫跨整個平台。</h2>
+
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:5mm; flex:1; min-height: 0;">
+      <div class="imgbox"><img class="img-fill" src="images/sr_16_retreat.jpg" alt="Podium amenities"/></div>
+      <div style="display:flex; flex-direction:column; justify-content:center;">
+        <ul class="arrow-list" style="font-size: 11pt;">
+          <li><b>餐飲服務泳池</b>，設私人涼亭</li>
+          <li><b>水療療程室</b> · 桑拿及蒸氣浴</li>
+          <li><b>健身中心</b> — 24 小時開放</li>
+          <li><b>社區零售</b>於平台層</li>
+          <li><b>燒烤區</b>遍佈園區</li>
+          <li><b>兒童泳池</b>及有監督遊樂區</li>
+          <li><b>住戶休憩廳</b> — 日間及晚間</li>
+        </ul>
+        <p class="body" style="margin-top: 5mm; font-size: 9.5pt;">
+          設置於連接三座塔樓的超現代景觀平台，可俯瞰杜拜歌劇院長廊。
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>11 / 19</div>
+  </div>
+</section>
+
+<!-- =================== PAGE 11 — AVAILABLE UNITS =================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">St. Regis Residences · Downtown Dubai</div>
+  </div>
+
+  <div class="content">
+    <div class="section-tag">09 &nbsp;·&nbsp; 可選單位</div>
+    <h2 class="h2" style="margin-bottom: 7mm;"><b>四個單位</b><br/>位於 55 樓。</h2>
+
+    <div class="unit-grid">
+      <div class="unit-card">
+        <div class="label">單位 · 1 房 D 型</div>
+        <div class="num">Apt. <b>5501</b></div>
+        <div class="meta">
+          <div>
+            <div class="k">套房</div>
+            <div class="v">825 sqft</div>
+          </div>
+          <div>
+            <div class="k">露台</div>
+            <div class="v">89 sqft</div>
+          </div>
+          <div>
+            <div class="k">總面積</div>
+            <div class="v">914 sqft</div>
+          </div>
+          <div>
+            <div class="k">睡房數</div>
+            <div class="v">1 房</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="unit-card">
+        <div class="label">單位 · 2 房 F1 型</div>
+        <div class="num">Apt. <b>5502</b></div>
+        <div class="meta">
+          <div>
+            <div class="k">套房</div>
+            <div class="v">1,023 sqft</div>
+          </div>
+          <div>
+            <div class="k">露台</div>
+            <div class="v">88 sqft</div>
+          </div>
+          <div>
+            <div class="k">總面積</div>
+            <div class="v">1,111 sqft</div>
+          </div>
+          <div>
+            <div class="k">睡房數</div>
+            <div class="v">2 房</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="unit-card">
+        <div class="label">單位 · 3 房 D 型</div>
+        <div class="num">Apt. <b>5503</b></div>
+        <div class="meta">
+          <div>
+            <div class="k">套房</div>
+            <div class="v">1,530 sqft</div>
+          </div>
+          <div>
+            <div class="k">露台</div>
+            <div class="v">233 sqft</div>
+          </div>
+          <div>
+            <div class="k">總面積</div>
+            <div class="v">1,763 sqft</div>
+          </div>
+          <div>
+            <div class="k">睡房數</div>
+            <div class="v">3 房</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="unit-card">
+        <div class="label">單位 · 3 房 D 型</div>
+        <div class="num">Apt. <b>5510</b></div>
+        <div class="meta">
+          <div>
+            <div class="k">套房</div>
+            <div class="v">1,527 sqft</div>
+          </div>
+          <div>
+            <div class="k">露台</div>
+            <div class="v">233 sqft</div>
+          </div>
+          <div>
+            <div class="k">總面積</div>
+            <div class="v">1,761 sqft</div>
+          </div>
+          <div>
+            <div class="k">睡房數</div>
+            <div class="v">3 房</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>12 / 19</div>
+  </div>
+</section>
+
+<!-- =================== PAGE 12 — FLOOR PLAN 5501 =================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">St. Regis Residences · 一號塔</div>
+  </div>
+
+  <div class="content">
+    <div class="section-tag">10 &nbsp;·&nbsp; 平面圖</div>
+    <div style="display:grid; grid-template-columns: 35% 65%; gap: 10mm; flex:1; min-height:0; align-items:start;">
+      <div>
+        <h2 class="h2" style="margin-bottom: 6mm;">Apt. <b>5501</b></h2>
+        <div style="font-family:'Manrope'; font-size: 9pt; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted-light); margin-bottom: 6mm;">1 房 · D 型</div>
+        <div style="display:grid; grid-template-columns: 1fr; gap: 3mm;">
+          <div style="display:flex; justify-content:space-between; padding: 3mm 0; border-bottom: 1px solid var(--line-cream); font-size: 10.5pt;">
+            <span style="color: var(--text-muted-light);">套房面積</span><span style="font-weight: 600;">825 sqft · 77 sqm</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding: 3mm 0; border-bottom: 1px solid var(--line-cream); font-size: 10.5pt;">
+            <span style="color: var(--text-muted-light);">露台</span><span style="font-weight: 600;">89 sqft · 8 sqm</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding: 3mm 0; border-bottom: 1px solid var(--line-cream); font-size: 10.5pt;">
+            <span style="color: var(--text-muted-light);">總面積</span><span style="font-weight: 700; font-size: 12pt;">914 sqft · 85 sqm</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding: 3mm 0; border-bottom: 1px solid var(--line-cream); font-size: 10.5pt;">
+            <span style="color: var(--text-muted-light);">樓層</span><span style="font-weight: 600;">55<sup>th</sup></span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding: 3mm 0; font-size: 10.5pt;">
+            <span style="color: var(--text-muted-light);">位置</span><span style="font-weight: 600;">角位 · 雙露台</span>
+          </div>
+        </div>
+      </div>
+      <div class="imgbox" style="background: rgba(255,255,255,0.5); border: 1px solid var(--line-cream); height: 100%;">
+        <img class="img-fill" src="images/sr_fp_5501.jpg" alt="樓層 plan 5501" style="object-fit: contain;"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>13 / 19</div>
+  </div>
+</section>
+
+<!-- =================== PAGE 13 — FLOOR PLAN 5502 =================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">St. Regis Residences · 一號塔</div>
+  </div>
+
+  <div class="content">
+    <div class="section-tag">10 &nbsp;·&nbsp; 平面圖</div>
+    <div style="display:grid; grid-template-columns: 35% 65%; gap: 10mm; flex:1; min-height:0; align-items:start;">
+      <div>
+        <h2 class="h2" style="margin-bottom: 6mm;">Apt. <b>5502</b></h2>
+        <div style="font-family:'Manrope'; font-size: 9pt; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted-light); margin-bottom: 6mm;">2 房 · F1 型</div>
+        <div style="display:grid; grid-template-columns: 1fr; gap: 3mm;">
+          <div style="display:flex; justify-content:space-between; padding: 3mm 0; border-bottom: 1px solid var(--line-cream); font-size: 10.5pt;">
+            <span style="color: var(--text-muted-light);">套房面積</span><span style="font-weight: 600;">1,023 sqft · 95 sqm</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding: 3mm 0; border-bottom: 1px solid var(--line-cream); font-size: 10.5pt;">
+            <span style="color: var(--text-muted-light);">露台</span><span style="font-weight: 600;">88 sqft · 8 sqm</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding: 3mm 0; border-bottom: 1px solid var(--line-cream); font-size: 10.5pt;">
+            <span style="color: var(--text-muted-light);">總面積</span><span style="font-weight: 700; font-size: 12pt;">1,111 sqft · 103 sqm</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding: 3mm 0; border-bottom: 1px solid var(--line-cream); font-size: 10.5pt;">
+            <span style="color: var(--text-muted-light);">樓層</span><span style="font-weight: 600;">55<sup>th</sup></span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding: 3mm 0; font-size: 10.5pt;">
+            <span style="color: var(--text-muted-light);">位置</span><span style="font-weight: 600;">兩房 · 單露台</span>
+          </div>
+        </div>
+      </div>
+      <div class="imgbox" style="background: rgba(255,255,255,0.5); border: 1px solid var(--line-cream); height: 100%;">
+        <img class="img-fill" src="images/sr_fp_5502.jpg" alt="樓層 plan 5502" style="object-fit: contain;"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>14 / 19</div>
+  </div>
+</section>
+
+<!-- =================== PAGE 14 — FLOOR PLAN 5503 =================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">St. Regis Residences · 一號塔</div>
+  </div>
+
+  <div class="content">
+    <div class="section-tag">10 &nbsp;·&nbsp; 平面圖</div>
+    <div style="display:grid; grid-template-columns: 35% 65%; gap: 10mm; flex:1; min-height:0; align-items:start;">
+      <div>
+        <h2 class="h2" style="margin-bottom: 6mm;">Apt. <b>5503</b></h2>
+        <div style="font-family:'Manrope'; font-size: 9pt; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted-light); margin-bottom: 6mm;">3 房 · D 型</div>
+        <div style="display:grid; grid-template-columns: 1fr; gap: 3mm;">
+          <div style="display:flex; justify-content:space-between; padding: 3mm 0; border-bottom: 1px solid var(--line-cream); font-size: 10.5pt;">
+            <span style="color: var(--text-muted-light);">套房面積</span><span style="font-weight: 600;">1,530 sqft · 142 sqm</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding: 3mm 0; border-bottom: 1px solid var(--line-cream); font-size: 10.5pt;">
+            <span style="color: var(--text-muted-light);">露台</span><span style="font-weight: 600;">233 sqft · 22 sqm</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding: 3mm 0; border-bottom: 1px solid var(--line-cream); font-size: 10.5pt;">
+            <span style="color: var(--text-muted-light);">總面積</span><span style="font-weight: 700; font-size: 12pt;">1,763 sqft · 164 sqm</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding: 3mm 0; border-bottom: 1px solid var(--line-cream); font-size: 10.5pt;">
+            <span style="color: var(--text-muted-light);">樓層</span><span style="font-weight: 600;">55<sup>th</sup></span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding: 3mm 0; font-size: 10.5pt;">
+            <span style="color: var(--text-muted-light);">位置</span><span style="font-weight: 600;">三房 · 環繞露台</span>
+          </div>
+        </div>
+      </div>
+      <div class="imgbox" style="background: rgba(255,255,255,0.5); border: 1px solid var(--line-cream); height: 100%;">
+        <img class="img-fill" src="images/sr_fp_5503.jpg" alt="樓層 plan 5503" style="object-fit: contain;"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>15 / 19</div>
+  </div>
+</section>
+
+<!-- =================== PAGE 15 — FLOOR PLAN 5510 =================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">St. Regis Residences · 一號塔</div>
+  </div>
+
+  <div class="content">
+    <div class="section-tag">10 &nbsp;·&nbsp; 平面圖</div>
+    <div style="display:grid; grid-template-columns: 35% 65%; gap: 10mm; flex:1; min-height:0; align-items:start;">
+      <div>
+        <h2 class="h2" style="margin-bottom: 6mm;">Apt. <b>5510</b></h2>
+        <div style="font-family:'Manrope'; font-size: 9pt; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted-light); margin-bottom: 6mm;">3 房 · D 型</div>
+        <div style="display:grid; grid-template-columns: 1fr; gap: 3mm;">
+          <div style="display:flex; justify-content:space-between; padding: 3mm 0; border-bottom: 1px solid var(--line-cream); font-size: 10.5pt;">
+            <span style="color: var(--text-muted-light);">套房面積</span><span style="font-weight: 600;">1,527 sqft · 142 sqm</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding: 3mm 0; border-bottom: 1px solid var(--line-cream); font-size: 10.5pt;">
+            <span style="color: var(--text-muted-light);">露台</span><span style="font-weight: 600;">233 sqft · 22 sqm</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding: 3mm 0; border-bottom: 1px solid var(--line-cream); font-size: 10.5pt;">
+            <span style="color: var(--text-muted-light);">總面積</span><span style="font-weight: 700; font-size: 12pt;">1,761 sqft · 164 sqm</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding: 3mm 0; border-bottom: 1px solid var(--line-cream); font-size: 10.5pt;">
+            <span style="color: var(--text-muted-light);">樓層</span><span style="font-weight: 600;">55<sup>th</sup></span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding: 3mm 0; font-size: 10.5pt;">
+            <span style="color: var(--text-muted-light);">位置</span><span style="font-weight: 600;">三房 · 環繞露台</span>
+          </div>
+        </div>
+      </div>
+      <div class="imgbox" style="background: rgba(255,255,255,0.5); border: 1px solid var(--line-cream); height: 100%;">
+        <img class="img-fill" src="images/sr_fp_5510.jpg" alt="樓層 plan 5510" style="object-fit: contain;"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>16 / 19</div>
+  </div>
+</section>
+
+<!-- =================== PAGE 12 — EXTRAORDINARY LIVING =================== -->
+<section class="page theme-dark">
+  <div class="hero"><img src="images/sr_17_street.jpg" alt="Street view with Burj"/></div>
+  <div class="hero-overlay" style="background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.15) 35%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.92) 100%);"></div>
+
+  <div class="topbar">
+    <div class="wordmark" style="color:#fff;">P A N G E A</div>
+    <div class="topbar-right" style="color:rgba(255,255,255,0.85);">St. Regis Residences · Downtown Dubai</div>
+  </div>
+
+  <div class="panel bl" style="max-width: 145mm;">
+    <div class="panel-eyebrow">10 &nbsp;·&nbsp; 周邊環境</div>
+    <h2 class="panel-title">非凡生活<br/><b>於國際都會</b>。</h2>
+    <p class="panel-body">
+      踏出大門即抵謝赫穆罕默德本拉希德大道 — 杜拜歌劇院在左、哈里發塔公園在前、杜拜購物中心步行四分鐘可達。
+    </p>
+  </div>
+
+  <div class="footer" style="color:rgba(255,255,255,0.75);">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>17 / 19</div>
+  </div>
+</section>
+
+<!-- =================== PAGE 13 — SPECIFICATIONS =================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">St. Regis Residences · Downtown Dubai</div>
+  </div>
+
+  <div class="content">
+    <div class="section-tag">11 &nbsp;·&nbsp; 規格</div>
+    <h2 class="display-sm" style="margin-bottom: 8mm;"><b>詳細資料。</b></h2>
+
+    <div class="specs">
+      <div class="col">
+        <div class="col-title">本盤資料</div>
+        <div class="row"><span class="key">塔樓</span><span class="val">一號塔</span></div>
+        <div class="row"><span class="key">樓層</span><span class="val">55<sup>th</sup></span></div>
+        <div class="row"><span class="key">單位</span><span class="val">5501 · 5502 · 5503 · 5510</span></div>
+        <div class="row"><span class="key">間隔</span><span class="val">1-3 房</span></div>
+        <div class="row"><span class="key">傢俬</span><span class="val">品牌裝修 · 未配傢俬</span></div>
+        <div class="row"><span class="key">景觀</span><span class="val">哈里發塔 · 歌劇院 · 噴泉</span></div>
+        <div class="row"><span class="key">狀態</span><span class="val">Off-plan · 交付 end 2026</span></div>
+        <div class="row"><span class="key">Sale</span><span class="val">直接由 Emaar 銷售</span></div>
+        <div class="row"><span class="key">Payment</span><span class="val">隨工程進度分期</span></div>
+      </div>
+      <div class="col">
+        <div class="col-title">大廈資料</div>
+        <div class="row"><span class="key">發展商</span><span class="val">Emaar Properties</span></div>
+        <div class="row"><span class="key">品牌</span><span class="val">St. Regis（Marriott 旗下）</span></div>
+        <div class="row"><span class="key">業權</span><span class="val">永久業權 · 可申請黃金簽證</span></div>
+        <div class="row"><span class="key">服務</span><span class="val">品牌管理</span></div>
+        <div class="row"><span class="key">泳池</span><span class="val">度假式平台 · 餐飲服務</span></div>
+        <div class="row"><span class="key">健康設施</span><span class="val">水療、桑拿、蒸氣、健身</span></div>
+        <div class="row"><span class="key">家庭設施</span><span class="val">兒童泳池及遊樂區</span></div>
+        <div class="row"><span class="key">位置</span><span class="val">謝赫穆罕默德本拉希德大道</span></div>
+        <div class="row"><span class="key">地段</span><span class="val">哈里發塔區 · DLD</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>18 / 19</div>
+  </div>
+</section>
+
+<!-- =================== PAGE 14 — CONTACT =================== -->
+<section class="page theme-cream">
+  <div class="half-image right"><img src="images/sr_05_iconic.jpg" alt="St. Regis tower · Downtown" style="object-position: center top;"/></div>
+
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">St. Regis Residences · Downtown Dubai</div>
+  </div>
+
+  <div class="half-content left" style="justify-content: flex-start; padding-top: 6mm;">
+    <div class="section-tag">12 &nbsp;·&nbsp; 下一步</div>
+    <h2 class="display-sm">讓我們一同<br/>探討<b>選擇。</b></h2>
+
+    <p class="body" style="font-size: 10pt; margin-top: 2mm;">
+      本人可安排視察 St. Regis Residences 設施平台及示範單位，並可同時前往 Vida Dubai Mall 視察。5501、5502、5503 及 5510 單位之平面圖及價格將由發展商另函提供。
+    </p>
+    <p class="body" style="font-size: 10pt; margin-top: 2mm;">
+      若客戶傾向<b>全新及品牌管理</b>，本盤更為合適；若客戶傾向<b>今年即可入住</b>，Vida Dubai Mall 單位仍為更佳之選。
+    </p>
+
+    <div class="contact-card" style="margin-top: 5mm;">
+      <div class="eyebrow">您的物業顧問</div>
+      <div class="name">Raj Tomar</div>
+      <div class="role">物業顧問 · Pangea Properties · RERA ORN 23724</div>
+      <div class="row"><span class="k">M</span><span>+971 58 996 6085</span></div>
+      <div class="row"><span class="k">E</span><span>raj@pangeadubai.com</span></div>
+      <div class="row"><span class="k">W</span><span>www.pangeadubai.com</span></div>
+    </div>
+
+    <p class="disclaimer" style="margin-top: 5mm; max-width: 125mm;">
+      所有效果圖、位置標示及設施描述均取自 Emaar St. Regis Residences 發展商小冊子。St. Regis Residences, Downtown Dubai 並非由 Marriott International, Inc. 擁有、開發或銷售。Emaar Properties PJSC 取得 Marriott 授權使用 St. Regis 品牌。最終商業條款須以 SPA 及 RERA F 表為準。
+    </p>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>19 / 19</div>
+  </div>
+</section>
+
+</body>
+</html>
