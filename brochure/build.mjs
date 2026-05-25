@@ -33,6 +33,11 @@ const variants = [
     pdf: 'St_Regis_Residences_T1_Brochure_Landscape_EN.pdf',
     width: '297mm', height: '210mm',
   },
+  {
+    html: 'cost-summary.html',
+    pdf: 'Vida_T1_3BR_Acquisition_Cost.pdf',
+    width: '297mm', height: '210mm',
+  },
 ];
 
 const browser = await chromium.launch();

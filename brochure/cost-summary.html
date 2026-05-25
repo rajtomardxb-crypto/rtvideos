@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Vida Dubai Mall · T1 · 3BR — Acquisition Cost Summary</title>
+<link href="fonts/fonts.css" rel="stylesheet">
+<style>
+  :root {
+    --bg-cream: #ece4d3;
+    --ink: #1a1f25;
+    --line-cream: #d7ceba;
+    --text-muted-light: #5a6172;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  @page { size: 297mm 210mm; margin: 0; }
+  html, body {
+    font-family: 'Inter', 'Manrope', -apple-system, sans-serif;
+    font-weight: 400;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    background: #333;
+  }
+  .page {
+    width: 297mm; height: 210mm;
+    page-break-after: auto;
+    overflow: hidden;
+    position: relative;
+    background: var(--bg-cream);
+  }
+  .page::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(135deg, rgba(0,0,0,0.012) 0%, transparent 70%),
+                radial-gradient(ellipse at top right, rgba(255,255,255,0.4), transparent 70%);
+  }
+
+  .topbar {
+    position: absolute;
+    top: 12mm; left: 16mm; right: 16mm;
+    display: flex; justify-content: space-between; align-items: center;
+    z-index: 10;
+  }
+  .wordmark { font-family: 'Manrope', sans-serif; font-weight: 600; letter-spacing: 0.32em; font-size: 10pt; color: rgba(26,31,37,0.9); }
+  .topbar-right { font-family: 'Manrope', sans-serif; font-weight: 400; font-size: 8.5pt; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(26,31,37,0.55); }
+
+  .footer {
+    position: absolute;
+    bottom: 9mm; left: 16mm; right: 16mm;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 8pt;
+    letter-spacing: 0.05em;
+    color: rgba(26,31,37,0.45);
+    z-index: 10;
+  }
+  .footer .left { display: flex; gap: 8mm; }
+
+  .content {
+    position: absolute;
+    top: 24mm; bottom: 16mm; left: 16mm; right: 16mm;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .section-tag {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 8.5pt;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: rgba(26,31,37,0.55);
+    margin-bottom: 4mm;
+  }
+
+  .display {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 300;
+    font-size: 30pt;
+    line-height: 1.06;
+    letter-spacing: 0.035em;
+    text-transform: uppercase;
+    margin-bottom: 3mm;
+  }
+  .display b { font-weight: 700; }
+
+  .subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 10.5pt;
+    color: var(--text-muted-light);
+    letter-spacing: 0.04em;
+    margin-bottom: 7mm;
+  }
+
+  /* === Cost breakdown table === */
+  .breakdown {
+    margin-top: 0;
+    background: rgba(255,255,255,0.55);
+    border: 1px solid var(--line-cream);
+  }
+  .row {
+    display: grid;
+    grid-template-columns: 30mm 1fr auto;
+    column-gap: 10mm;
+    padding: 5mm 10mm;
+    border-bottom: 1px solid var(--line-cream);
+    align-items: center;
+  }
+  .row:last-child { border-bottom: none; }
+  .row .label {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 8pt;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(26,31,37,0.5);
+  }
+  .row .desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 10.5pt;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+  .row .desc b { font-weight: 600; }
+  .row .desc .sub {
+    font-family: 'Manrope', sans-serif;
+    font-size: 8pt;
+    letter-spacing: 0.04em;
+    color: var(--text-muted-light);
+    margin-top: 1mm;
+  }
+  .row .amount {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 13pt;
+    text-align: right;
+    white-space: nowrap;
+  }
+  .row .amount .ccy {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 8.5pt;
+    letter-spacing: 0.12em;
+    color: rgba(26,31,37,0.55);
+    margin-right: 2.5mm;
+  }
+
+  .row.total {
+    background: rgba(13, 16, 20, 0.96);
+    color: white;
+    padding: 7mm 10mm;
+  }
+  .row.total .label { color: rgba(255,255,255,0.55); }
+  .row.total .desc { color: white; font-weight: 600; font-size: 12pt; }
+  .row.total .amount { font-size: 19pt; }
+  .row.total .amount .ccy { color: rgba(255,255,255,0.7); }
+
+  .notes {
+    margin-top: 6mm;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6mm;
+    font-family: 'Inter', sans-serif;
+    font-size: 8.5pt;
+    line-height: 1.55;
+    color: var(--text-muted-light);
+  }
+  .notes .col { padding: 3mm 5mm; border-left: 2px solid var(--line-cream); }
+  .notes b { font-weight: 600; color: var(--ink); }
+
+  .ref {
+    position: absolute;
+    top: 26mm; right: 16mm;
+    text-align: right;
+    font-family: 'Manrope', sans-serif;
+  }
+  .ref .label {
+    font-size: 8pt; letter-spacing: 0.32em; text-transform: uppercase;
+    color: rgba(26,31,37,0.5); margin-bottom: 2mm;
+  }
+  .ref .val {
+    font-size: 13pt; font-weight: 600;
+  }
+  .ref .sub {
+    font-size: 9pt; color: var(--text-muted-light); margin-top: 1mm;
+  }
+</style>
+</head>
+<body>
+
+<section class="page">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">Prepared for Mr. Xie Xingyao · Hong Kong</div>
+  </div>
+
+  <div class="ref">
+    <div class="label">Property</div>
+    <div class="val">Vida Dubai Mall · Tower 1</div>
+    <div class="sub">3 BR + Maid · 1,693 sqft · 23<sup>rd</sup> floor</div>
+  </div>
+
+  <div class="content">
+    <div class="section-tag">Acquisition Cost Summary &nbsp;·&nbsp; AED</div>
+    <h1 class="display">The <b>all-in</b> cost<br/>of acquisition.</h1>
+    <div class="subtitle">All figures in AED. Ready-unit purchase, direct transfer at the Dubai Land Department.</div>
+
+    <div class="breakdown">
+      <div class="row">
+        <div class="label">01</div>
+        <div class="desc">
+          <b>Purchase price</b>
+          <div class="sub">Agreed consideration for the unit</div>
+        </div>
+        <div class="amount"><span class="ccy">AED</span>8,000,000</div>
+      </div>
+
+      <div class="row">
+        <div class="label">02</div>
+        <div class="desc">
+          <b>Dubai Land Department</b> · 4%
+          <div class="sub">Transfer fee, paid at the trustee office on transfer day</div>
+        </div>
+        <div class="amount"><span class="ccy">AED</span>320,000</div>
+      </div>
+
+      <div class="row">
+        <div class="label">03</div>
+        <div class="desc">
+          <b>Agent commission</b> · 2%
+          <div class="sub">Pangea Properties advisory fee</div>
+        </div>
+        <div class="amount"><span class="ccy">AED</span>160,000</div>
+      </div>
+
+      <div class="row">
+        <div class="label">04</div>
+        <div class="desc">
+          <b>Trustee office fee</b>
+          <div class="sub">DLD-authorised registration trustee</div>
+        </div>
+        <div class="amount"><span class="ccy">AED</span>5,000</div>
+      </div>
+
+      <div class="row total">
+        <div class="label">Total</div>
+        <div class="desc">All-in acquisition cost</div>
+        <div class="amount"><span class="ccy">AED</span>8,485,000</div>
+      </div>
+    </div>
+
+    <div class="notes">
+      <div class="col">
+        <b>What is included</b> — Purchase price for the residence; DLD transfer fee at 4 %;
+        registration trustee fee; Pangea Properties advisory commission at 2 %.
+      </div>
+      <div class="col">
+        <b>Not included</b> — Title deed issuance fee (AED 250); Emaar NOC fee (≈ AED 1,500);
+        future service charges and utility connections. No mortgage assumed.
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left">
+      <span>Raj Tomar · Real Estate Advisor · Pangea Properties · RERA ORN 23724</span>
+    </div>
+    <div>raj@pangeadubai.com &nbsp;·&nbsp; +971 58 996 6085 &nbsp;·&nbsp; pangeadubai.com</div>
+  </div>
+</section>
+
+</body>
+</html>
