@@ -1,0 +1,783 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>The St. Regis Residences · Downtown Dubai · Tower 1 — Pangea Properties</title>
+<link href="fonts/fonts.css" rel="stylesheet">
+<style>
+  :root {
+    --bg-dark: #0d1014;
+    --bg-cream: #ece4d3;
+    --ink: #1a1f25;
+    --line-dark: #2a3038;
+    --line-cream: #d7ceba;
+    --text-light: #e6eaef;
+    --text-muted-dark: #99a0aa;
+    --text-muted-light: #5a6172;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  @page { size: 297mm 210mm; margin: 0; }
+  html, body {
+    font-family: 'Inter', 'Manrope', -apple-system, sans-serif;
+    font-weight: 400;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    background: #333;
+  }
+  .page { width: 297mm; height: 210mm; page-break-after: always; overflow: hidden; position: relative; }
+  .page:last-child { page-break-after: auto; }
+  .theme-dark { background: var(--bg-dark); color: var(--text-light); }
+  .theme-dark::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(135deg, rgba(255,255,255,0.012) 0%, transparent 60%), radial-gradient(ellipse at top right, rgba(60,80,100,0.18), transparent 60%);
+  }
+  .theme-cream { background: var(--bg-cream); color: var(--ink); }
+
+  .topbar { position: absolute; top: 9mm; left: 14mm; right: 14mm; display: flex; justify-content: space-between; align-items: center; z-index: 10; }
+  .wordmark { font-family: 'Manrope', sans-serif; font-weight: 600; letter-spacing: 0.32em; font-size: 9pt; }
+  .topbar-right { font-family: 'Manrope', sans-serif; font-weight: 400; font-size: 8pt; letter-spacing: 0.18em; text-transform: uppercase; }
+  .theme-dark .wordmark { color: rgba(255,255,255,0.95); text-shadow: 0 1px 4px rgba(0,0,0,0.3); }
+  .theme-dark .topbar-right { color: rgba(255,255,255,0.85); text-shadow: 0 1px 4px rgba(0,0,0,0.3); }
+  .theme-cream .wordmark { color: rgba(26,31,37,0.9); }
+  .theme-cream .topbar-right { color: rgba(26,31,37,0.55); }
+
+  .footer { position: absolute; bottom: 7mm; left: 14mm; right: 14mm; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.5pt; letter-spacing: 0.05em; z-index: 10; }
+  .footer .left { display: flex; gap: 8mm; }
+  .theme-dark .footer { color: rgba(255,255,255,0.55); }
+  .theme-cream .footer { color: rgba(26,31,37,0.45); }
+
+  .content { position: absolute; top: 20mm; bottom: 14mm; left: 14mm; right: 14mm; z-index: 2; display: flex; flex-direction: column; }
+
+  .section-tag { font-family: 'Manrope', sans-serif; font-weight: 500; font-size: 9pt; letter-spacing: 0.42em; text-transform: uppercase; margin-bottom: 7mm; }
+  .theme-dark .section-tag { color: rgba(255,255,255,0.6); }
+  .theme-cream .section-tag { color: rgba(26,31,37,0.55); }
+
+  .display { font-family: 'Manrope', sans-serif; font-weight: 300; font-size: 44pt; line-height: 1.08; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 6mm; }
+  .display b { font-weight: 700; letter-spacing: 0.03em; }
+  .display-sm { font-family: 'Manrope', sans-serif; font-weight: 300; font-size: 30pt; line-height: 1.1; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 5mm; }
+  .display-sm b { font-weight: 700; }
+  .h2 { font-family: 'Manrope', sans-serif; font-weight: 300; font-size: 26pt; line-height: 1.14; letter-spacing: 0.035em; text-transform: uppercase; margin-bottom: 5mm; }
+  .h2 b { font-weight: 700; }
+
+  .lead { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 13pt; line-height: 1.55; margin-bottom: 4mm; }
+  .lead b { font-weight: 600; }
+  .body { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 11pt; line-height: 1.6; margin-bottom: 3mm; }
+  .body b { font-weight: 600; }
+  .theme-dark .body { color: rgba(220, 225, 232, 0.88); }
+  .theme-cream .body { color: var(--text-muted-light); }
+
+  .imgbox { overflow: hidden; position: relative; }
+  .img-fill { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .hero { position: absolute; inset: 0; z-index: 0; }
+  .hero img { width: 100%; height: 100%; object-fit: cover; }
+  .hero-overlay { position: absolute; inset: 0; z-index: 1; }
+
+  .half-image { width: 50%; height: 100%; position: absolute; top: 0; overflow: hidden; }
+  .half-image.left { left: 0; }
+  .half-image.right { right: 0; }
+  .half-image img { width: 100%; height: 100%; object-fit: cover; }
+
+  .half-content { width: 50%; position: absolute; top: 18mm; bottom: 14mm; padding: 0 14mm; z-index: 2; display: flex; flex-direction: column; justify-content: center; }
+  .half-content.left { left: 0; padding-left: 14mm; padding-right: 12mm; }
+  .half-content.right { right: 0; padding-right: 14mm; padding-left: 12mm; }
+
+  .panel { position: absolute; background: rgba(13, 16, 20, 0.82); color: white; padding: 10mm 12mm; z-index: 5; max-width: 145mm; }
+  .panel.bl { left: 14mm; bottom: 16mm; }
+  .panel-eyebrow { font-family: 'Manrope', sans-serif; font-weight: 500; font-size: 9pt; letter-spacing: 0.42em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 5mm; }
+  .panel-title { font-family: 'Manrope', sans-serif; font-weight: 300; font-size: 26pt; line-height: 1.1; letter-spacing: 0.04em; text-transform: uppercase; color: #fff; margin-bottom: 5mm; }
+  .panel-title b { font-weight: 700; }
+  .panel-body { font-family: 'Inter', sans-serif; font-size: 10.5pt; line-height: 1.55; color: rgba(255,255,255,0.9); }
+  .panel-body b { font-weight: 600; }
+
+  .photo-cap { position: absolute; bottom: 14mm; left: 14mm; right: 14mm; z-index: 5; color: white; font-family: 'Manrope', sans-serif; font-weight: 500; font-size: 8pt; letter-spacing: 0.32em; text-transform: uppercase; text-align: center; text-shadow: 0 2px 8px rgba(0,0,0,0.6); }
+
+  .stat-strip { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid; border-bottom: 1px solid; padding: 5mm 0; margin: 4mm 0; }
+  .theme-dark .stat-strip { border-color: rgba(255,255,255,0.18); }
+  .theme-cream .stat-strip { border-color: var(--line-cream); }
+  .stat { padding: 0 5mm; border-right: 1px solid; }
+  .theme-dark .stat { border-color: rgba(255,255,255,0.12); }
+  .theme-cream .stat { border-color: var(--line-cream); }
+  .stat:last-child { border-right: none; }
+  .stat-label { font-family: 'Manrope', sans-serif; font-size: 7.5pt; letter-spacing: 0.28em; text-transform: uppercase; opacity: 0.55; margin-bottom: 2mm; }
+  .stat-value { font-family: 'Manrope', sans-serif; font-weight: 600; font-size: 12pt; line-height: 1.1; }
+
+  .arrow-list { list-style: none; padding: 0; margin: 0; }
+  .arrow-list li { padding-left: 10mm; position: relative; margin-bottom: 4mm; font-size: 11pt; line-height: 1.55; }
+  .arrow-list li::before { content: '→'; position: absolute; left: 0; top: 0; font-size: 11pt; opacity: 0.6; }
+  .arrow-list li b { font-weight: 600; }
+  .theme-dark .arrow-list li { color: rgba(220,225,232,0.88); }
+  .theme-cream .arrow-list li { color: var(--text-muted-light); }
+
+  .figure { display: flex; flex-direction: column; height: 100%; }
+  .figure .imgbox { flex: 1; }
+  .figure .cap { font-family: 'Manrope', sans-serif; font-size: 8pt; letter-spacing: 0.28em; text-transform: uppercase; text-align: center; padding-top: 3mm; opacity: 0.55; flex-shrink: 0; }
+
+  .specs { display: grid; grid-template-columns: 1fr 1fr; gap: 12mm; flex: 1; }
+  .specs .col-title { font-family: 'Manrope', sans-serif; font-weight: 600; font-size: 9pt; letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 5mm; opacity: 0.6; padding-bottom: 3mm; border-bottom: 1px solid var(--line-cream); }
+  .specs .row { display: flex; justify-content: space-between; align-items: baseline; padding: 2.5mm 0; border-bottom: 1px solid var(--line-cream); font-size: 10pt; }
+  .specs .row:last-child { border-bottom: none; }
+  .specs .key { color: var(--text-muted-light); font-weight: 400; letter-spacing: 0.02em; }
+  .specs .val { font-weight: 600; text-align: right; max-width: 60%; }
+
+  .contact-card { padding: 8mm 9mm; background: rgba(255,255,255,0.6); border: 1px solid var(--line-cream); max-width: 110mm; }
+  .contact-card .eyebrow { font-family: 'Manrope', sans-serif; font-weight: 500; font-size: 8pt; letter-spacing: 0.35em; text-transform: uppercase; opacity: 0.55; margin-bottom: 3mm; }
+  .contact-card .name { font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 18pt; margin-bottom: 1.5mm; }
+  .contact-card .role { font-family: 'Manrope', sans-serif; font-size: 8.5pt; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.6; margin-bottom: 5mm; }
+  .contact-card .row { display: flex; align-items: baseline; gap: 4mm; margin-bottom: 2.5mm; font-size: 10.5pt; }
+  .contact-card .row .k { font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 9pt; letter-spacing: 0.18em; opacity: 0.6; width: 6mm; }
+
+  .disclaimer { font-family: 'Inter', sans-serif; font-size: 7.5pt; line-height: 1.55; color: rgba(26,31,37,0.5); }
+
+  /* Unit card layout for the available units page */
+  .unit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; flex: 1; min-height: 0; }
+  .unit-card { border: 1px solid var(--line-cream); padding: 6mm 8mm; background: rgba(255,255,255,0.55); display: flex; flex-direction: column; }
+  .unit-card .num { font-family: 'Manrope', sans-serif; font-weight: 200; font-size: 30pt; line-height: 1; color: var(--ink); margin-bottom: 3mm; }
+  .unit-card .num b { font-weight: 700; }
+  .unit-card .label { font-family: 'Manrope', sans-serif; font-weight: 500; font-size: 7.5pt; letter-spacing: 0.32em; text-transform: uppercase; opacity: 0.55; margin-bottom: 3mm; }
+  .unit-card .meta { display: grid; grid-template-columns: 1fr 1fr; gap: 3mm; font-size: 9.5pt; }
+  .unit-card .meta .k { font-family: 'Manrope', sans-serif; font-size: 7pt; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.55; margin-bottom: 1mm; }
+  .unit-card .meta .v { font-family: 'Manrope', sans-serif; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<!-- =================== PAGE 1 — COVER =================== -->
+<section class="page theme-dark">
+  <div class="hero"><img src="images/sr_01_cover.jpg" alt="St. Regis Residences Downtown Dubai" /></div>
+  <div class="hero-overlay" style="background: linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.25) 35%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.92) 100%);"></div>
+
+  <div class="topbar">
+    <div class="wordmark" style="color:#fff;">P A N G E A</div>
+    <div class="topbar-right" style="color:rgba(255,255,255,0.85);">Property Brochure</div>
+  </div>
+
+  <div style="position:absolute; left: 22mm; right: 22mm; top: 52mm; bottom: 52mm; z-index:5; background: rgba(13, 16, 20, 0.85); border: 1px solid rgba(255,255,255,0.1); text-align:center; display: flex; flex-direction: column; justify-content: center; padding: 14mm 28mm;">
+    <div style="font-family:'Manrope'; font-weight:500; font-size:8.5pt; letter-spacing:0.5em; text-transform:uppercase; color:rgba(255,255,255,0.75); margin-bottom:8mm;">
+      Property Brochure &nbsp;·&nbsp; Downtown Dubai
+    </div>
+    <h1 style="font-family:'Manrope'; font-weight:300; font-size:38pt; line-height:1.06; letter-spacing:0.045em; text-transform:uppercase; color:#fff; margin: 0;">
+      The St. Regis<br/><b style="font-weight:700;">Residences</b><br/>
+      <span style="font-size: 22pt; letter-spacing: 0.04em; display:inline-block; margin-top: 5mm;">Downtown Dubai · Tower 1</span>
+    </h1>
+    <div style="width:46mm; height:1px; background:rgba(255,255,255,0.5); margin: 8mm auto;"></div>
+    <div style="font-family:'Inter'; font-size:12pt; font-weight:400; color:#fff; letter-spacing:0.02em; margin-bottom:4mm;">
+      Four units on the <b>55<sup>th</sup> floor</b>
+    </div>
+    <div style="font-family:'Inter'; font-size:10pt; color:rgba(255,255,255,0.88); letter-spacing:0.04em;">
+      Off-plan &nbsp;·&nbsp; Handover end of 2026 &nbsp;·&nbsp; Branded by St. Regis
+    </div>
+  </div>
+
+  <div class="footer" style="color:rgba(255,255,255,0.8);">
+    <div class="left">
+      <span>Raj Tomar · Real Estate Advisor</span>
+      <span>+971 58 996 6085 · raj@pangeadubai.com</span>
+    </div>
+    <div>01 / 14</div>
+  </div>
+</section>
+
+<!-- =================== PAGE 2 — PERSONAL NOTE =================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">Prepared for Mr. Xie Xingyao · Hong Kong</div>
+  </div>
+
+  <div class="content" style="padding-top: 22mm; padding-bottom: 14mm;">
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 14mm; height: 100%; align-items: stretch;">
+      <div style="display:flex; flex-direction:column; justify-content:center;">
+        <div class="section-tag" style="margin-bottom:7mm;">Personal Note &nbsp;·&nbsp; A Second Option</div>
+
+        <div style="font-family:'Manrope'; font-weight:300; font-size:10pt; letter-spacing:0.05em; text-transform:uppercase; color: rgba(26,31,37,0.55); margin-bottom: 2mm;">To</div>
+        <h2 style="font-family:'Manrope'; font-weight:300; font-size:26pt; line-height:1.06; letter-spacing:0.03em; margin-bottom: 2mm;">
+          Mr. <b style="font-weight:700;">Xie Xingyao</b>
+        </h2>
+        <div style="font-family:'Inter'; font-size:10pt; color: rgba(26,31,37,0.6); letter-spacing:0.04em; margin-bottom: 6mm;">
+          Hong Kong &nbsp;·&nbsp; On behalf of your principal
+        </div>
+
+        <p class="body" style="font-size:10pt; margin-bottom: 3mm;">Dear Mr. Xie,</p>
+        <p class="body" style="font-size:10pt; margin-bottom: 3mm;">
+          Alongside the Vida Dubai Mall residence, a second option has just come to hand
+          that I'd like to present for your principal's consideration: the
+          <b>St. Regis Residences, Downtown Dubai · Tower 1</b>.
+        </p>
+        <p class="body" style="font-size:10pt; margin-bottom: 3mm;">
+          We have <b>four units available on the 55<sup>th</sup> floor</b> — 5501, 5502,
+          5503 and 5510 — directly from the developer. <b>Handover is scheduled for
+          end of 2026</b>, so this is an off-plan position with payment phased through
+          the build period.
+        </p>
+        <p class="body" style="font-size:10pt;">
+          The principal differences from the Vida option: a higher floor with broader
+          downtown reach, the <b>St. Regis brand</b> (Marriott) operating the residences,
+          and a fresh-from-developer delivery rather than the ready-furnished Vida unit.
+        </p>
+
+        <div style="margin-top: 6mm;">
+          <div style="font-family:'Manrope'; font-weight:700; font-size:11pt; color:#1a1f25;">Raj Tomar</div>
+          <div style="font-family:'Manrope'; font-size:7.5pt; letter-spacing:0.18em; text-transform:uppercase; color: rgba(26,31,37,0.55);">Real Estate Advisor · Pangea Properties</div>
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; justify-content:center;">
+        <div style="border: 1px solid var(--line-cream); padding: 9mm 9mm; background: rgba(255,255,255,0.55);">
+          <div style="font-family:'Manrope'; font-weight:500; font-size:8pt; letter-spacing:0.4em; text-transform:uppercase; color: rgba(26,31,37,0.55); margin-bottom: 6mm;">
+            St. Regis vs. Vida — at a glance
+          </div>
+
+          <div style="display:grid; grid-template-columns: 32mm 1fr; gap: 4mm; padding-bottom: 4mm; border-bottom: 1px solid var(--line-cream); margin-bottom: 4mm;">
+            <div style="font-family:'Manrope'; font-weight:700; font-size:8pt; letter-spacing:0.18em; text-transform:uppercase; color:#1a1f25;">Status</div>
+            <div style="font-family:'Inter'; font-size:9.5pt; line-height:1.5; color: var(--text-muted-light);">Off-plan · Handover end of 2026</div>
+          </div>
+          <div style="display:grid; grid-template-columns: 32mm 1fr; gap: 4mm; padding-bottom: 4mm; border-bottom: 1px solid var(--line-cream); margin-bottom: 4mm;">
+            <div style="font-family:'Manrope'; font-weight:700; font-size:8pt; letter-spacing:0.18em; text-transform:uppercase; color:#1a1f25;">Floor</div>
+            <div style="font-family:'Inter'; font-size:9.5pt; line-height:1.5; color: var(--text-muted-light);">55<sup>th</sup> floor — broader downtown views</div>
+          </div>
+          <div style="display:grid; grid-template-columns: 32mm 1fr; gap: 4mm; padding-bottom: 4mm; border-bottom: 1px solid var(--line-cream); margin-bottom: 4mm;">
+            <div style="font-family:'Manrope'; font-weight:700; font-size:8pt; letter-spacing:0.18em; text-transform:uppercase; color:#1a1f25;">Units available</div>
+            <div style="font-family:'Inter'; font-size:9.5pt; line-height:1.5; color: var(--text-muted-light);">5501 · 5502 · 5503 · 5510 — choice of layouts</div>
+          </div>
+          <div style="display:grid; grid-template-columns: 32mm 1fr; gap: 4mm; padding-bottom: 4mm; border-bottom: 1px solid var(--line-cream); margin-bottom: 4mm;">
+            <div style="font-family:'Manrope'; font-weight:700; font-size:8pt; letter-spacing:0.18em; text-transform:uppercase; color:#1a1f25;">Brand</div>
+            <div style="font-family:'Inter'; font-size:9.5pt; line-height:1.5; color: var(--text-muted-light);">St. Regis (Marriott International) — global luxury</div>
+          </div>
+          <div style="display:grid; grid-template-columns: 32mm 1fr; gap: 4mm; padding-bottom: 4mm; border-bottom: 1px solid var(--line-cream); margin-bottom: 4mm;">
+            <div style="font-family:'Manrope'; font-weight:700; font-size:8pt; letter-spacing:0.18em; text-transform:uppercase; color:#1a1f25;">Location</div>
+            <div style="font-family:'Inter'; font-size:9.5pt; line-height:1.5; color: var(--text-muted-light);">3 min walk to Burj Khalifa · 4 min to Dubai Mall · 1 min to Dubai Opera</div>
+          </div>
+          <div style="display:grid; grid-template-columns: 32mm 1fr; gap: 4mm;">
+            <div style="font-family:'Manrope'; font-weight:700; font-size:8pt; letter-spacing:0.18em; text-transform:uppercase; color:#1a1f25;">Payment</div>
+            <div style="font-family:'Inter'; font-size:9.5pt; line-height:1.5; color: var(--text-muted-light);">Phased through build — direct from Emaar</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>02 / 14</div>
+  </div>
+</section>
+
+<!-- =================== PAGE 3 — HALLMARK OF DISTINCTION =================== -->
+<section class="page theme-dark">
+  <div class="hero"><img src="images/sr_02_burj.jpg" alt="Burj Khalifa night view"/></div>
+  <div class="hero-overlay" style="background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.1) 30%, rgba(0,0,0,0.5) 65%, rgba(0,0,0,0.92) 100%);"></div>
+
+  <div class="topbar">
+    <div class="wordmark" style="color:#fff;">P A N G E A</div>
+    <div class="topbar-right" style="color:rgba(255,255,255,0.85);">St. Regis Residences · Downtown Dubai</div>
+  </div>
+
+  <div class="panel bl" style="max-width: 145mm;">
+    <div class="panel-eyebrow">01 &nbsp;·&nbsp; The Address</div>
+    <h2 class="panel-title">The hallmark of<br/><b>distinction</b>.</h2>
+    <p class="panel-body">
+      A place unlike any other, Downtown Dubai is where record-breaking is the norm.
+      It is the only place where you can take a walk past the world's tallest tower
+      or enjoy the captivating choreography of the world's largest fountain show.
+    </p>
+  </div>
+
+  <div class="footer" style="color:rgba(255,255,255,0.75);">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>03 / 14</div>
+  </div>
+</section>
+
+<!-- =================== PAGE 4 — LIVE IN THE CENTRE =================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">St. Regis Residences · Downtown Dubai</div>
+  </div>
+
+  <div class="content">
+    <div style="display:grid; grid-template-columns: 45% 55%; gap: 12mm; height: 100%;">
+      <div class="imgbox" style="height:100%; background:#0d1014;">
+        <img class="img-fill" src="images/sr_06_map.jpg" alt="Location map" style="object-fit: contain;"/>
+      </div>
+      <div style="display:flex; flex-direction:column; justify-content:center;">
+        <div class="section-tag">02 &nbsp;·&nbsp; Proximity</div>
+        <h2 class="display">Live in the<br/><b>centre of it all.</b></h2>
+
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 6mm; margin-top: 6mm;">
+          <div style="border: 1px solid var(--line-cream); padding: 6mm 7mm; background: rgba(255,255,255,0.5);">
+            <div style="font-family:'Manrope'; font-weight:200; font-size:32pt; line-height:1; color: var(--ink);">4</div>
+            <div style="font-family:'Inter'; font-size:9pt; opacity: 0.55; margin-top: 2mm; letter-spacing: 0.04em;">min walk to</div>
+            <div style="font-family:'Manrope'; font-weight:600; font-size:11pt; margin-top: 1mm;">The Dubai Mall</div>
+          </div>
+          <div style="border: 1px solid var(--line-cream); padding: 6mm 7mm; background: rgba(255,255,255,0.5);">
+            <div style="font-family:'Manrope'; font-weight:200; font-size:32pt; line-height:1; color: var(--ink);">3</div>
+            <div style="font-family:'Inter'; font-size:9pt; opacity: 0.55; margin-top: 2mm; letter-spacing: 0.04em;">min walk to</div>
+            <div style="font-family:'Manrope'; font-weight:600; font-size:11pt; margin-top: 1mm;">Burj Khalifa</div>
+          </div>
+          <div style="border: 1px solid var(--line-cream); padding: 6mm 7mm; background: rgba(255,255,255,0.5);">
+            <div style="font-family:'Manrope'; font-weight:200; font-size:32pt; line-height:1; color: var(--ink);">2</div>
+            <div style="font-family:'Inter'; font-size:9pt; opacity: 0.55; margin-top: 2mm; letter-spacing: 0.04em;">min walk to</div>
+            <div style="font-family:'Manrope'; font-weight:600; font-size:11pt; margin-top: 1mm;">The Dubai Fountain</div>
+          </div>
+          <div style="border: 1px solid var(--line-cream); padding: 6mm 7mm; background: rgba(255,255,255,0.5);">
+            <div style="font-family:'Manrope'; font-weight:200; font-size:32pt; line-height:1; color: var(--ink);">1</div>
+            <div style="font-family:'Inter'; font-size:9pt; opacity: 0.55; margin-top: 2mm; letter-spacing: 0.04em;">min walk to</div>
+            <div style="font-family:'Manrope'; font-weight:600; font-size:11pt; margin-top: 1mm;">Dubai Opera</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>04 / 14</div>
+  </div>
+</section>
+
+<!-- =================== PAGE 5 — SIMPLY ICONIC =================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">St. Regis Residences · Downtown Dubai</div>
+  </div>
+
+  <div class="content">
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 14mm; height: 100%;">
+      <div style="display:flex; flex-direction:column; justify-content:center;">
+        <div class="section-tag">03 &nbsp;·&nbsp; The Building</div>
+        <h2 class="display">Simply<br/><b>iconic.</b></h2>
+        <p class="body" style="font-size: 11.5pt;">
+          The St. Regis Residences, Downtown Dubai sit at the foot of the
+          <b>Burj Khalifa</b>, opposite the Dubai Opera and the Dubai Fountain. Tower 1
+          is the original tower of the development.
+        </p>
+        <p class="body" style="font-size: 11.5pt;">
+          Designed to the exacting standards of the St. Regis brand, homes range from
+          one to three bedrooms and have been carefully positioned to capture the open
+          views of Burj Khalifa, Dubai Opera and The Dubai Fountain.
+        </p>
+
+        <div class="stat-strip" style="margin-top: 6mm;">
+          <div class="stat"><div class="stat-label">Tower</div><div class="stat-value">Tower 1</div></div>
+          <div class="stat"><div class="stat-label">Floor</div><div class="stat-value">55<sup>th</sup></div></div>
+          <div class="stat"><div class="stat-label">Branded by</div><div class="stat-value">St. Regis</div></div>
+          <div class="stat"><div class="stat-label">Handover</div><div class="stat-value">End 2026</div></div>
+        </div>
+      </div>
+      <div class="imgbox" style="height:100%;">
+        <img class="img-fill" src="images/sr_05_iconic.jpg" alt="St. Regis tower with Burj Khalifa"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>05 / 14</div>
+  </div>
+</section>
+
+<!-- =================== PAGE 6 — COME HOME TO LEGENDARY STYLE =================== -->
+<section class="page theme-dark">
+  <div class="half-image right"><img src="images/sr_08_legendary.jpg" alt="Legendary Style"/></div>
+
+  <div class="topbar">
+    <div class="wordmark" style="color:#fff;">P A N G E A</div>
+    <div class="topbar-right" style="color:rgba(255,255,255,0.85);">St. Regis Residences · Downtown Dubai</div>
+  </div>
+
+  <div class="half-content left">
+    <div class="section-tag">04 &nbsp;·&nbsp; The Brand</div>
+    <h2 class="h2">Come home to<br/><b>legendary style.</b></h2>
+    <p class="body" style="font-size: 11pt; margin-top: 2mm;">
+      The St. Regis brand sets the standard in premiere personalised living experiences.
+      Downtown Dubai is the hallmark of luxury living celebrating the quintessential,
+      the rare and the exquisite.
+    </p>
+
+    <ul class="arrow-list" style="margin-top: 6mm;">
+      <li><b>Grand signature staircase</b> — arrival sequence in the manner of the brand.</li>
+      <li><b>Great Hall</b> — double-height lobby with curated art and a residents' library.</li>
+      <li><b>Residential lounges</b> — distinct daytime and evening spaces.</li>
+      <li><b>St. Regis butler service</b> — available to residents on request.</li>
+    </ul>
+  </div>
+
+  <div class="footer" style="color:rgba(255,255,255,0.75);">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>06 / 14</div>
+  </div>
+</section>
+
+<!-- =================== PAGE 7 — UNIQUE SPACES & UNMATCHED VIEWS =================== -->
+<section class="page theme-dark">
+  <div class="hero"><img src="images/sr_12_living.jpg" alt="Living room with Burj view"/></div>
+  <div class="hero-overlay" style="background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, transparent 25%, transparent 55%, rgba(0,0,0,0.92) 100%);"></div>
+
+  <div class="topbar">
+    <div class="wordmark" style="color:#fff;">P A N G E A</div>
+    <div class="topbar-right" style="color:rgba(255,255,255,0.85);">St. Regis Residences · Downtown Dubai</div>
+  </div>
+
+  <div class="panel bl" style="max-width: 145mm;">
+    <div class="panel-eyebrow">05 &nbsp;·&nbsp; The View</div>
+    <h2 class="panel-title">Unique spaces,<br/><b>unmatched views</b>.</h2>
+    <p class="panel-body">
+      Homes are carefully positioned to capture the open views of <b>Burj Khalifa</b>,
+      Dubai Opera and The Dubai Fountain — the three icons that define this district —
+      with interiors and finishes that harmonise with the tower's architecture and aesthetic.
+    </p>
+  </div>
+
+  <div class="photo-cap" style="bottom: 9mm;">Developer Render · Typical Living Area Towards Burj Khalifa</div>
+
+  <div class="footer" style="color:rgba(255,255,255,0.75);">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>07 / 14</div>
+  </div>
+</section>
+
+<!-- =================== PAGE 8 — THE INTERIORS =================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">St. Regis Residences · Downtown Dubai</div>
+  </div>
+
+  <div class="content">
+    <div class="section-tag">06 &nbsp;·&nbsp; The Interiors</div>
+    <h2 class="h2" style="margin-bottom: 7mm;">The <b>ultimate</b> in<br/>comfort &amp; luxury.</h2>
+
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:5mm; flex:1; min-height: 0;">
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/sr_13_kitchen.jpg" alt="Living and dining"/></div>
+        <div class="cap">Living &amp; Dining · Open-Plan Kitchen</div>
+      </div>
+      <div class="figure">
+        <div class="imgbox"><img class="img-fill" src="images/sr_14_bedroom.jpg" alt="Master bedroom with Burj view"/></div>
+        <div class="cap">Master Bedroom · Burj Khalifa View</div>
+      </div>
+    </div>
+
+    <p class="body" style="margin-top: 6mm; max-width: 235mm;">
+      Interiors are finished to St. Regis specification: stone and warm timber palette,
+      integrated kitchen, full-height glazing onto the balconies and the Downtown skyline.
+      Layouts run from one to three bedrooms; the units offered here are on the 55<sup>th</sup> floor.
+    </p>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>08 / 14</div>
+  </div>
+</section>
+
+<!-- =================== PAGE 9 — RELAX AND UNWIND (POOL) =================== -->
+<section class="page theme-dark">
+  <div class="hero"><img src="images/sr_15_pool.jpg" alt="Resort pool"/></div>
+  <div class="hero-overlay" style="background: linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 30%, rgba(0,0,0,0.5) 65%, rgba(0,0,0,0.92) 100%);"></div>
+
+  <div class="topbar">
+    <div class="wordmark" style="color:#fff;">P A N G E A</div>
+    <div class="topbar-right" style="color:rgba(255,255,255,0.85);">St. Regis Residences · Downtown Dubai</div>
+  </div>
+
+  <div class="panel bl" style="max-width: 135mm;">
+    <div class="panel-eyebrow">07 &nbsp;·&nbsp; The Pool</div>
+    <h2 class="panel-title">Relax<br/>and <b>unwind</b>.</h2>
+    <p class="panel-body">
+      A resort-scaled pool set across the podium deck, framed by mature palms, sun-shades
+      and private cabanas — open to the residents of all three towers.
+    </p>
+  </div>
+
+  <div class="footer" style="color:rgba(255,255,255,0.75);">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>09 / 14</div>
+  </div>
+</section>
+
+<!-- =================== PAGE 10 — URBAN RETREAT (AMENITIES) =================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">St. Regis Residences · Downtown Dubai</div>
+  </div>
+
+  <div class="content">
+    <div class="section-tag">08 &nbsp;·&nbsp; Amenities</div>
+    <h2 class="h2" style="margin-bottom: 7mm;">An <b>urban retreat</b><br/>across the podium.</h2>
+
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:5mm; flex:1; min-height: 0;">
+      <div class="imgbox"><img class="img-fill" src="images/sr_16_retreat.jpg" alt="Podium amenities"/></div>
+      <div style="display:flex; flex-direction:column; justify-content:center;">
+        <ul class="arrow-list" style="font-size: 11pt;">
+          <li><b>F&amp;B serviced pool</b> with cabanas</li>
+          <li><b>Spa treatment rooms</b> · sauna &amp; steam</li>
+          <li><b>Fitness centre</b> — 24-hour access</li>
+          <li><b>Community retail</b> on the podium</li>
+          <li><b>Barbecue areas</b> across the gardens</li>
+          <li><b>Kids' pool</b> &amp; supervised play area</li>
+          <li><b>Resident lounges</b> — daytime &amp; evening</li>
+        </ul>
+        <p class="body" style="margin-top: 5mm; font-size: 9.5pt;">
+          Set across an ultra-modern landscaped podium that connects the three towers,
+          with views over the Dubai Opera promenade.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>10 / 14</div>
+  </div>
+</section>
+
+<!-- =================== PAGE 11 — AVAILABLE UNITS =================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">St. Regis Residences · Downtown Dubai</div>
+  </div>
+
+  <div class="content">
+    <div class="section-tag">09 &nbsp;·&nbsp; Available Units</div>
+    <h2 class="h2" style="margin-bottom: 7mm;"><b>Four units</b><br/>on the 55<sup>th</sup> floor.</h2>
+
+    <div class="unit-grid">
+      <div class="unit-card">
+        <div class="label">Unit</div>
+        <div class="num">Apt. <b>5501</b></div>
+        <div class="meta">
+          <div>
+            <div class="k">Floor</div>
+            <div class="v">55<sup>th</sup></div>
+          </div>
+          <div>
+            <div class="k">Tower</div>
+            <div class="v">Tower 1</div>
+          </div>
+          <div>
+            <div class="k">Status</div>
+            <div class="v">Off-plan</div>
+          </div>
+          <div>
+            <div class="k">Handover</div>
+            <div class="v">End 2026</div>
+          </div>
+        </div>
+        <p class="body" style="font-size: 9pt; margin-top: 5mm;">
+          Floor plan to follow under separate cover.
+        </p>
+      </div>
+
+      <div class="unit-card">
+        <div class="label">Unit</div>
+        <div class="num">Apt. <b>5502</b></div>
+        <div class="meta">
+          <div>
+            <div class="k">Floor</div>
+            <div class="v">55<sup>th</sup></div>
+          </div>
+          <div>
+            <div class="k">Tower</div>
+            <div class="v">Tower 1</div>
+          </div>
+          <div>
+            <div class="k">Status</div>
+            <div class="v">Off-plan</div>
+          </div>
+          <div>
+            <div class="k">Handover</div>
+            <div class="v">End 2026</div>
+          </div>
+        </div>
+        <p class="body" style="font-size: 9pt; margin-top: 5mm;">
+          Floor plan to follow under separate cover.
+        </p>
+      </div>
+
+      <div class="unit-card">
+        <div class="label">Unit</div>
+        <div class="num">Apt. <b>5503</b></div>
+        <div class="meta">
+          <div>
+            <div class="k">Floor</div>
+            <div class="v">55<sup>th</sup></div>
+          </div>
+          <div>
+            <div class="k">Tower</div>
+            <div class="v">Tower 1</div>
+          </div>
+          <div>
+            <div class="k">Status</div>
+            <div class="v">Off-plan</div>
+          </div>
+          <div>
+            <div class="k">Handover</div>
+            <div class="v">End 2026</div>
+          </div>
+        </div>
+        <p class="body" style="font-size: 9pt; margin-top: 5mm;">
+          Floor plan to follow under separate cover.
+        </p>
+      </div>
+
+      <div class="unit-card">
+        <div class="label">Unit</div>
+        <div class="num">Apt. <b>5510</b></div>
+        <div class="meta">
+          <div>
+            <div class="k">Floor</div>
+            <div class="v">55<sup>th</sup></div>
+          </div>
+          <div>
+            <div class="k">Tower</div>
+            <div class="v">Tower 1</div>
+          </div>
+          <div>
+            <div class="k">Status</div>
+            <div class="v">Off-plan</div>
+          </div>
+          <div>
+            <div class="k">Handover</div>
+            <div class="v">End 2026</div>
+          </div>
+        </div>
+        <p class="body" style="font-size: 9pt; margin-top: 5mm;">
+          Floor plan to follow under separate cover.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>11 / 14</div>
+  </div>
+</section>
+
+<!-- =================== PAGE 12 — EXTRAORDINARY LIVING =================== -->
+<section class="page theme-dark">
+  <div class="hero"><img src="images/sr_17_street.jpg" alt="Street view with Burj"/></div>
+  <div class="hero-overlay" style="background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.15) 35%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.92) 100%);"></div>
+
+  <div class="topbar">
+    <div class="wordmark" style="color:#fff;">P A N G E A</div>
+    <div class="topbar-right" style="color:rgba(255,255,255,0.85);">St. Regis Residences · Downtown Dubai</div>
+  </div>
+
+  <div class="panel bl" style="max-width: 145mm;">
+    <div class="panel-eyebrow">10 &nbsp;·&nbsp; The Neighbourhood</div>
+    <h2 class="panel-title">Extraordinary living<br/>in a <b>cosmopolitan city</b>.</h2>
+    <p class="panel-body">
+      Step out and you are on Sheikh Mohammed bin Rashid Boulevard, with the Dubai Opera
+      to the left, Burj Park ahead and The Dubai Mall a four-minute walk away.
+    </p>
+  </div>
+
+  <div class="footer" style="color:rgba(255,255,255,0.75);">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>12 / 14</div>
+  </div>
+</section>
+
+<!-- =================== PAGE 13 — SPECIFICATIONS =================== -->
+<section class="page theme-cream">
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">St. Regis Residences · Downtown Dubai</div>
+  </div>
+
+  <div class="content">
+    <div class="section-tag">11 &nbsp;·&nbsp; Specifications</div>
+    <h2 class="display-sm" style="margin-bottom: 8mm;">The <b>detail.</b></h2>
+
+    <div class="specs">
+      <div class="col">
+        <div class="col-title">The Offer</div>
+        <div class="row"><span class="key">Tower</span><span class="val">Tower 1</span></div>
+        <div class="row"><span class="key">Floor</span><span class="val">55<sup>th</sup></span></div>
+        <div class="row"><span class="key">Units</span><span class="val">5501 · 5502 · 5503 · 5510</span></div>
+        <div class="row"><span class="key">Configurations</span><span class="val">1–3 bedroom</span></div>
+        <div class="row"><span class="key">Furnishing</span><span class="val">Branded fit-out · unfurnished</span></div>
+        <div class="row"><span class="key">View</span><span class="val">Burj Khalifa · Opera · Fountain</span></div>
+        <div class="row"><span class="key">Status</span><span class="val">Off-plan · Handover end 2026</span></div>
+        <div class="row"><span class="key">Sale</span><span class="val">Direct from Emaar</span></div>
+        <div class="row"><span class="key">Payment</span><span class="val">Phased through build</span></div>
+      </div>
+      <div class="col">
+        <div class="col-title">The Building</div>
+        <div class="row"><span class="key">Developer</span><span class="val">Emaar Properties</span></div>
+        <div class="row"><span class="key">Brand</span><span class="val">St. Regis (Marriott International)</span></div>
+        <div class="row"><span class="key">Tenure</span><span class="val">Freehold · Golden Visa eligible</span></div>
+        <div class="row"><span class="key">Service</span><span class="val">Branded &amp; serviced</span></div>
+        <div class="row"><span class="key">Pool</span><span class="val">Resort podium · F&amp;B service</span></div>
+        <div class="row"><span class="key">Wellness</span><span class="val">Spa, sauna, steam, fitness</span></div>
+        <div class="row"><span class="key">Family</span><span class="val">Kids' pool &amp; play area</span></div>
+        <div class="row"><span class="key">Location</span><span class="val">Sheikh Mohammed bin Rashid Blvd</span></div>
+        <div class="row"><span class="key">Zone</span><span class="val">Burj Khalifa · DLD zone</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>13 / 14</div>
+  </div>
+</section>
+
+<!-- =================== PAGE 14 — CONTACT =================== -->
+<section class="page theme-cream">
+  <div class="half-image right"><img src="images/sr_05_iconic.jpg" alt="St. Regis tower · Downtown" style="object-position: center top;"/></div>
+
+  <div class="topbar">
+    <div class="wordmark">P A N G E A</div>
+    <div class="topbar-right">St. Regis Residences · Downtown Dubai</div>
+  </div>
+
+  <div class="half-content left" style="justify-content: flex-start; padding-top: 6mm;">
+    <div class="section-tag">12 &nbsp;·&nbsp; Next Steps</div>
+    <h2 class="display-sm">Let's discuss<br/>the <b>options.</b></h2>
+
+    <p class="body" style="font-size: 10pt; margin-top: 2mm;">
+      I can arrange a site visit to the St. Regis Residences podium and the show
+      apartment, alongside the Vida Dubai Mall viewing. Floor plans and pricing for
+      units 5501, 5502, 5503 and 5510 will follow under separate cover from the
+      developer.
+    </p>
+    <p class="body" style="font-size: 10pt; margin-top: 2mm;">
+      For the principal who wants <b>brand-new and branded</b>, this is the closer
+      match. For the principal who wants <b>move-in-ready this year</b>, the Vida
+      Dubai Mall unit remains the better fit.
+    </p>
+
+    <div class="contact-card" style="margin-top: 5mm;">
+      <div class="eyebrow">Your Advisor</div>
+      <div class="name">Raj Tomar</div>
+      <div class="role">Real Estate Advisor · Pangea Properties · RERA ORN 23724</div>
+      <div class="row"><span class="k">M</span><span>+971 58 996 6085</span></div>
+      <div class="row"><span class="k">E</span><span>raj@pangeadubai.com</span></div>
+      <div class="row"><span class="k">W</span><span>www.pangeadubai.com</span></div>
+    </div>
+
+    <p class="disclaimer" style="margin-top: 5mm; max-width: 125mm;">
+      All renders, location indications and amenity descriptions extracted from the
+      Emaar St. Regis Residences developer brochure. The St. Regis Residences,
+      Downtown Dubai are not owned, developed or sold by Marriott International, Inc.
+      Emaar Properties PJSC uses the St. Regis marks under licence from Marriott.
+      Final commercial terms subject to confirmation against the SPA and RERA Form F.
+    </p>
+  </div>
+
+  <div class="footer">
+    <div class="left"><span>pangeadubai.com</span><span>raj@pangeadubai.com · +971 58 996 6085</span></div>
+    <div>14 / 14</div>
+  </div>
+</section>
+
+</body>
+</html>

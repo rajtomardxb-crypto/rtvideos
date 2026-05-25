@@ -28,6 +28,11 @@ const variants = [
     pdf: 'Vida_Dubai_Mall_T1_3BR_Brochure_Portrait_ZH.pdf',
     width: '210mm', height: '297mm',
   },
+  {
+    html: 'brochure-stregis.html',
+    pdf: 'St_Regis_Residences_T1_Brochure_Landscape_EN.pdf',
+    width: '297mm', height: '210mm',
+  },
 ];
 
 const browser = await chromium.launch();
